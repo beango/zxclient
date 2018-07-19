@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C5B4AB9-8002-4B19-816B-94C57BF43BE7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZXClient</RootNamespace>
+    <AssemblyName>ZXClient</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Administrator\Documents\zxeval\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bitbug_favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>33375C40E8892F06FCCEBF42E13ECEA370CE37D2</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ZXClient_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net20\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.108.0\lib\net20\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADBClient.cs" />
+    <Compile Include="control\Catch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="control\Catch.Designer.cs">
+      <DependentUpon>Catch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\CutPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="control\CutPopUp.designer.cs">
+      <DependentUpon>CutPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\EventControls\EventIntermediaryPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\EventControls\EventReceiverPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\EventControls\EventSenderPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\EventControls\IMouseEventReceiver.cs" />
+    <Compile Include="control\MyRectangle.cs" />
+    <Compile Include="control\ScreenBody.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="control\ScreenBody.designer.cs">
+      <DependentUpon>ScreenBody.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\ScreenBodyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="control\ScreenBodyFrm.Designer.cs">
+      <DependentUpon>ScreenBodyFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\TextBoxXP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\ThemedColors.cs" />
+    <Compile Include="control\Win32.cs" />
+    <Compile Include="control\zgke.cs" />
+    <Compile Include="dao\db_KeyConfig.cs" />
+    <Compile Include="dao\db_EmployeeLoginDao.cs" />
+    <Compile Include="dao\db_ConfigDao.cs" />
+    <Compile Include="dao\db_ResUpdateDao.cs" />
+    <Compile Include="ConfigSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigSet.Designer.cs">
+      <DependentUpon>ConfigSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadConfirm.designer.cs">
+      <DependentUpon>DownloadConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadProgress.designer.cs">
+      <DependentUpon>DownloadProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPwdFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPwdFrm.Designer.cs">
+      <DependentUpon>EditPwdFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProcessing.Designer.cs">
+      <DependentUpon>FrmProcessing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotKeyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotKeyFrm.Designer.cs">
+      <DependentUpon>HotKeyFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\gdi32\NativeMethods.cs" />
+    <Compile Include="Imports\user32\NativeMethods.cs" />
+    <Compile Include="LoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginWindow.Designer.cs">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\InfoSetModel.cs" />
+    <Compile Include="model\MainStaticData.cs" />
+    <Compile Include="model\PjqModel.cs" />
+    <Compile Include="model\UserModel.cs" />
+    <Compile Include="NotifyWin\NotifyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Updater\AutoUpdater.cs" />
+    <Compile Include="Updater\CommonUnitity.cs" />
+    <Compile Include="Updater\Config.cs" />
+    <Compile Include="Updater\ConstFile.cs" />
+    <Compile Include="Updater\DownloadFileInfo.cs" />
+    <Compile Include="Updater\IAutoUpdater.cs" />
+    <Compile Include="Updater\LocalFile.cs" />
+    <Compile Include="Updater\RemoteFile.cs" />
+    <Compile Include="util\BitmapImageUtil.cs" />
+    <Compile Include="util\Common.cs" />
+    <Compile Include="util\CommonHelper.cs" />
+    <Compile Include="util\EDncryptHelper.cs" />
+    <Compile Include="util\FtpHelper.cs" />
+    <Compile Include="util\HotKey.cs" />
+    <Compile Include="util\HttpUtil.cs" />
+    <Compile Include="util\JsonHelper.cs" />
+    <Compile Include="util\KeyboardHook.cs" />
+    <Compile Include="util\LogHelper.cs" />
+    <Compile Include="util\MyOpaqueLayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="util\ScreenCapture.cs" />
+    <Compile Include="util\ZipHelper.cs" />
+    <Compile Include="util\ZipStorer.cs" />
+    <Compile Include="VoiceText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VoiceText.Designer.cs">
+      <DependentUpon>VoiceText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkForm.Designer.cs">
+      <DependentUpon>WorkForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ConfigSet.resx">
+      <DependentUpon>ConfigSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control\Catch.resx">
+      <DependentUpon>Catch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control\CutPopup.resx">
+      <DependentUpon>CutPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control\ScreenBody.resx">
+      <DependentUpon>ScreenBody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadConfirm.resx">
+      <DependentUpon>DownloadConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadProgress.resx">
+      <DependentUpon>DownloadProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPwdFrm.resx">
+      <DependentUpon>EditPwdFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotKeyFrm.resx">
+      <DependentUpon>HotKeyFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginWindow.resx">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifyWin\NotifyWindow.resx">
+      <DependentUpon>NotifyWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="VoiceText.resx">
+      <DependentUpon>VoiceText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkForm.resx">
+      <DependentUpon>WorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Autoupdater.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="db\d.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="version.json" />
+    <None Include="ZXClient_TemporaryKey.pfx" />
+    <None Include="数字窗智能终端-服务后台.url" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdbBin\adb.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AdbBin\AdbWinApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AdbBin\AdbWinUsbApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AdbBin\cmd.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AdbBin\fav.ico" />
+    <Content Include="Assets\ic_launcher.png" />
+    <Content Include="bitbug_favicon.ico" />
+    <Content Include="Cursors\hcross.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cursors\move_m.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cursors\size1_m.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cursors\size2_m.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cursors\size3_m.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cursors\size4_m.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\b1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\buttonbg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\buttonbg2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Icon.ico" />
+    <None Include="Resources\TopRight.png" />
+    <None Include="Resources\TopLeft.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\BottomRight.png" />
+    <None Include="Resources\BottomLeft.png" />
+    <EmbeddedResource Include="Resources\loading2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CutImg\" />
+    <Folder Include="libs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets" Condition="Exists('..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net20\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.108.0\build\net20\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net20\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net20\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
