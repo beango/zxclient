@@ -17,7 +17,7 @@ namespace ZXClient
         {
             InitializeComponent();
             CommonHelper.SetMid(this);
-            Dictionary<string, string> keyDict = db_KeyConfig.getKeyConfig(MainStaticData.USERCARD);
+            Dictionary<string, string> keyDict = db_KeyConfig.getKeyConfig(MainData.USERCARD);
             if (keyDict != null && keyDict.ContainsKey("欢迎光临"))
             {
                 tbWelKey.Text = keyDict["欢迎光临"];
@@ -80,25 +80,25 @@ namespace ZXClient
                     d.Add(tbVoiceKey.Text);
             }
 
-            if (db_KeyConfig.addIfNoExist(MainStaticData.USERCARD, "欢迎光临", tbWelKey.Text) == 0)
+            if (db_KeyConfig.addIfNoExist(MainData.USERCARD, "欢迎光临", tbWelKey.Text) == 0)
             {
-                db_KeyConfig.update(tbWelKey.Text, MainStaticData.USERCARD, "欢迎光临");
+                db_KeyConfig.update(tbWelKey.Text, MainData.USERCARD, "欢迎光临");
             }
-            if (db_KeyConfig.addIfNoExist(MainStaticData.USERCARD, "暂停服务", tbPauseKey.Text) == 0)
+            if (db_KeyConfig.addIfNoExist(MainData.USERCARD, "暂停服务", tbPauseKey.Text) == 0)
             {
-                db_KeyConfig.update(tbPauseKey.Text, MainStaticData.USERCARD, "暂停服务");
+                db_KeyConfig.update(tbPauseKey.Text, MainData.USERCARD, "暂停服务");
             }
-            if (db_KeyConfig.addIfNoExist(MainStaticData.USERCARD, "服务评价", tbEvalKey.Text) == 0)
+            if (db_KeyConfig.addIfNoExist(MainData.USERCARD, "服务评价", tbEvalKey.Text) == 0)
             {
-                db_KeyConfig.update(tbEvalKey.Text, MainStaticData.USERCARD, "服务评价");
+                db_KeyConfig.update(tbEvalKey.Text, MainData.USERCARD, "服务评价");
             }
-            if (db_KeyConfig.addIfNoExist(MainStaticData.USERCARD, "语音播报", tbVoiceKey.Text) == 0)
+            if (db_KeyConfig.addIfNoExist(MainData.USERCARD, "语音播报", tbVoiceKey.Text) == 0)
             {
-                db_KeyConfig.update(tbVoiceKey.Text, MainStaticData.USERCARD, "语音播报");
+                db_KeyConfig.update(tbVoiceKey.Text, MainData.USERCARD, "语音播报");
             }
             MessageBox.Show("配置保存成功,将自动重启!");
             Application.ExitThread();
-            MainStaticData.Restart();
+            MainData.Restart();
         }
 
         private void tbWelKey_KeyUp(object sender, KeyEventArgs e)
@@ -144,8 +144,8 @@ namespace ZXClient
 
         private void HotKeyFrm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (null != MainStaticData.wf)
-                MainStaticData.wf.Visible = true;
+            if (null != MainData.wf)
+                MainData.wf.Visible = true;
         }
     }
 }

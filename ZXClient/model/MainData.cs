@@ -12,7 +12,7 @@ using ZXClient.util;
 
 namespace ZXClient.model
 {
-    public static class MainStaticData
+    public static class MainData
     {
         public static SQLiteConnection conn = new SQLiteConnection();
         public static String datasource = System.Environment.CurrentDirectory + "\\db\\d.db";

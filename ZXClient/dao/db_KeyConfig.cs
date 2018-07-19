@@ -12,7 +12,7 @@ namespace ZXClient.dao
     {
         public static bool exists(string usercard, string actionName)
         {
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 DataTable data = ExecuteDataTable("SELECT * FROM KeyConfig where actionName='"+actionName+"' and usercard='"+ usercard + "'", null);
                 return data.Rows.Count > 0;
@@ -21,7 +21,7 @@ namespace ZXClient.dao
 
         internal static Dictionary<string, string> getKeyConfig(string usercard)
         {
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 DataTable data = null;
                 if (String.IsNullOrEmpty(usercard))
@@ -46,7 +46,7 @@ namespace ZXClient.dao
         {
             if (exists(usercard,actionName))
                 return 0;
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 cmd.CommandText = "INSERT INTO KeyConfig(id, usercard, actionName, key)" +
                     " VALUES  (@id, @usercard, @actionName, @key)";
@@ -62,7 +62,7 @@ namespace ZXClient.dao
 
         public static int update(string key, string usercard, string actionName)
         {
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 cmd.CommandText = "update KeyConfig set key=@key where usercard=@usercard and actionName=@actionName";
                 cmd.Parameters.AddWithValue("@key", key);
@@ -76,7 +76,7 @@ namespace ZXClient.dao
 
         public static int updateByKey(string key, string value)
         {
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 cmd.CommandText = "update KeyConfig set " + key+"=@value";
                 cmd.Parameters.AddWithValue("@value", value);
@@ -88,7 +88,7 @@ namespace ZXClient.dao
         {
             DataTable data = new DataTable();
 
-            SQLiteCommand command = new SQLiteCommand(sql, MainStaticData.conn);
+            SQLiteCommand command = new SQLiteCommand(sql, MainData.conn);
             if (parameters != null)
             {
                 command.Parameters.AddRange(parameters);

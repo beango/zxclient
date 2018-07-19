@@ -88,7 +88,7 @@ namespace ZXClient
                 }
 
                 initDB();
-                if (MainStaticData.cbNoLogin)
+                if (MainData.cbNoLogin)
                 {
                     Application.Run(new WorkForm());
                 }
@@ -114,35 +114,35 @@ namespace ZXClient
             try
             {
                 SQLiteConnectionStringBuilder connstr = new SQLiteConnectionStringBuilder();
-                connstr.DataSource = MainStaticData.datasource;
+                connstr.DataSource = MainData.datasource;
                 
-                MainStaticData.conn.ConnectionString = connstr.ToString();
-                MainStaticData.conn.Open();
+                MainData.conn.ConnectionString = connstr.ToString();
+                MainData.conn.Open();
                
                 db_ConfigDao.UpdateSchema();
-                int r = db_ConfigDao.addIfNoExist("http://localhost:8080/zxweb/", "localhost", "8080", "192.168.1.123", MainStaticData.ConnTypeData[0]);//不存在则添加
+                int r = db_ConfigDao.addIfNoExist("http://localhost:8080/zxweb/", "localhost", "8080", "192.168.1.123", MainData.ConnTypeData[0]);//不存在则添加
                 
                 object[] configs = db_ConfigDao.getConfig();
-                MainStaticData.ServerAddr = configs[0].ToString();
-                MainStaticData.ServerIP = configs[1].ToString();
-                MainStaticData.ServerPort = configs[2].ToString();
-                MainStaticData.DeviceIP = configs[3].ToString();
-                MainStaticData.ConnType = configs[4].ToString();
+                MainData.ServerAddr = configs[0].ToString();
+                MainData.ServerIP = configs[1].ToString();
+                MainData.ServerPort = configs[2].ToString();
+                MainData.DeviceIP = configs[3].ToString();
+                MainData.ConnType = configs[4].ToString();
                 
-                MainStaticData.FtpIP = configs[5].ToString();
-                MainStaticData.FtpPort = configs[6].ToString();
-                MainStaticData.FtpUserName = configs[7].ToString();
-                MainStaticData.FtpPwd = configs[8].ToString();
+                MainData.FtpIP = configs[5].ToString();
+                MainData.FtpPort = configs[6].ToString();
+                MainData.FtpUserName = configs[7].ToString();
+                MainData.FtpPwd = configs[8].ToString();
                 
                 if (null!= configs[9])
                 {
-                    MainStaticData.cbNoLogin = Boolean.Parse(configs[9].ToString());
+                    MainData.cbNoLogin = Boolean.Parse(configs[9].ToString());
                 }
                 
-                MainStaticData.isNetwork = MainStaticData.ConnType == MainStaticData.ConnTypeData[0];
+                MainData.isNetwork = MainData.ConnType == MainData.ConnTypeData[0];
                 
-                if (MainStaticData.FtpIP != "" && MainStaticData.FtpUserName != null)
-                    MainStaticData.ftpHelper = new FtpHelper(MainStaticData.FtpIP, "/", MainStaticData.FtpUserName, MainStaticData.FtpPwd);
+                if (MainData.FtpIP != "" && MainData.FtpUserName != null)
+                    MainData.ftpHelper = new FtpHelper(MainData.FtpIP, "/", MainData.FtpUserName, MainData.FtpPwd);
             }
             catch (Exception ex)
             {

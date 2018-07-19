@@ -104,6 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADBClient.cs" />
+    <Compile Include="AlertFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlertFrm.Designer.cs">
+      <DependentUpon>AlertFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="control\Catch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,7 +203,7 @@
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="model\InfoSetModel.cs" />
-    <Compile Include="model\MainStaticData.cs" />
+    <Compile Include="model\MainData.cs" />
     <Compile Include="model\PjqModel.cs" />
     <Compile Include="model\UserModel.cs" />
     <Compile Include="NotifyWin\NotifyWindow.cs">
@@ -244,6 +250,9 @@
     <Compile Include="WorkForm.Designer.cs">
       <DependentUpon>WorkForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlertFrm.resx">
+      <DependentUpon>AlertFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfigSet.resx">
       <DependentUpon>ConfigSet.cs</DependentUpon>
     </EmbeddedResource>

@@ -19,12 +19,12 @@ namespace ZXClient
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            cbConnType.Items.AddRange(MainStaticData.ConnTypeData);
-            tbServerIP.Text = MainStaticData.ServerIP;
-            cbConnType.SelectedText = MainStaticData.ConnType;
-            tbDeviceIP.Text = MainStaticData.DeviceIP;
-            tbServerPort.Text = MainStaticData.ServerPort;
-            cbNoLogin.Checked = MainStaticData.cbNoLogin;
+            cbConnType.Items.AddRange(MainData.ConnTypeData);
+            tbServerIP.Text = MainData.ServerIP;
+            cbConnType.SelectedText = MainData.ConnType;
+            tbDeviceIP.Text = MainData.DeviceIP;
+            tbServerPort.Text = MainData.ServerPort;
+            cbNoLogin.Checked = MainData.cbNoLogin;
         }
         
         private static byte[] ReadFile(String img)
@@ -70,7 +70,7 @@ namespace ZXClient
                 MessageBox.Show("服务器IP不能为空!");
                 return;
             }
-            if (tbDeviceIP.Text == "" && cbConnType.Text == MainStaticData.ConnTypeData[0]) //网络连接
+            if (tbDeviceIP.Text == "" && cbConnType.Text == MainData.ConnTypeData[0]) //网络连接
             {
                 MessageBox.Show("评价器IP不能为空!");
                 return;
@@ -83,12 +83,12 @@ namespace ZXClient
             db_ConfigDao.updateByKey("isNoLogin", cbNoLogin.Checked);
             
             MessageBox.Show("配置保存成功,将自动重启!");
-            MainStaticData.Restart();
+            MainData.Restart();
         }
 
         private void cbConnType_TextChanged(object sender, EventArgs e)
         {
-            if (cbConnType.Text == MainStaticData.ConnTypeData[0])
+            if (cbConnType.Text == MainData.ConnTypeData[0])
             {
                 tbDeviceIP.Visible = lblDevice.Visible = true;
                 ShowInfo2("切换到网络连接方式！");
@@ -128,8 +128,8 @@ namespace ZXClient
         
         private void ConfigSet_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(null!= MainStaticData.wf)
-                MainStaticData.wf.Visible = true;
+            if(null!= MainData.wf)
+                MainData.wf.Visible = true;
         }
     }
 }

@@ -221,12 +221,19 @@ namespace ZXClient.control
 
         private void CutSelection()
         {
-            Bitmap cut_bmp = null;
-            ProcessBitmap(ref cut_bmp);
-            //Clipboard.SetImage(cut_bmp);
-            string imageName = saveCutImg(cut_bmp);
-            OnCut(this, new CutEventArgs(selection, imageName));
-            this.Close();
+            try
+            {
+                Bitmap cut_bmp = null;
+                ProcessBitmap(ref cut_bmp);
+                //Clipboard.SetImage(cut_bmp);
+                string imageName = saveCutImg(cut_bmp);
+                OnCut(this, new CutEventArgs(selection, imageName));
+                this.Close();
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         private void SaveSelection()

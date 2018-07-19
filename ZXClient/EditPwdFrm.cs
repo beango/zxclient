@@ -45,8 +45,8 @@ namespace ZXClient
             }
             String oldpwd = EDncryptHelper.MD5Encrypt16(tbOld.Text);
             String newpwd = EDncryptHelper.MD5Encrypt16(tbNew.Text);
-            string data = String.Format("cardnum={0}&oldpsw={1}&newpsw={2}", MainStaticData.USERCARD, oldpwd, newpwd);
-            String ReturnDatastr = HttpUtil.RequestData(MainStaticData.ServerAddr + MainStaticData.INTE_EMPLOYEECHANGEPSW, data);
+            string data = String.Format("cardnum={0}&oldpsw={1}&newpsw={2}", MainData.USERCARD, oldpwd, newpwd);
+            String ReturnDatastr = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_EMPLOYEECHANGEPSW, data);
             if (ReturnDatastr == "errorPassword")
             {
                 MessageBox.Show("旧密码错误!");
@@ -54,10 +54,10 @@ namespace ZXClient
             }
             if (ReturnDatastr == "changeSuccess")
             {
-                db_EmployeeLoginDao.logout(MainStaticData.USERCARD);
+                db_EmployeeLoginDao.logout(MainData.USERCARD);
                 MessageBox.Show("密码修改成功,请重新登录!");
                 Application.ExitThread();
-                MainStaticData.Restart();
+                MainData.Restart();
                 return;
             }
             MessageBox.Show(ReturnDatastr);//
@@ -65,8 +65,8 @@ namespace ZXClient
 
         private void EditPwdFrm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (null != MainStaticData.wf)
-                MainStaticData.wf.Visible = true;
+            if (null != MainData.wf)
+                MainData.wf.Visible = true;
         }
     }
 }

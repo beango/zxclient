@@ -21,7 +21,7 @@ namespace ZXClient
         {
             InitializeComponent();
             SetForegroundWindow(this.Handle);//当到最前端
-            if (MainStaticData.autoLoginSucc==false)
+            if (MainData.autoLoginSucc==false)
             {
                 MessageBox.Show("自动登录失败，请重新登录！");
             }
@@ -62,7 +62,7 @@ namespace ZXClient
                 allDone.WaitOne();
                 llgin(lastEmployee);
             }
-            if (lastEmployee == null || lastEmployee[2] == "0" || MainStaticData.autoLoginSucc != true) //没有自动登录的账户,弹出登录框, 或者自动登录没有成功，也弹出登录框
+            if (lastEmployee == null || lastEmployee[2] == "0" || MainData.autoLoginSucc != true) //没有自动登录的账户,弹出登录框, 或者自动登录没有成功，也弹出登录框
             {
                 this.Invoke(new Action(delegate () { btnLogin.Enabled = true;if (lastEmployee != null && lastEmployee.Length>0) { tbCard.Text = lastEmployee[0]; } })); 
             }
@@ -71,11 +71,11 @@ namespace ZXClient
         private void llgin(string[] lastEmployee)
         {
             this.Invoke(new Action(delegate () { _ShowInfo("正在登录!", Color.Blue); }));
-            MainStaticData.USERCARD = lastEmployee[0];
+            MainData.USERCARD = lastEmployee[0];
             string loginRst = UserLogin(lastEmployee[0], lastEmployee[1], lastEmployee[2] == "1" ? 1 : 0);
-            if (loginRst == MainStaticData.loginSuccess)
+            if (loginRst == MainData.loginSuccess)
             {
-                MainStaticData.autoLoginSucc = true;
+                MainData.autoLoginSucc = true;
                 this.Invoke(new Action(delegate () { _ShowInfo("登录成功,正在跳转!", Color.Blue); }));
                 Thread.Sleep(1000);
             }
@@ -83,7 +83,7 @@ namespace ZXClient
             {
                 this.Invoke(new Action(delegate () { _ShowInfo("登录失败!", Color.Blue); }));
             }
-            if (MainStaticData.autoLoginSucc == true)
+            if (MainData.autoLoginSucc == true)
             {
                 if (this.InvokeRequired)
                 {
@@ -141,14 +141,14 @@ namespace ZXClient
                 return;
             }
             string isLogin = UserLogin(card, pw, cbMember.Checked ? 1 : 0);
-            if (isLogin != MainStaticData.loginSuccess)
+            if (isLogin != MainData.loginSuccess)
             {
                 lblErrMsg.ForeColor = Color.Red;
                 lblErrMsg.Text = isLogin;
             }
             else
             {
-                MainStaticData.USERCARD = card;
+                MainData.USERCARD = card;
                 this.DialogResult = DialogResult.OK;
             }
         }
@@ -164,7 +164,7 @@ namespace ZXClient
             try
             {
                 string data = String.Format("cardnum={0}&psw={1}", card, EDncryptHelper.MD5Encrypt16(pw));
-                ReturnDatastr = HttpUtil.RequestData(MainStaticData.ServerAddr + MainStaticData.INTE_EMPLOYEELOGIN, data);
+                ReturnDatastr = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_EMPLOYEELOGIN, data);
                 if (ReturnDatastr==null)
                 {
                     return "服务器连接失败!";
@@ -176,9 +176,9 @@ namespace ZXClient
                 return "服务器连接失败!";
             }
             LogHelper.WriteInfo(typeof(LoginWindow), "登录结果：　" + ReturnDatastr);
-            if (ReturnDatastr == MainStaticData.loginSuccess)
+            if (ReturnDatastr == MainData.loginSuccess)
             {
-                MainStaticData.USERCARD = card;
+                MainData.USERCARD = card;
                 if (db_EmployeeLoginDao.existsByCard(card)) //如果存在记录则修改
                 {
                     db_EmployeeLoginDao.update(card, pw, isMember);

@@ -11,7 +11,7 @@ namespace ZXClient.dao
     {
         public static bool exists()
         {
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 DataTable data = ExecuteDataTable("SELECT * FROM Config", null);
                 return data.Rows.Count > 0;
@@ -20,7 +20,7 @@ namespace ZXClient.dao
 
         internal static object[] getConfig()
         {
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 DataTable data = ExecuteDataTable("SELECT ServerAddr,ServerIP, ServerPort,DeviceIP,ConnType," +
                     "FtpIP,FtpPort,FtpUserName,FtpPwd,isNoLogin FROM Config limit 1", null);
@@ -39,7 +39,7 @@ namespace ZXClient.dao
         {
             if (exists())
                 return 0;
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 cmd.CommandText = "INSERT INTO Config(id, ServerAddr,ServerIP, ServerPort, DeviceIP, ConnType, isNoLogin)" +
                     " VALUES  (@id, @ServerAddr, @ServerIP, @ServerPort, @DeviceIP, @ConnType, @isNoLogin)";
@@ -56,7 +56,7 @@ namespace ZXClient.dao
 
         public static int update(string ServerAddr, string ServerIP, string ServerPort)
         {
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 cmd.CommandText = "update Config set ServerAddr=@ServerAddr,ServerIP=@ServerIP,ServerPort=@ServerPort ";
                 cmd.Parameters.AddWithValue("@ServerAddr", ServerAddr);
@@ -68,7 +68,7 @@ namespace ZXClient.dao
 
         public static int updateByKey(string key, object value)
         {
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 cmd.CommandText = "update Config set "+key+"=@value";
                 cmd.Parameters.AddWithValue("@value", value);
@@ -80,7 +80,7 @@ namespace ZXClient.dao
         {
             DataTable data = new DataTable();
 
-            SQLiteCommand command = new SQLiteCommand(sql, MainStaticData.conn);
+            SQLiteCommand command = new SQLiteCommand(sql, MainData.conn);
             if (parameters != null)
             {
                 command.Parameters.AddRange(parameters);
@@ -93,11 +93,10 @@ namespace ZXClient.dao
 
         internal static void UpdateSchema()
         {
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 cmd.CommandText = "select sql from sqlite_master where type='table' and tbl_name='Config'";
                 String sql = (String)cmd.ExecuteScalar();
-                Console.WriteLine(sql);
                 if (!sql.Contains("isNoLogin"))
                 {
                     cmd.CommandText = "ALTER TABLE [Config] Add [isNoLogin] BOOLEAN(1)";

@@ -13,7 +13,7 @@ namespace ZXClient.dao
         {
             //这里演示如何插入一条新的记录，如果要插入多条记录需要使用“事务”机制来提高效率  
             //你可以调用ExecuteNonQuery函数来简化下面的代码  
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 cmd.CommandText = "INSERT INTO ResUpdate(pkid, mac, ver,states,cdate)" +
                     " VALUES  (@pkid, @mac, @ver, @states, @cdate)";
@@ -30,7 +30,7 @@ namespace ZXClient.dao
         {
             //这里演示如何插入一条新的记录，如果要插入多条记录需要使用“事务”机制来提高效率  
             //你可以调用ExecuteNonQuery函数来简化下面的代码  
-            using (SQLiteCommand cmd = (SQLiteCommand)MainStaticData.conn.CreateCommand())
+            using (SQLiteCommand cmd = (SQLiteCommand)MainData.conn.CreateCommand())
             {
                 cmd.CommandText = "update ResUpdate set states=@states where mac=@mac and ver=@ver";
                 cmd.Parameters.AddWithValue("@ver", ver);
@@ -59,7 +59,7 @@ namespace ZXClient.dao
         {
             DataTable data = new DataTable();
 
-            SQLiteCommand command = new SQLiteCommand(sql, MainStaticData.conn);
+            SQLiteCommand command = new SQLiteCommand(sql, MainData.conn);
             if (parameters != null)
             {
                 command.Parameters.AddRange(parameters);

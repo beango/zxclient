@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using ZXClient.util;
 
 namespace ZXClient
 {
@@ -76,11 +77,18 @@ namespace ZXClient
         // Send a command to emulated shell
         public void SendCommand(string command)
         {
-            CMD.WorkerSupportsCancellation = true;
-            Command = command;
-            CMD.RunWorkerAsync();
-            while (!Complete) Sleep(500);
-            Complete = false;
+            try
+            {
+                CMD.WorkerSupportsCancellation = true;
+                Command = command;
+                CMD.RunWorkerAsync();
+                while (!Complete) Sleep(500);
+                Complete = false;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteError(typeof(ADBClient), ex);
+            }
         }
 
         // Sleep until output
