@@ -30,10 +30,13 @@ namespace ZXClient.control
         EventSenderPictureBox cTopLeft, cTopRight, cBottomRight, cBottomLeft, hHighlight;
         EventIntermediaryPictureBox hContainer;
         Form workForm;
+        int cuttype;//1截屏，2同屏
 
-        public CutPopUp(Bitmap screen_bmp, Screen dest_scr, Rectangle previous_selection, Form workForm)
+        public CutPopUp(Bitmap screen_bmp, Screen dest_scr, Rectangle previous_selection, Form workForm, int type)
         {
             this.workForm = workForm;
+            this.cuttype = type;
+            
             mouse_regions = new Rectangle[4] {
                 Rectangle.Empty,
                 Rectangle.Empty,
@@ -45,6 +48,10 @@ namespace ZXClient.control
             selection = previous_selection;
 
             InitializeComponent();
+            if (type == 2)
+                OptionsMenuSave.Text = "开始同屏";
+            if (type == 1)
+                OptionsMenuSave.Text = "截屏并发送";
 
             this.Icon = Resources.Icon;
             this.DoubleBuffered = true;

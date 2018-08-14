@@ -69,8 +69,6 @@ namespace ZXClient
 
                 Output = process.StandardOutput.ReadToEnd();
                 Complete = true;
-
-                Console.WriteLine("CMD_SEND_RESULT:" + Output);
             };
         }
 
@@ -81,6 +79,7 @@ namespace ZXClient
             {
                 CMD.WorkerSupportsCancellation = true;
                 Command = command;
+                Console.WriteLine("command:" + command);
                 CMD.RunWorkerAsync();
                 while (!Complete) Sleep(500);
                 Complete = false;
@@ -172,6 +171,11 @@ namespace ZXClient
         public void Push(string input, string output)
         {
             try { SendCommand("\"" + adbPath + "\" push \"" + input + "\" \"" + output + "\""); } catch { try { SendCommand("\"" + adbPath + "\" push \"" + input.Replace("/", "\\") + "\" \"" + output + "\""); } catch {  } }
+        }
+
+        public void rm(string dir)
+        {
+            try { SendCommand("" + adbPath + " shell rm " + dir); } catch { }
         }
 
         public void Pull(string input, string output)

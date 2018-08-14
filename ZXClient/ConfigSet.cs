@@ -25,6 +25,7 @@ namespace ZXClient
             tbDeviceIP.Text = MainData.DeviceIP;
             tbServerPort.Text = MainData.ServerPort;
             cbNoLogin.Checked = MainData.cbNoLogin;
+            flowLayoutPanel1.WrapContents = false;
         }
         
         private static byte[] ReadFile(String img)
@@ -95,7 +96,7 @@ namespace ZXClient
             }
             else
             {
-                tbDeviceIP.Visible = lblDevice.Visible = false;
+                tbDeviceIP.Visible = lblDevice.Visible = false; 
                 _ShowInfo("切换到USB连接方式！");
             }
         }

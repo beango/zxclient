@@ -170,7 +170,7 @@ namespace ZXClient.util
                 Console.WriteLine("接口请求:" + POSTURL + (PostData == "" ? "" : ("?" + PostData)));
                 //发送请求的数据
                 WebRequest myHttpWebRequest = WebRequest.Create(POSTURL);
-                myHttpWebRequest.Timeout = 3000;
+                myHttpWebRequest.Timeout = 5000;
                 myHttpWebRequest.Method = "POST";
                 UTF8Encoding encoding = new UTF8Encoding();
                 byte[] byte1 = encoding.GetBytes(PostData);

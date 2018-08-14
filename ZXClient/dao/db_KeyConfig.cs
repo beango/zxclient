@@ -6,7 +6,6 @@ using ZXClient.model;
 using ZXClient.util;
 
 namespace ZXClient.dao
-
 {
     public class db_KeyConfig
     {
@@ -34,7 +33,8 @@ namespace ZXClient.dao
                     Dictionary<string, string> keydic = new Dictionary<string, string>();
                     for (int i = 0; i < data.Rows.Count; i++)
                     {
-                        keydic.Add(data.Rows[i][0].ToString(), data.Rows[i][1].ToString());
+                        if(!keydic.ContainsKey(data.Rows[i][0].ToString()))
+                            keydic.Add(data.Rows[i][0].ToString(), data.Rows[i][1].ToString());
                     }
                     return keydic;
                 }

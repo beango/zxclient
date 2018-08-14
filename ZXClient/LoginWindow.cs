@@ -14,6 +14,10 @@ namespace ZXClient
 {
     public partial class LoginWindow : Form
     {
+        private delegate void DelegateName();
+        System.Timers.Timer autoLoginTimer;
+        public static ManualResetEvent allDone = new ManualResetEvent(false);
+
         [DllImport("User32.dll")]
         private static extern bool SetForegroundWindow(IntPtr hWnd);
 
@@ -30,11 +34,7 @@ namespace ZXClient
             this.Focus();
             this.tbCard.Focus();
         }
-
-        int waittimes = 6;//5秒后自动登录
-        private delegate void DelegateName();
-        System.Timers.Timer autoLoginTimer;
-        public static ManualResetEvent allDone = new ManualResetEvent(false);
+        
         private void AutoLogin()
         {
             string[] lastEmployee = db_EmployeeLoginDao.getLastAutoLogin();
@@ -48,9 +48,9 @@ namespace ZXClient
                     autoLoginTimer.Interval = 1000;
                     autoLoginTimer.Elapsed += (sender, e) =>
                     {
-                        if (waittimes > 0)
+                        if (MainData.waittimes > 0)
                         {
-                            this.BeginInvoke(new Action(delegate () { _ShowInfo((waittimes-1) + "秒后自动登录，取消勾选则自动登录取消．", Color.Blue); waittimes--; }));
+                            this.BeginInvoke(new Action(delegate () { _ShowInfo((MainData.waittimes -1) + "秒后自动登录，取消勾选则自动登录取消．", Color.Blue); MainData.waittimes--; }));
                         }
                         else
                         {
@@ -115,7 +115,7 @@ namespace ZXClient
             {
                 autoLoginTimer.Enabled = false;
                 autoLoginTimer.Close();
-                this.BeginInvoke(new Action(delegate () { _ShowInfo("自动登录已取消．", Color.Blue); this.btnLogin.Enabled = true; waittimes--; }));
+                this.BeginInvoke(new Action(delegate () { _ShowInfo("自动登录已取消．", Color.Blue); this.btnLogin.Enabled = true; MainData.waittimes--; }));
             }
         }
 

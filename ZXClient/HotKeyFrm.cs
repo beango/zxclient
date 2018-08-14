@@ -17,6 +17,9 @@ namespace ZXClient
         {
             InitializeComponent();
             CommonHelper.SetMid(this);
+
+            lblCutVideo.Visible = txtCutVideo.Visible = !MainData.isNetwork;
+
             Dictionary<string, string> keyDict = db_KeyConfig.getKeyConfig(MainData.USERCARD);
             if (keyDict != null && keyDict.ContainsKey("欢迎光临"))
             {
@@ -33,6 +36,10 @@ namespace ZXClient
             if (keyDict != null && keyDict.ContainsKey("语音播报"))
             {
                 tbVoiceKey.Text = keyDict["语音播报"];
+            }
+            if (keyDict != null && keyDict.ContainsKey("同屏"))
+            {
+                txtCutVideo.Text = keyDict["同屏"];
             }
         }
         
@@ -79,6 +86,16 @@ namespace ZXClient
                 else
                     d.Add(tbVoiceKey.Text);
             }
+            if (txtCutVideo.Text != "")
+            {
+                if (d.Contains(txtCutVideo.Text))
+                {
+                    MessageBox.Show("按键设置重复!");
+                    return;
+                }
+                else
+                    d.Add(txtCutVideo.Text);
+            }
 
             if (db_KeyConfig.addIfNoExist(MainData.USERCARD, "欢迎光临", tbWelKey.Text) == 0)
             {
@@ -95,6 +112,10 @@ namespace ZXClient
             if (db_KeyConfig.addIfNoExist(MainData.USERCARD, "语音播报", tbVoiceKey.Text) == 0)
             {
                 db_KeyConfig.update(tbVoiceKey.Text, MainData.USERCARD, "语音播报");
+            }
+            if (db_KeyConfig.addIfNoExist(MainData.USERCARD, "同屏", txtCutVideo.Text) == 0)
+            {
+                db_KeyConfig.update(txtCutVideo.Text, MainData.USERCARD, "同屏");
             }
             MessageBox.Show("配置保存成功,将自动重启!");
             Application.ExitThread();
@@ -146,6 +167,14 @@ namespace ZXClient
         {
             if (null != MainData.wf)
                 MainData.wf.Visible = true;
+        }
+
+        private void txtCutVideo_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Modifiers.CompareTo(Keys.Control) >= 0 && e.KeyCode != Keys.ControlKey)
+            {
+                txtCutVideo.Text = HotKey.GetStringByKey(e);
+            }
         }
     }
 }

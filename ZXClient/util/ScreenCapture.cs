@@ -34,6 +34,7 @@ namespace ZXClient.util
         ///  抓取整个屏幕  
         /// </summary>  
         /// <returns></returns>  
+        /// 
         public static Bitmap captureScreen()
         {
             Size screenSize = Screen.PrimaryScreen.Bounds.Size;

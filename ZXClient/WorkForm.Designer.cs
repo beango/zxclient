@@ -130,13 +130,11 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "WorkForm";
-            this.Activated += new System.EventHandler(this.WorkForm_Activated);
-            this.Deactivate += new System.EventHandler(this.WorkForm_Deactivate);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WorkForm_FormClosed);
             this.Load += new System.EventHandler(this.WorkForm_Load);
             this.LocationChanged += new System.EventHandler(this.WorkForm_LocationChanged);
             this.SizeChanged += new System.EventHandler(this.WorkForm_SizeChanged);
-            this.Leave += new System.EventHandler(this.WorkForm_Leave);
+          
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();

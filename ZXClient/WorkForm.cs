@@ -78,63 +78,87 @@ namespace ZXClient
         private void OnKeyPress(KeyEventArgs e, out bool handle)
         {
             handle = false;
-            string eStr = HotKey.GetStringByKey(e);
-            if (null != MainData.keyDict)
+            try
             {
-                foreach (var item in MainData.keyDict)
+                string eStr = HotKey.GetStringByKey(e);
+                if (null != MainData.keyDict)
                 {
-                    KeyEventArgs hotkey = item.Value;
-                    if (e.KeyValue == hotkey.KeyValue && Control.ModifierKeys == hotkey.Modifiers)
+                    foreach (var item in MainData.keyDict)
                     {
-                        if (OnKeyPressinTimer != 0)
+                        KeyEventArgs hotkey = item.Value;
+                        if (e.KeyValue == hotkey.KeyValue && ModifierKeys == hotkey.Modifiers)
                         {
                             handle = true;
-                            return;
-                        }
-                        if (0 == 0)
-                        {
-                            OnKeyPressinTimer = 1;
-                            #region ACTION
-                            switch (item.Key)
+                            if (OnKeyPressinTimer != 0)
                             {
-                                case "欢迎光临":
-                                    if (this.btnWel.Enabled)
-                                    {
-                                        btnWel_Click(null, null);
-                                        handle = true;
-                                    }
-                                    break;
-                                case "暂停服务":
-                                    if (this.btnPause.Enabled)
-                                    {
-                                        btnPause_Click(null, null); handle = true;
-                                    }
-                                    break;
-                                case "服务评价":
-                                    if (btnEval.Enabled)
-                                    {
-                                        btnEval_Click(null, null); handle = true;
-                                    }
-                                    break;
-                                case "语音播报":
-                                    if (this.btnVoice.Enabled)
-                                    {
-                                        btnVoice_Click(null, null); handle = true;
-                                    }
-                                    break;
-                                default:
-                                    break;
+                                //Console.WriteLine("操作过于频繁！");
+                                //if (!isAlert)
+                                //{
+                                //    isAlert = true;
+                                //    DialogResult ds = MessageBox.Show(this, "操作过于频繁！");
+                                //    if (ds == DialogResult.OK)
+                                //    {
+                                //        isAlert = false;
+                                //    }
+                                //}
+                                return;
                             }
-                            #endregion
-                            //Interlocked.Exchange(ref inTimer, 0);
-                            new DelegateName(new Action(delegate
+                            if (0 == 0)
                             {
-                                Thread.Sleep(5000);
-                                OnKeyPressinTimer = 0;
-                            })).BeginInvoke(null, null);
+                                OnKeyPressinTimer = 1;
+                                #region ACTION
+                                switch (item.Key)
+                                {
+                                    case "欢迎光临":
+                                        if (this.btnWel.Enabled)
+                                        {
+                                            btnWel_Click(null, null);
+                                            handle = true;
+                                        }
+                                        break;
+                                    case "暂停服务":
+                                        if (this.btnPause.Enabled)
+                                        {
+                                            btnPause_Click(null, null); handle = true;
+                                        }
+                                        break;
+                                    case "服务评价":
+                                        if (btnEval.Enabled)
+                                        {
+                                            btnEval_Click(null, null); handle = true;
+                                        }
+                                        break;
+                                    case "语音播报":
+                                        if (this.btnVoice.Enabled)
+                                        {
+                                            btnVoice_Click(null, null); handle = true;
+                                        }
+                                        break;
+                                    case "同屏":
+                                        if (this.btnCut2.Enabled)
+                                        {
+                                            btnCut2_Click(null, null); handle = true;
+                                        }
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                #endregion
+                                //Interlocked.Exchange(ref inTimer, 0);
+                                new DelegateName(new Action(delegate
+                                {
+                                    Thread.Sleep(1000);
+                                    OnKeyPressinTimer = 0;
+                                })).BeginInvoke(null, null);
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                handle = false;
             }
         }
 
@@ -1010,14 +1034,24 @@ namespace ZXClient
                         USBSendFile("", "notice.xml");
                         #endregion
 
+                        #region 评价按键更新
+                        if(HttpUtil.DownloadFile(MainData.ServerAddr + MainData.INTE_GETEVALBUTTONS, "button.xml"))
+                        {
+                            ShowInfo2("评价按键更新");
+                            USBSendFile("", "button.xml", "eval/button.xml");
+                        }
+                        else
+                        {
+                            #region 评价按钮
+                            ret = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_GETKEYALL, "");
+                            USBSendData(String.Format("S51||{0}||E", ret), "GETKEYALL");
+                            #endregion
+                        }
+                        #endregion
+
                         #region 意见调查
                         HttpUtil.DownloadFile(MainData.ServerAddr + MainData.INTE_ADVICEDOWNLOAD, "advice.db");
                         USBSendFile("", "advice.db", "advise.ItemListener");
-                        #endregion
-
-                        #region 评价按钮
-                        ret = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_GETKEYALL, "");
-                        USBSendData(String.Format("S51||{0}||E", ret), "GETKEYALL");
                         #endregion
                     }
                     #endregion
@@ -1104,6 +1138,7 @@ namespace ZXClient
         {
             if (WindowState == FormWindowState.Minimized || isRect)
             {
+                this.Show();
                 this.Visible = true;
                 this.ShowIcon = this.ShowInTaskbar = true;
                 this.stopAnchor = AnchorStyles.None;
@@ -1117,14 +1152,6 @@ namespace ZXClient
             }
         }
 
-        private void WorkForm_Deactivate(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Minimized)
-            {
-                //this.Visible = false;
-            }
-        }
-
         System.Timers.Timer Cut2Timer;
         
         private void WorkForm_Load(object sender, EventArgs e)
@@ -1135,9 +1162,7 @@ namespace ZXClient
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
             SetVisibleCore(false);
-
-            //Program.Notify("提醒", "程序启动成功");
-
+       
             //同屏
             Cut2Timer = new System.Timers.Timer(MainData.CUTVIDEOPERSECOND);//实例化Timer类，设置间隔时间为10000毫秒； 
             Cut2Timer.Elapsed += new System.Timers.ElapsedEventHandler(CutVideo);//到达时间的时候执行事件； 
@@ -1155,46 +1180,54 @@ namespace ZXClient
                 }
                 for (int i = 0; i < data2.Count; i++)
                 {
-                    ShowInfo2(op + "------------------:" + data2[i]);
                     if (data2[i].StartsWith("S02||"))//评价数据
                     {
                         String[] d = data2[i].Split(new string[] { "||" }, StringSplitOptions.None);
-                        if (isPJQ)
+                        if (d.Length==10)
                         {
-                            byte[] data1 = MainData.encode.GetBytes(JsonHelper.SerializeObject(new { appriseresult = d[2] }));
-                            int rr = client.Send(data1, data1.Length, ipendpoint);
-                            ShowInfo2("评价器应答命令:" + rr + ", "+ JsonHelper.SerializeObject(new { appriseresult = d[2] }));
-                        }
-                        
-                        String data = String.Format("mac={0}&tt={1}&cardnum={2}&pj={3}&demo=(NULL)&businessType=1&videofile={4}&businessTime={5}&imgfile={6}&busRst={7}&videofile2={8}"
-                            , mID, d[5], d[1], d[2], d[7], d[4], d[6], d[8], d[7]);
-                        String rst = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_EVALDATA, data);
-                        //if (rst == "success")
-                        {
-                            if (op == "SE" && GetEvalResultTimer != null && GetEvalResultTimer.Enabled)
-                                GetEvalResultTimer.Stop();
-                            MyClient.Pull(MainData.SDCARD + "recorder/", "recorder/");//下载录音录像文件
-                            MyClient.Execute("rm " + MainData.SDCARD + "recorder/*", true);
-                            
-                            #region 上传录音录像文件到FTP
-                            try
+                            if (isPJQ)
                             {
-                                String ftpDir = "recorder";
-                                List<String> listFiles = CommonHelper.ListFiles(new DirectoryInfo(ftpDir));
-                                foreach (var item in listFiles)
+                                byte[] data1 = MainData.encode.GetBytes(JsonHelper.SerializeObject(new { appriseresult = d[2] }));
+                                int rr = client.Send(data1, data1.Length, ipendpoint);
+                                ShowInfo2("评价器应答命令:" + rr + ", " + JsonHelper.SerializeObject(new { appriseresult = d[2] }));
+                            }
+
+                            String data = String.Format("mac={0}&tt={1}&cardnum={2}&pj={3}&demo=(NULL)&businessType=1&videofile={4}&businessTime={5}&imgfile={6}&busRst={7}&videofile2={8}"
+                                , mID, d[5], d[1], d[2], d[7], d[4], d[6], d[8], d[7]);
+                            String rst = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_EVALDATA, data);
+                            //if (rst == "success")
+                            {
+                                if (op == "SE" && GetEvalResultTimer != null && GetEvalResultTimer.Enabled)
+                                    GetEvalResultTimer.Stop();
+                                MyClient.Pull(MainData.SDCARD + "recorder/", "recorder/");//下载录音录像文件
+                                MyClient.Execute("rm " + MainData.SDCARD + "recorder/*", true);
+
+                                #region 上传录音录像文件到FTP
+                                try
                                 {
-                                    FileInfo f = new FileInfo(item);
-                                    if (HttpUtil.UploadFile(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, f))
+                                    String ftpDir = "recorder";
+                                    List<String> listFiles = CommonHelper.ListFiles(new DirectoryInfo(ftpDir));
+                                    foreach (var item in listFiles)
                                     {
-                                        f.Delete();
+                                        FileInfo f = new FileInfo(item);
+                                        if (HttpUtil.UploadFile(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, f))
+                                        {
+                                            f.Delete();
+                                        }
                                     }
                                 }
+                                catch (Exception ex)
+                                {
+                                    LogHelper.WriteError(TAG, ex);
+                                }
+                                #endregion
                             }
-                            catch (Exception ex)
-                            {
-                                LogHelper.WriteError(TAG, ex);
-                            }
-                            #endregion
+                        }
+                        if (d.Length==7)
+                        {
+                            String data = String.Format("mac={0}&tt={1}&name={2}&phone={3}&remark={4}", d[1], d[2], d[3], d[4], d[5]);
+                            String rst = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_APPRIESADDCONTACT, data);
+                            Console.WriteLine("联系方式上传结果:" + rst);
                         }
                     }
                     if (op.StartsWith("S98||") && data2[i].StartsWith("RecvCmdOK"))//修改评价器配置成功
@@ -1210,9 +1243,7 @@ namespace ZXClient
                 }
                 if (data2.Count > 0 && data2[0].StartsWith("S24||"))
                 {
-                    ShowInfo2("获取意见调查数据:" + data2[0]);
                     String adviceData = data2[0].Substring(5, data2[0].Length-8);
-                    ShowInfo2("获取意见调查数据:" + adviceData.Split(',')[0]);
                     HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_ADVICEANSWER, "answer=" + adviceData.Split(',')[0]);
                 }
             };
@@ -1321,7 +1352,10 @@ namespace ZXClient
                 MessageBox.Show(this, Resources.ZHCN_DEVICENOCONN);
                 return;
             }
-            ActionPause(null,null);
+            AsyncBtn(this.btnPause, new Action(delegate
+            {
+                ActionPause(null, null);
+            }), 1000);
         }
 
         private void ActionPauseReset(UdpClient client, IPEndPoint remoteIpep)
@@ -1395,7 +1429,6 @@ namespace ZXClient
                 if (this.btnPause.Text.ToString() == "暂停")
                 {
                     string rst = this.NetWorkSendData("S03E");
-                    Console.WriteLine("命令返回结果:" + rst);
                     if(this.InvokeRequired)
                         this.Invoke(new Action(delegate {
                             btnPause.Text = "取消暂停";
@@ -1429,6 +1462,10 @@ namespace ZXClient
                             }
                         }
                     }
+                    if (btnCut2.Text == "停止同屏" && btnCut2.Enabled)
+                    {
+                        btnCut2_Click(null, null);
+                    }
                 }
                 else if (btnPause.Text.ToString() == "取消暂停")
                 {
@@ -1453,6 +1490,7 @@ namespace ZXClient
             else
                 method();
         }
+
         /// <summary>
         /// 请评价
         /// </summary>
@@ -1482,7 +1520,7 @@ namespace ZXClient
             }));
         }
 
-        private void AsyncBtn(Button btn,Action action)
+        private void AsyncBtn(Button btn,Action action, int sleep=5000)
         {
             new DelegateName(new Action(delegate
             {
@@ -1504,7 +1542,7 @@ namespace ZXClient
 
             new DelegateName(new Action(delegate
             {
-                Thread.Sleep(5000);
+                Thread.Sleep(sleep);
                 if (btn.InvokeRequired == false)
                 {
                     if (isConnected)
@@ -1675,7 +1713,7 @@ namespace ZXClient
                 }
                 GetScreenOnFocus();
 
-                CutPopUp cut_form = new CutPopUp(CutScreen(screen_on_focus.Bounds.Left, screen_on_focus.Bounds.Top, screen_on_focus.Bounds.Width, screen_on_focus.Bounds.Height), screen_on_focus,previous_selection, this);
+                CutPopUp cut_form = new CutPopUp(CutScreen(screen_on_focus.Bounds.Left, screen_on_focus.Bounds.Top, screen_on_focus.Bounds.Width, screen_on_focus.Bounds.Height), screen_on_focus,previous_selection, this, 1);
                 cut_form.OnCut += (s, e) =>
                 {
                     if (!isRect)
@@ -1683,7 +1721,7 @@ namespace ZXClient
                         this.Show(); this.Focus();
                     }
                     previous_selection = e.Selection;
-                    imgsrc = e.imgsrc;
+                    imgsrc = e.imgsrc; 
 
                     if (MainData.isNetwork)
                     {
@@ -1926,17 +1964,7 @@ namespace ZXClient
         }
 
         private Point mPoint = new Point();
-
-        private void WorkForm_Activated(object sender, EventArgs e)
-        {
-            //注册热键Shift+S，Id号为100。HotKey.KeyModifiers.Shift也可以直接使用数字4来表示。
-            //HotKey.RegisterHotKey(Handle, 100, HotKey.KeyModifiers.Shift, Keys.S);
-            //注册热键Ctrl+B，Id号为101。HotKey.KeyModifiers.Ctrl也可以直接使用数字2来表示。
-            //HotKey.RegisterHotKey(Handle, 101, HotKey.KeyModifiers.Ctrl, Keys.B);
-            //注册热键Alt+D，Id号为102。HotKey.KeyModifiers.Alt也可以直接使用数字1来表示。
-            //HotKey.RegisterHotKey(Handle, 102, HotKey.KeyModifiers.Alt, Keys.D);
-        }
-
+        
         //3.判断输入键值（实现KeyDown事件）
         private void hook_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1968,11 +1996,6 @@ namespace ZXClient
                     }
                 }
             }
-        }
-
-        private void WorkForm_Leave(object sender, EventArgs e)
-        {
-
         }
         
         /// <summary>
@@ -2027,9 +2050,31 @@ namespace ZXClient
             }
             if (btnCut2.Text == "同屏")
             {
-                isCuttingVideo = true;
-                btnCut2.Text = "停止同屏";
-                this.Cut2Timer.Start();
+                GetScreenOnFocus();
+
+                CutPopUp cut_form = new CutPopUp(CutScreen(screen_on_focus.Bounds.Left, screen_on_focus.Bounds.Top, screen_on_focus.Bounds.Width, screen_on_focus.Bounds.Height), screen_on_focus, previous_selection, this, 2);
+                cut_form.OnCut += (s, e2) =>
+                {
+                    if (!isRect)
+                    {
+                        this.Show(); this.Focus();
+                    }
+                    previous_selection = e2.Selection;
+                    cutvideo_x = previous_selection.X;
+                    cutvideo_y = previous_selection.Y;
+                    cutvideo_width = previous_selection.Width;
+                    cutvideo_height = previous_selection.Height;
+                    isCuttingVideo = true;
+                    btnCut2.Text = "停止同屏";
+                    this.Cut2Timer.Start();
+                    if (!isRect)//最小化
+                    {
+                        this.WindowState = FormWindowState.Minimized;
+                        this.ShowInTaskbar = false;
+                        SetVisibleCore(false);
+                    }
+                };
+                cut_form.Show();
             }
             else //停止
             {
@@ -2047,6 +2092,7 @@ namespace ZXClient
         
         private delegate void returnStrDelegate();
         private delegate void returnStrDelegate2(object param);
+        private int cutvideo_x=0, cutvideo_y = 0, cutvideo_width = 100, cutvideo_height = 100;
 
         //判断一下是不是该用Invoke滴~，不是就直接返回~
         private void returnCB(returnStrDelegate myDelegate)
@@ -2072,8 +2118,8 @@ namespace ZXClient
                 myDelegate(param);
             }
         }
-        
-        private void CutVideo(object sender, ElapsedEventArgs e)
+
+        private void CutVideo(object sender, ElapsedEventArgs e1)
         {
             Thread.CurrentThread.IsBackground = false;
             try
@@ -2089,25 +2135,24 @@ namespace ZXClient
 
                 if (!Directory.Exists(dir))
                     Directory.CreateDirectory(dir);
+                
+                Image img = ScreenCapture.captureScreen(cutvideo_x, cutvideo_y, cutvideo_width, cutvideo_height);
 
-                Image img = ScreenCapture.captureScreen();
                 //以JPG文件格式来保存
+                Size screenSize = Screen.PrimaryScreen.Bounds.Size;
                 string imgName = string.Format(@"captureimg.{0:yyyyMMddHHmmss.ffff}.jpg", DateTime.Now);
-                img.Save(dir + "/" + imgName, ImageFormat.Jpeg);
-
+                //img.Save(dir + "/" + imgName, ImageFormat.Jpeg);
+                Common.GetPicThumbnail(img, dir + "/" + imgName, Convert.ToInt32(screenSize.Height / 2), Convert.ToInt32(screenSize.Width / 2), 70);
                 USBSendFile(dir, imgName);
                 FileInfo f = new FileInfo(dir + "/" + imgName);
-                Console.WriteLine("发送了文件" + f.Exists);
+                USBSendData(String.Format("S08||{0}||E", dir + "/" + imgName), "CutPrint");
                 if (f.Exists)
                 {
                     f.Delete();
                 }
-
-                USBSendData(String.Format("S08||{0}||E", dir + "/" + imgName), "CutPrint");
             }
             catch (Exception)
             {
-                throw;
             }
             finally
             {

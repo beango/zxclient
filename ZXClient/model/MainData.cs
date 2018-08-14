@@ -24,6 +24,7 @@ namespace ZXClient.model
         public static string INTE_EMPLOYEEGETINFO = "employeeGetInfo.action";
         public static string INTE_EMPLOYEEINFOSETDOWN = "employeeInfoSetDownload";
         public static string INTE_EVALDATA = "appriesAddSpByPantryn.action";
+        public static string INTE_APPRIESADDCONTACT = "appriesAddContact.action";
         public static string INTE_EMPLOYEELOGIN = "employeeLogin.action";
         public static string INTE_GETDEPTVIDEO = "getDeptVideo.action";//录音录像权限
         public static string INTE_GETDEPTNOTICE = "getDeptNotice.action";//获取设备游屏信息
@@ -32,6 +33,7 @@ namespace ZXClient.model
         public static string INTE_NOTICEDOWNLOAD = "noticeDownload";//通知公告资源
         public static string INTE_ADVICEDOWNLOAD = "adviceDownload";//意见调查
         public static string INTE_ADVICEANSWER = "advicesaveAnswer";//意见调查结果
+        public static string INTE_GETEVALBUTTONS = "getevalbuttons.action";//获取评价按键
         public static string INTE_EMPLOYEECHANGEPSW = "employeeChangePsw.action";//修改密码
         public static string INTE_GETKEYALL = "getKeyAll.action";//获取所有评价按钮
         public static string INTE_APPRIESFILEUPLOAD = "appries/appriesFileupload.action";
@@ -49,6 +51,7 @@ namespace ZXClient.model
         
         public static string AdbExePath = "AdbBin\\adb.exe"; //ADb文件路径
         public static double CUTVIDEOPERSECOND = 800;
+        public static int waittimes = 6;//自动登录等待时间，5秒
 
         public static string loginSuccess = "loginSuccess";
         public static string[] ConnTypeData = new string[] { "网络连接", "USB连接" };
