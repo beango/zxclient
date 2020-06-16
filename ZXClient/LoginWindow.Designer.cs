@@ -161,7 +161,7 @@
         private System.Windows.Forms.TextBox tbPwd;
         private System.Windows.Forms.CheckBox cbMember;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lblErrMsg;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox btnLogin;

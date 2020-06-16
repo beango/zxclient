@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
+using log4net;
 using ZXClient.dao;
 using ZXClient.model;
 using ZXClient.NotifyWin;
 using ZXClient.Updater;
 using ZXClient.util;
+using System.Runtime.InteropServices;
 
 namespace ZXClient
 {
@@ -40,7 +43,7 @@ namespace ZXClient
                 AutoUpdater autoUpdater = new AutoUpdater();
                 try
                 {
-                    autoUpdater.Update();
+                    //autoUpdater.Update();
                 }
                 catch (WebException exp)
                 {
@@ -86,7 +89,6 @@ namespace ZXClient
                         }
                     }
                 }
-
                 initDB();
                 if (MainData.cbNoLogin)
                 {
@@ -105,6 +107,7 @@ namespace ZXClient
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message + ex.StackTrace);
                 LogHelper.WriteError(typeof(Program), ex);
             }
         }
@@ -115,38 +118,39 @@ namespace ZXClient
             {
                 SQLiteConnectionStringBuilder connstr = new SQLiteConnectionStringBuilder();
                 connstr.DataSource = MainData.datasource;
-                
+
                 MainData.conn.ConnectionString = connstr.ToString();
                 MainData.conn.Open();
-               
+
                 db_ConfigDao.UpdateSchema();
-                int r = db_ConfigDao.addIfNoExist("http://localhost:8080/zxweb/", "localhost", "8080", "192.168.1.123", MainData.ConnTypeData[0]);//不存在则添加
-                
+                int r = db_ConfigDao.addIfNoExist("http://localhost:8080/", "localhost", "8080", "192.168.1.123", MainData.ConnTypeData[0]);//不存在则添加
+
                 object[] configs = db_ConfigDao.getConfig();
                 MainData.ServerAddr = configs[0].ToString();
                 MainData.ServerIP = configs[1].ToString();
                 MainData.ServerPort = configs[2].ToString();
                 MainData.DeviceIP = configs[3].ToString();
                 MainData.ConnType = configs[4].ToString();
-                
+
                 MainData.FtpIP = configs[5].ToString();
                 MainData.FtpPort = configs[6].ToString();
                 MainData.FtpUserName = configs[7].ToString();
                 MainData.FtpPwd = configs[8].ToString();
-                
+
                 if (null!= configs[9])
                 {
                     MainData.cbNoLogin = Boolean.Parse(configs[9].ToString());
                 }
-                
+
                 MainData.isNetwork = MainData.ConnType == MainData.ConnTypeData[0];
-                
+
                 if (MainData.FtpIP != "" && MainData.FtpUserName != null)
-                    MainData.ftpHelper = new FtpHelper(MainData.FtpIP, "/", MainData.FtpUserName, MainData.FtpPwd);
+                MainData.ftpHelper = new FtpHelper(MainData.FtpIP, "/", MainData.FtpUserName, MainData.FtpPwd);
             }
             catch (Exception ex)
             {
-                LogHelper.WriteError(typeof(Program), ex);
+                Console.WriteLine(ex.Message + ex.StackTrace);
+                //LogHelper.WriteError(typeof(Program), ex);
             }
         }
         

@@ -17,6 +17,7 @@ namespace ZXClient
         private delegate void DelegateName();
         System.Timers.Timer autoLoginTimer;
         public static ManualResetEvent allDone = new ManualResetEvent(false);
+        public static LoginWindow loginWindow = null;
 
         [DllImport("User32.dll")]
         private static extern bool SetForegroundWindow(IntPtr hWnd);
@@ -24,6 +25,7 @@ namespace ZXClient
         public LoginWindow()
         {
             InitializeComponent();
+            loginWindow = this;
             SetForegroundWindow(this.Handle);//当到最前端
             if (MainData.autoLoginSucc==false)
             {
@@ -40,9 +42,9 @@ namespace ZXClient
             string[] lastEmployee = db_EmployeeLoginDao.getLastAutoLogin();
             if (lastEmployee != null && lastEmployee[2] == "1") //如果最后一次登录的账号为自动登录
             {
-                this.BeginInvoke(new Action(delegate () { cbMember.Checked = true; btnLogin.Enabled = false; tbCard.Text = lastEmployee[0]; }));
+                this.BeginInvoke(new System.Action(delegate() { cbMember.Checked = true; btnLogin.Enabled = false; tbCard.Text = lastEmployee[0]; }));
 
-                IAsyncResult r = new DelegateName(new Action(delegate
+                IAsyncResult r = new DelegateName(new System.Action(delegate
                 {
                     autoLoginTimer = new System.Timers.Timer();
                     autoLoginTimer.Interval = 1000;
@@ -50,7 +52,7 @@ namespace ZXClient
                     {
                         if (MainData.waittimes > 0)
                         {
-                            this.BeginInvoke(new Action(delegate () { _ShowInfo((MainData.waittimes -1) + "秒后自动登录，取消勾选则自动登录取消．", Color.Blue); MainData.waittimes--; }));
+                            this.BeginInvoke(new System.Action(delegate() { _ShowInfo((MainData.waittimes - 1) + "秒后自动登录，取消勾选则自动登录取消．", Color.Blue); MainData.waittimes--; }));
                         }
                         else
                         {
@@ -64,30 +66,31 @@ namespace ZXClient
             }
             if (lastEmployee == null || lastEmployee[2] == "0" || MainData.autoLoginSucc != true) //没有自动登录的账户,弹出登录框, 或者自动登录没有成功，也弹出登录框
             {
-                this.Invoke(new Action(delegate () { btnLogin.Enabled = true;if (lastEmployee != null && lastEmployee.Length>0) { tbCard.Text = lastEmployee[0]; } })); 
+                this.Invoke(new System.Action(delegate() { btnLogin.Enabled = true; if (lastEmployee != null && lastEmployee.Length > 0) { tbCard.Text = lastEmployee[0]; } })); 
             }
         }
 
         private void llgin(string[] lastEmployee)
         {
-            this.Invoke(new Action(delegate () { _ShowInfo("正在登录!", Color.Blue); }));
+            this.Invoke(new System.Action(delegate() { _ShowInfo("正在登录!", Color.Blue); }));
             MainData.USERCARD = lastEmployee[0];
             string loginRst = UserLogin(lastEmployee[0], lastEmployee[1], lastEmployee[2] == "1" ? 1 : 0);
             if (loginRst == MainData.loginSuccess)
             {
                 MainData.autoLoginSucc = true;
-                this.Invoke(new Action(delegate () { _ShowInfo("登录成功,正在跳转!", Color.Blue); }));
+                this.Invoke(new System.Action(delegate() { _ShowInfo("登录成功,正在跳转!", Color.Blue); }));
                 Thread.Sleep(1000);
             }
             else
             {
-                this.Invoke(new Action(delegate () { _ShowInfo("登录失败!", Color.Blue); }));
+                this.Invoke(new System.Action(delegate() { _ShowInfo("登录失败!", Color.Blue); }));
             }
             if (MainData.autoLoginSucc == true)
             {
                 if (this.InvokeRequired)
                 {
-                    this.Invoke(new Action(delegate () {
+                    this.Invoke(new System.Action(delegate()
+                    {
                         this.Close();
                         this.notifyIcon1.Dispose();
                     }));
@@ -115,7 +118,7 @@ namespace ZXClient
             {
                 autoLoginTimer.Enabled = false;
                 autoLoginTimer.Close();
-                this.BeginInvoke(new Action(delegate () { _ShowInfo("自动登录已取消．", Color.Blue); this.btnLogin.Enabled = true; MainData.waittimes--; }));
+                this.BeginInvoke(new System.Action(delegate() { _ShowInfo("自动登录已取消．", Color.Blue); this.btnLogin.Enabled = true; MainData.waittimes--; }));
             }
         }
 
@@ -221,8 +224,8 @@ namespace ZXClient
             int xWidth = SystemInformation.PrimaryMonitorSize.Width;//获取显示器屏幕宽度
             int yHeight = SystemInformation.PrimaryMonitorSize.Height;//高度
             setForm.Location = new Point(xWidth / 2, yHeight / 2);//这里需要再减去窗体本身的宽度和高度的一半
-            setForm.ShowDialog();
-            this.Hide();
+            DialogResult dr = setForm.ShowDialog(this);
+            //this.Hide();
         }
 
         /// <summary>
@@ -244,7 +247,6 @@ namespace ZXClient
 
         private void LoginWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Console.WriteLine("登录框关闭");
             this.notifyIcon1.Dispose();
         }
 
@@ -283,6 +285,5 @@ namespace ZXClient
             if (e.KeyCode == Keys.Enter)
                 btnLogin_Click(sender, e);
         }
-        
     }
 }

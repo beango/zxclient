@@ -15,7 +15,7 @@ namespace ZXClient.model
     public static class MainData
     {
         public static SQLiteConnection conn = new SQLiteConnection();
-        public static String datasource = System.Environment.CurrentDirectory + "\\db\\d.db";
+        public static String datasource = System.Environment.CurrentDirectory + "/db/d.db";
         public static Encoding encode = Encoding.UTF8;
 
         public static string INET_EMPLOYEESERVERTIME = "employeeServerTime.action";
@@ -45,10 +45,10 @@ namespace ZXClient.model
         internal static string ServerPort { get; set; }//服务器地址接口
         internal static string DeviceIP { get; set; }//评价器地址
         internal static bool cbNoLogin { get; set; }//是否允许免登
-        
+
         internal static int devicePort = 8000, forwardPort = 8011;
-        internal static int udpPort=8001, udpRecivePort=7791;
-        
+        internal static int udpPort = 8001, udpRecivePort = 7791;
+
         public static string AdbExePath = "AdbBin\\adb.exe"; //ADb文件路径
         public static double CUTVIDEOPERSECOND = 800;
         public static int waittimes = 6;//自动登录等待时间，5秒
@@ -69,6 +69,9 @@ namespace ZXClient.model
         internal static string FtpPwd { get; set; }//评价器地址
         public static FtpHelper ftpHelper;
         public static WorkForm wf;
+        public static System.Timers.Timer RECTTIMER;
+
+        public static AsyncUdpSever udpHelper;
 
         public static Socket UsbSocket;
         public static Boolean isPJQ = false;
@@ -83,28 +86,40 @@ namespace ZXClient.model
         /// <param name="ExecutablePath"></param>
         public static void Restart()//string ExecutablePat
         {
-            if (null != WorkForm.ctimer)
-            {
-                WorkForm.ctimer.Enabled = false;
-                WorkForm.ctimer.Stop();
-            }
             if (null != WorkForm.KEYKOOK)
                 WorkForm.KEYKOOK.Stop();
-            if (isNetwork)
+            if (null!=RECTTIMER)
             {
-
+                RECTTIMER.Stop();
             }
+            try
+            {
+                WorkForm.udpclient.Close();
+                (WorkForm.udpclient as IDisposable).Dispose();
+                WorkForm.udpclient = null;//为协议至空值
+            }
+            catch (Exception e)
+            {
+                Tools.ShowInfo2("重启时监听端口释放失败:" + e.Message);
+            }
+            if(wf !=null)
+                wf.IsUdpcRecvStart = false;
+            Tools.killadb();
+            
+           
             Application.ExitThread();
-            Thread thtmp = new Thread(new ParameterizedThreadStart(run));
-            object appName = Application.ExecutablePath;
-            Thread.Sleep(1000);
-            thtmp.Start(appName);
+            //System.Environment.Exit(0);
+           
+            //System.Diagnostics.Process.Start(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            Thread thtmp = new Thread(new ThreadStart(run));
+            Thread.Sleep(2000);
+            thtmp.Start();
         }
 
-        private static void run(Object obj)
+        private static void run()
         {
             Process ps = new Process();
-            ps.StartInfo.FileName = obj.ToString();
+            ps.StartInfo.FileName = Application.ExecutablePath;
             ps.StartInfo.Arguments = "NEWCONFIG-RESTART";
             ps.Start();
         }

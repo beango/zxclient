@@ -134,7 +134,6 @@
             this.Load += new System.EventHandler(this.WorkForm_Load);
             this.LocationChanged += new System.EventHandler(this.WorkForm_LocationChanged);
             this.SizeChanged += new System.EventHandler(this.WorkForm_SizeChanged);
-          
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();

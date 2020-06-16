@@ -76,14 +76,15 @@ namespace ZXClient
                 MessageBox.Show("评价器IP不能为空!");
                 return;
             }
-            db_ConfigDao.updateByKey("ServerAddr", String.Format("http://{0}:8080/", tbServerIP.Text));
+            db_ConfigDao.updateByKey("ServerAddr", String.Format("http://{0}:{1}/", tbServerIP.Text, tbServerPort.Text));
             db_ConfigDao.updateByKey("ServerIP", tbServerIP.Text);
             db_ConfigDao.updateByKey("DeviceIP", tbDeviceIP.Text);
             db_ConfigDao.updateByKey("ConnType", cbConnType.Text); 
             db_ConfigDao.updateByKey("ServerPort", tbServerPort.Text);
             db_ConfigDao.updateByKey("isNoLogin", cbNoLogin.Checked);
-            
-            MessageBox.Show("配置保存成功,将自动重启!");
+
+            this.Close();
+            MessageBox.Show("配置保存成功,请重新启动客户端!");
             MainData.Restart();
         }
 
@@ -129,8 +130,10 @@ namespace ZXClient
         
         private void ConfigSet_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(null!= MainData.wf)
-                MainData.wf.Visible = true;
+            //if(null!= MainData.wf)
+            //    MainData.wf.Visible = true;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

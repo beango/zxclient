@@ -9,7 +9,7 @@ namespace ZXClient
     public partial class ADBClient// : Component
     {
         // ----------------------------------------- Adb.exe path, leave blank if in same directory as app or included in PATH
-        private string adbPath = "adb";
+        private string adbPath = System.Environment.CurrentDirectory + "\\AdbBin\\adb.exe";
         public string AdbPath
         {
             get { return adbPath; }
@@ -77,15 +77,16 @@ namespace ZXClient
         {
             try
             {
+                Console.WriteLine("adb命令" + command);
                 CMD.WorkerSupportsCancellation = true;
                 Command = command;
-                Console.WriteLine("command:" + command);
                 CMD.RunWorkerAsync();
                 while (!Complete) Sleep(500);
                 Complete = false;
             }
             catch (Exception ex)
             {
+                Tools.ShowInfo2(ex.Message + ex.StackTrace);
                 LogHelper.WriteError(typeof(ADBClient), ex);
             }
         }
@@ -170,7 +171,10 @@ namespace ZXClient
 
         public void Push(string input, string output)
         {
-            try { SendCommand("\"" + adbPath + "\" push \"" + input + "\" \"" + output + "\""); } catch { try { SendCommand("\"" + adbPath + "\" push \"" + input.Replace("/", "\\") + "\" \"" + output + "\""); } catch {  } }
+            try { SendCommand("\"" + adbPath + "\" push \"" + input + "\" \"" + output + "\""); } catch { try { SendCommand("\"" + adbPath + "\" push \"" + input.Replace("/", "\\") + "\" \"" + output + "\""); } 
+            catch (Exception e) {
+                Tools.ShowInfo2(e.Message + e.StackTrace);
+            } }
         }
 
         public void rm(string dir)

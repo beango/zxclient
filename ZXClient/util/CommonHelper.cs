@@ -66,5 +66,16 @@ namespace ZXClient.util
                 (Screen.GetBounds(form).Height / 2) - (form.Height / 2),
                 form.Width, form.Height, BoundsSpecified.Location);
         }
+
+        public static byte[] GetPictureBytes(string filename)       //filename填写图片路径
+        {
+            FileInfo fileInfo = new FileInfo(filename);
+            byte[] buffer = new byte[fileInfo.Length];
+            using (FileStream stream = fileInfo.OpenRead())
+            {
+                stream.Read(buffer, 0, buffer.Length);
+            }
+            return buffer;
+        }
     }
 }

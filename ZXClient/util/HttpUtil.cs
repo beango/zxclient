@@ -19,13 +19,10 @@ namespace ZXClient.util
             {
                 StreamReader streamReader = RequestStream(POSTURL, PostData);
                 String rst = streamReader.ReadToEnd();
-                LogHelper.WriteInfo(typeof(HttpUtil), "接口请求结果:" + rst);
-                Console.WriteLine("接口请求结果:" + rst);
                 return rst;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("接口请求失败");
                 LogHelper.WriteError(typeof(HttpUtil), ex);
                 return null;
             }
@@ -86,21 +83,12 @@ namespace ZXClient.util
                 sb.Append("\r\n");
                 sb.Append("\r\n");
 
-                //上面拼出了对应的fidder格式的头即对应fiddler的下面内容
-
-                //---------------------------acebdf13572468
-                //Content-Disposition: form-data; name="file"; filename="Chrysanthemum.jpg"
-                //Content-Type: application/octet-stream
-
                 string strPostHeader = sb.ToString();
                 byte[] postHeaderBytes = Encoding.UTF8.GetBytes(strPostHeader);
                 requestStream.Write(postHeaderBytes, 0, postHeaderBytes.Length);  //把头部转为数据流放入到请求流中去
             
                 byte[] fileByte = File.ReadAllBytes(fileinfo.FullName);
                 requestStream.Write(fileByte, 0, fileByte.Length);   // 将文件流转为数据流放入到请求流中去，这部分对应fiddler中的
-
-                //<@INCLUDE *C:\Users\Public\Pictures\Sample Pictures\Chrysanthemum.jpg*@>
-
                 byte[] temp = Encoding.UTF8.GetBytes("\r\n");
                 requestStream.Write(temp, 0, temp.Length);        //结尾加了一个换行\r\n的目的是因为确保下一个分割线另起一行，这个分隔符一定要换行展示不然会报错
             
@@ -166,8 +154,6 @@ namespace ZXClient.util
         {
             try
             {
-                LogHelper.WriteInfo(typeof(HttpUtil), "接口请求:" + POSTURL + (PostData==""?"":("?" + PostData)));
-                Console.WriteLine("接口请求:" + POSTURL + (PostData == "" ? "" : ("?" + PostData)));
                 //发送请求的数据
                 WebRequest myHttpWebRequest = WebRequest.Create(POSTURL);
                 myHttpWebRequest.Timeout = 5000;

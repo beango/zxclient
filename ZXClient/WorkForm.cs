@@ -9,6 +9,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ using ZXClient.dao;
 using ZXClient.model;
 using ZXClient.Properties;
 using ZXClient.util;
+using System.ComponentModel;
 
 namespace ZXClient
 {
@@ -31,25 +33,27 @@ namespace ZXClient
         private System.Windows.Forms.Button btnEval;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnWel;
-        SynchronizationContext m_SyncContext = null;
-        Object locker = new Object();
-        ADBClient MyClient;
-        IList<string> DeviceList;
-        public delegate void SendCompletedEventHandler(string op, string message, List<String> data2, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint);
-        event SendCompletedEventHandler USBSendCompleted;
-        System.Timers.Timer GetEvalResultTimer;
 
-        private string mID = "";
-        private string mDeviceVer = "";
-        private string mDeviceNVer = "";
-        private bool isConnected = false;
+        
+        SynchronizationContext m_SyncContext = null;
+        //public static ADBClient MyClient = new ADBClient();
+        IList<string> DeviceList;
+        
+        public static System.Timers.Timer GetEvalResultTimer;
+
+        public static string mID = ""; //mac地址
+        public static string mDeviceVer = "";
+        public static string mDeviceNVer = "";
+        public static string mAndroidVer = "";
+        public static string mPrdCode = "";
+        public static bool isConnected = false;
         internal static KeyboardHook KEYKOOK;
         IPEndPoint ipendpoint;
-        UdpClient udpclient;
+        internal static UdpClient udpclient;
         Thread UdpThread;
         static bool isRect = false;//是否处于吸附状态
-        System.Timers.Timer HeartTimer;
-        System.Timers.Timer ConnTimer;
+        System.Timers.Timer workLoopTimer;
+        public static System.Timers.Timer heartTimer;
         static bool isCuttingVideo = false, isCuttingVideo2 = false;//是否正在同屏
         static bool isForwardPort = false;//本地端口是否转发成功
         
@@ -59,19 +63,93 @@ namespace ZXClient
             this.TopMost = true;
             CommonHelper.SetMid(this);
 
-            ConnTimer = new System.Timers.Timer() { Interval = 10 * 1000 };
-            ConnTimer.Elapsed += new System.Timers.ElapsedEventHandler(ConnTimer_Tick);
-
-            HeartTimer = new System.Timers.Timer();
-            HeartTimer.Interval = 10000;
-            HeartTimer.Elapsed += new System.Timers.ElapsedEventHandler(HeartTimer_Tick);
-
             m_SyncContext = SynchronizationContext.Current;
             KEYKOOK = new KeyboardHook();
             KEYKOOK.Start(OnKeyPress);//安装键盘钩子
 
             InitRightMenu();
             InitUI();
+
+            this.Text = Resources.CLIENTNAME;
+            this.notifyIcon1.Text = Resources.CLIENTNAME;
+
+            this.WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
+            SetVisibleCore(false);
+
+            //自动吸附
+            MainData.RECTTIMER = new System.Timers.Timer();
+            MainData.RECTTIMER.Interval = 300;
+            MainData.RECTTIMER.Elapsed += StopRectTimer_Tick;
+            MainData.RECTTIMER.Start();
+        }
+
+        private void WorkForm_Load(object sender, EventArgs e)
+        {
+            //同屏
+            Cut2Timer = new System.Timers.Timer(MainData.CUTVIDEOPERSECOND);//实例化Timer类，设置间隔时间为10000毫秒； 
+            Cut2Timer.Elapsed += new System.Timers.ElapsedEventHandler(CutVideo);//到达时间的时候执行事件； 
+            Cut2Timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)； 
+            Cut2Timer.Enabled = false;//是否执行System.Timers.Timer.Elapsed事件； 
+
+            workLoopTimer = new System.Timers.Timer();
+            workLoopTimer.Interval = 10000;
+            workLoopTimer.Elapsed += new System.Timers.ElapsedEventHandler(workLoop_Tick);
+            workLoopTimer.Start();
+
+            try
+            {
+                Tools.killadb();
+                MainData.udpHelper = new AsyncUdpSever(USBPJQListener2, MainData.udpPort);
+                Thread t = new Thread(new ThreadStart(MainData.udpHelper.ReceiveMsg));
+                t.Start();
+            }
+            catch (SocketException ex)
+            {
+                Tools.ShowInfo2("呼叫器监听建立失败1:" + ex.Message);
+                MessageBox.Show(this, "呼叫器监听失败:端口" + MainData.udpPort + "被占用,请与管理员联系");
+                LogHelper.WriteError(TAG, ex);
+            }
+            catch (Exception ex)
+            {
+                Tools.ShowInfo2("呼叫器监听建立失败1:" + ex.Message);
+                MessageBox.Show(this, "呼叫器监听建立失败");
+                LogHelper.WriteError(TAG, ex);
+            }
+            new Thread(ConnDevice).Start();//连接设备
+        }
+
+        private void listenQueue()
+        {
+            if (!MainData.isNetwork)
+            {
+                try
+                {
+                    Tools.ShowInfo2("监听 (软件呼叫器) 端口:" + MainData.udpPort);
+                    ipendpoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), MainData.udpPort);
+                    udpclient = new UdpClient(ipendpoint);
+                    //udpclient.ExclusiveAddressUse = false;
+                    //udpclient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
+                    //udpclient.Client.Bind(ipendpoint);
+
+                    IsUdpcRecvStart = true;
+                    UdpThread = new Thread(USBPJQListener);
+                    UdpThread.IsBackground = true;
+                    UdpThread.Start(udpclient);
+                }
+                catch (SocketException ex)
+                {
+                    Tools.ShowInfo2("呼叫器监听建立失败1:" + ex.Message);
+                    MessageBox.Show(this, "呼叫器监听失败:端口" + MainData.udpPort + "被占用,请与管理员联系");
+                    LogHelper.WriteError(TAG, ex);
+                }
+                catch (Exception ex)
+                {
+                    Tools.ShowInfo2("呼叫器监听建立失败1:" + ex.Message);
+                    MessageBox.Show(this, "呼叫器监听建立失败");
+                    LogHelper.WriteError(TAG, ex);
+                }
+            }
         }
 
         int OnKeyPressinTimer = 0;
@@ -91,16 +169,6 @@ namespace ZXClient
                             handle = true;
                             if (OnKeyPressinTimer != 0)
                             {
-                                //Console.WriteLine("操作过于频繁！");
-                                //if (!isAlert)
-                                //{
-                                //    isAlert = true;
-                                //    DialogResult ds = MessageBox.Show(this, "操作过于频繁！");
-                                //    if (ds == DialogResult.OK)
-                                //    {
-                                //        isAlert = false;
-                                //    }
-                                //}
                                 return;
                             }
                             if (0 == 0)
@@ -134,6 +202,12 @@ namespace ZXClient
                                             btnVoice_Click(null, null); handle = true;
                                         }
                                         break;
+                                    case "截屏":
+                                        if (this.btnCut.Enabled)
+                                        {
+                                            btnCut_Click(null, null); handle = true;
+                                        }
+                                        break;
                                     case "同屏":
                                         if (this.btnCut2.Enabled)
                                         {
@@ -144,8 +218,7 @@ namespace ZXClient
                                         break;
                                 }
                                 #endregion
-                                //Interlocked.Exchange(ref inTimer, 0);
-                                new DelegateName(new Action(delegate
+                                new DelegateName(new System.Action(delegate
                                 {
                                     Thread.Sleep(1000);
                                     OnKeyPressinTimer = 0;
@@ -178,7 +251,6 @@ namespace ZXClient
                     MainData.keyDict.Add(item.Key, hotkey);
                 }
             }
-            
             contextMenuStrip1.Items.Add("参数配置");
             contextMenuStrip1.Items[0].Click += configSet_Click;
 
@@ -194,14 +266,7 @@ namespace ZXClient
             contextMenuStrip1.Items.Add("退出");
             contextMenuStrip1.Items[4].Click += btnLogout_Click;
 
-            contextMenuStrip1.Items.Add("当前版本-"+ ConfigurationManager.AppSettings["version"]);
-
-            //tmEditPwd.Click += tmEditPwd_Click;//修改密码
-            //tmClose.Click += TmLogout_Click;//关闭
-            //tmHotKey.Click += tmHotKey_Click;//快捷键
-            //tmLogout.Click += TmLogout_Click;//注销
-            //tmLogout.Text = tmLogout.Text + MainStaticData.USERCARD;
-            //tmUpdateRes.Click += TmUpdateRes_Click;
+            contextMenuStrip1.Items.Add("当前版本-" + System.Configuration.ConfigurationManager.AppSettings["version"]);
         }
 
         /// <summary>
@@ -214,16 +279,16 @@ namespace ZXClient
             contextMenuStrip1.Items[3].Text = "正在更新";
             contextMenuStrip1.Items[3].Enabled = false;
 
-            Action caller = new Action(delegate
+            System.Action caller = new System.Action(delegate
             {
-                String data = String.Format("mac={0}&config=true", this.mID); //检查资源版本号
+                String data = String.Format("mac={0}&config=true&androidVer={1}&prdcode={2}", mID, WorkForm.mAndroidVer, WorkForm.mPrdCode); //检查资源版本号
                 String ret = HttpUtil.RequestData(MainData.ServerAddr + MainData.INET_GETUPDATEVERSION, data).Replace("Version=", "");
-                ShowInfo2("强制更新-评价器更新资源版本：" + this.mDeviceNVer + ", 服务器最新版本：" + ret);
+                Tools.ShowInfo2("强制更新-评价器更新资源版本：" + mDeviceNVer + ", 服务器最新版本：" + ret);
                 int mServerVer;//服务器版本号
                 if (int.TryParse(ret, out mServerVer))
                 {
-                    db_ResUpdateDao.update(this.mID, mServerVer, 0);
-                    this.mDeviceNVer = "0";
+                    db_ResUpdateDao.update(mID, mServerVer, 0);
+                    mDeviceNVer = "0";
                     _checkupdateres();
                     contextMenuStrip1.Items[3].Text = "强制更新";
                     contextMenuStrip1.Items[3].Enabled = true;
@@ -252,10 +317,10 @@ namespace ZXClient
                             while (isCuttingVideo2)
                                 Thread.Sleep(100);
                             this.Cut2Timer.Enabled = false;
-                            USBSendData("S08||STOP||E", "StopCutPrint");
+                            Tools.USBSendData("S08||STOP||E", "StopCutPrint");
                         }
-                        //USBSendData("S08||STOP||E", "StopCutPrint");
                         this.notifyIcon1.Dispose();
+                        IsUdpcRecvStart = false;
                         System.Environment.Exit(0);
                     }
                 }
@@ -271,7 +336,7 @@ namespace ZXClient
                             while (isCuttingVideo2)
                                 Thread.Sleep(100);
                             this.Cut2Timer.Enabled = false;
-                            USBSendData("S08||STOP||E", "StopCutPrint");
+                            Tools.USBSendData("S08||STOP||E", "StopCutPrint");
                         }
                         //USBSendData("S08||STOP||E", "StopCutPrint");
                         //db_EmployeeLoginDao.logout(MainStaticData.USERCARD);
@@ -320,24 +385,10 @@ namespace ZXClient
         private void configSet_Click(object sender, EventArgs e)
         {
             ConfigSet setForm = new ConfigSet();
-            setForm.Show();
-            this.Visible = false;
+            DialogResult dr = setForm.ShowDialog();
             MainData.wf = this;
         }
 
-        private void ShowInfo2(string strInfo)
-        {
-            try
-            {
-                Console.WriteLine(DateTime.Now + strInfo);
-                LogHelper.WriteInfo(TAG, strInfo);
-            }
-            catch (Exception)
-            {
-                
-            }
-        }
-        
         private void ConnDevice()
         {
             if (MainData.isNetwork)
@@ -355,42 +406,46 @@ namespace ZXClient
                     }
                     catch (SocketException ex)
                     {
-                        ShowInfo2("评价器监听失败:" + ex.Message);
+                        Tools.ShowInfo2("评价器监听失败:" + ex.Message);
                         isConnected = false;
                         LogHelper.WriteError(TAG, ex);
-                        MessageBox.Show(this, "评价器监听失败:端口" + MainData.udpRecivePort + "被占用,请与管理员联系");
+                        //this.Invoke(new System.Action(delegate()
+                        //{
+                            MessageBox.Show(this, "评价器监听失败:端口" + MainData.udpRecivePort + "被占用,请与管理员联系");
+                        //}));
                         return;
                     }
                     catch (Exception ex)
                     {
-                        ShowInfo2("端口监听失败3！");
+                        Tools.ShowInfo2("端口监听失败3！");
                         isConnected = false;
                         LogHelper.WriteError(TAG, ex);
                         return;
                     }
-                    ShowInfo2("端口监听成功");
+                    Tools.ShowInfo2("端口监听成功");
                 }
-                ShowInfo2("网络方式--心跳");
-                ConnTimer_Tick(null, null);
-                ConnTimer.Enabled = true;
+                Tools.ShowInfo2("网络方式--心跳");
+                //ConnTimer_Tick(null, null);
+                //ConnTimer.Enabled = true;
                 while (!isConnected)
                 {
                     Thread.Sleep(1000);
                 }
-                String recvData = NetWorkSendData(String.Format("S98{0},{1},{2},{3},{4},{5}E", 1, MainData.ServerIP, MainData.FtpIP, MainData.FtpPort, MainData.FtpUserName, MainData.FtpPwd)); //修改连接方式为网络连接1
+                String recvData = Tools.SendUDP(String.Format("S98{0},{1},{2},{3},{4},{5}E", 1, MainData.ServerIP, MainData.FtpIP, MainData.FtpPort, MainData.FtpUserName, MainData.FtpPwd)); //修改连接方式为网络连接1
             }
             else //USB连接
             {
-                MyClient = new ADBClient();
+                ADBClient MyClient = new ADBClient();
                 MyClient.AdbPath = MainData.AdbExePath;
                 MyClient.StartServer();
-                
+
                 DeviceList = MyClient.Devices();
                 if (DeviceList.Count == 0)
                 {
                     if (IsHandleCreated && InvokeRequired)
                     {
-                        this.Invoke(new Action(delegate {
+                        this.Invoke(new System.Action(delegate
+                        {
                             if (WindowState == FormWindowState.Minimized)
                             {
                                 this.Visible = true;
@@ -405,9 +460,9 @@ namespace ZXClient
                             }
                         }));
                     }
-                        
-                    ShowInfo2("没有检测到评价器！");
-                    this.isConnected = false;
+
+                    Tools.ShowInfo2("没有检测到评价器！");
+                    isConnected = false;
                     if (!isConnected)
                     {
                         Thread.Sleep(5000);
@@ -416,39 +471,56 @@ namespace ZXClient
                 }
                 else
                 {
-                    ShowInfo2("检测到USB设备,可以进行端口转发了.");
+                    Tools.ShowInfo2("检测到USB设备,可以进行端口转发了.");
                     if (!isForwardPort)
                     {
                         MyClient.Forward(MainData.forwardPort, MainData.devicePort);
-                        ShowInfo2(String.Format("设备端口{0}重定向到本地端口{1}",
+                        Tools.ShowInfo2(String.Format("设备端口{0}重定向到本地端口{1}",
                             MainData.devicePort, MainData.forwardPort));
-                        isForwardPort = true;
-                        Thread.Sleep(200);
+                        Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                        try
+                        {
+                            socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), MainData.forwardPort));
+                            Tools.ShowInfo2("测试连接重定向端口成功");
+                            Tools.isUsbConnected = true;
+                            isForwardPort = true;
+                            isConnected = true;
+                            socket.Close();
+                            socket = null;
+                        }
+                        catch (SocketException)
+                        {
+                            Tools.ShowInfo2("***测试连接重定向端口失败***");
+                            Tools.isUsbConnected = false;
+                        }
+                        finally
+                        {
+                            if (socket != null)
+                            {
+                                socket.Close();
+                                socket = null;
+                            }
+                        }
                     }
-                    ShowInfo2("USB端口转发了,可以发送数据包了.");
-                    if (!ConnTimer.Enabled) {
-                        ConnTimer_Tick(null, null);
-                        ConnTimer.Enabled = true;
-                        ConnTimer.Start();
-                    }
-                        
                     while (!isConnected)
                     {
                         Thread.Sleep(100);
                     }
-                    ShowInfo2("设备连接成功");
+                    Tools.ShowInfo2("设备连接成功");
                     if (isConnected)
                     {
-                        List<string> data2 = USBSendData("S99||0||E", "getDeviceInfo");//获取设备信息
+                        List<string> data2 = Tools.USBSendData("S99||0||E", "getDeviceInfo");//获取设备信息
                         if (data2 != null && data2.Count > 0)
                         {
                             String[] d = data2[data2.Count - 1].Split(new string[] { "||" }, StringSplitOptions.None);
                             if (d.Length > 2)
                             {
-                                this.mID = d[2];
-                                this.mDeviceVer = d[1].Replace("Version=", "");
-                                this.mDeviceNVer = d[d.Length - 2];
-                                ShowInfo2("获取设备mac地址:" + this.mID + "，设备资源版本号：" + this.mDeviceVer + "，设备更新资源版本号：" + this.mDeviceNVer);
+                                mID = d[2];
+                                mDeviceVer = d[1].Replace("Version=", "");
+                                mDeviceNVer = d[7];
+                                WorkForm.mAndroidVer = d[8];
+                                WorkForm.mPrdCode = d[9];
+                                Tools.ShowInfo2(data2[data2.Count - 1] + "获取设备mac地址:" + mID + "，设备资源版本号：" + mDeviceVer + "，设备更新资源版本号：" + mDeviceNVer + ", len:" + d.Length);
                                 isConnected = true;
                                 BtnEnable(true);
                             }
@@ -461,41 +533,36 @@ namespace ZXClient
                             ConnDevice();
                         }
 
-                        USBSendData(String.Format("S98||{0}{1}||E", 0, MainData.ServerIP), "changeConnType");//修改连接方式
-                        ShowInfo2("开始心跳" + IsUdpcRecvStart);
-                        HeartTimer.Enabled = true;
-
-                        #region 监听排队叫号器
-                        if (!IsUdpcRecvStart)
-                        {
-                            try
-                            {
-                                ipendpoint = new IPEndPoint(IPAddress.Any, MainData.udpPort);
-                                udpclient = new UdpClient(ipendpoint);
-                                IsUdpcRecvStart = true;
-                                UdpThread = new Thread(USBPJQListener);
-                                UdpThread.IsBackground = true;
-                                UdpThread.Start(udpclient);
-                            }
-                            catch (SocketException ex)
-                            {
-                                ShowInfo2("呼叫器监听建立失败1:" + ex.Message);
-                                MessageBox.Show(this, "呼叫器监听失败:端口" + MainData.udpPort + "被占用,请与管理员联系");
-                                LogHelper.WriteError(TAG, ex);
-                            }
-                            catch (Exception ex)
-                            {
-                                ShowInfo2("呼叫器监听建立失败1:" + ex.Message);
-                                MessageBox.Show(this, "呼叫器监听建立失败");
-                                LogHelper.WriteError(TAG, ex);
-                            }
-                        }
-                        #endregion
+                        Tools.USBSendData(String.Format("S98||{0}{1}||E", 0, MainData.ServerIP), "changeConnType");//修改连接方式
+                        Tools.ShowInfo2("开始心跳" + IsUdpcRecvStart);
+                        workLoopTimer.Enabled = true;
                     }
                 }
             }
         }
         
+        Socket USBDeviceSocket;
+
+        private Boolean BindSocketUSB()
+        {
+            if(USBDeviceSocket!=null && USBDeviceSocket.Connected)
+            {
+                USBDeviceSocket.Shutdown(SocketShutdown.Both);
+                USBDeviceSocket.Close();
+            }
+            USBDeviceSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            try
+            {
+                USBDeviceSocket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), MainData.forwardPort));
+                return true;
+            }
+            catch (SocketException)
+            {
+                Tools.ShowInfo2("评价器连接失败1");
+                return false;
+            }
+        }
+
         private Boolean EmployeeLogin(Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint)
         {
             String d = "";
@@ -507,7 +574,7 @@ namespace ZXClient
                 }
                 else
                 {
-                    this.NetWorkSendData(String.Format("S04{0}E", MainData.USERCARD));
+                    Tools.SendUDP(String.Format("S04{0}E", MainData.USERCARD));
                     return true;
                 }
             }
@@ -524,7 +591,7 @@ namespace ZXClient
                     catch (Exception ex)
                     {
                         LogHelper.WriteError(TAG, ex);
-                        ShowInfo2("用户登录失败-服务器出错！");
+                        Tools.ShowInfo2("用户登录失败-服务器出错！");
                         return false;
                     }
                     DirectoryInfo d1 = new DirectoryInfo("picture");
@@ -536,19 +603,18 @@ namespace ZXClient
                     {
                         if (null != model && null != model.picture && "" != model.picture)
                         {
-                            string picpath = "picture/user_" + model.ext2 + ".jpg";
                             bool down = HttpUtil.DownloadFile(MainData.ServerAddr + model.picture, "picture/user_" + model.ext2 + ".jpg");
                             if (down)
                             {
-                                USBSendFile("", picpath);
-                                MyClient.Push(picpath, MainData.SDCARD + "/user_" + model.ext2 + ".jpg");
+                                string picpath = System.Environment.CurrentDirectory + "\\picture\\user_" + model.ext2 + ".jpg";
+                                new ADBClient().Push(picpath, MainData.SDCARD + "user_" + model.ext2 + ".jpg");
                             }
                         }
                     }
                     catch (Exception ex)
                     {
                         LogHelper.WriteError(TAG, ex);
-                        ShowInfo2("用户照片下载失败！");
+                        Tools.ShowInfo2("用户照片下载失败！");
                         return false;
                     }
 
@@ -593,7 +659,7 @@ namespace ZXClient
                             {
                                 d += "|company,单位名称," + model.companyName;
                             }
-                            List<string> data2 = USBSendData(String.Format("S04||{0}||E", d), "login", isPJQ, client, ipendpoint);
+                            List<string> data2 = Tools.USBSendData(String.Format("S04||{0}||E", d), "login", isPJQ, client, ipendpoint);
                             if (data2.Count > 0 && data2[data2.Count - 1] == "RecvCmdOK")
                                 return true;
                             return false;
@@ -602,7 +668,7 @@ namespace ZXClient
                     catch (Exception ex)
                     {
                         LogHelper.WriteError(TAG, ex);
-                        ShowInfo2("用户配置信息下载失败！");
+                        Tools.ShowInfo2("用户配置信息下载失败！");
                         return false;
                     }
                 }
@@ -612,23 +678,25 @@ namespace ZXClient
             }
         }
 
-        private bool IsUdpcRecvStart = false;
+        public bool IsUdpcRecvStart = false;
 
         /// <summary>
         /// 监听UDP返回消息－网络方式
         /// </summary>
         public void NetworkListener(object obj)
         {
+            UdpClient client = obj as UdpClient;
             try
             {
-                UdpClient client = obj as UdpClient;
                 IPEndPoint remoteIpep = new IPEndPoint(IPAddress.Any, 0);
-                ShowInfo2("开始监听（UDP）评价器返回数据，端口：7791," + IsUdpcRecvStart);
-                while (IsUdpcRecvStart)
+                Tools.ShowInfo2("开始监听（UDP）评价器返回数据，端口：7791," + IsUdpcRecvStart);
+                while (IsUdpcRecvStart && client != null)
                 {
+                    if (client.Available <= 0) continue;
+                   
                     byte[] bytes = client.Receive(ref remoteIpep);
                     string strInfo = MainData.encode.GetString(bytes, 0, bytes.Length);
-                    ShowInfo2("评价器返回：" + strInfo);
+                    Tools.ShowInfo2("评价器返回：" + strInfo);
                     if (strInfo == "DisConnect")
                     {
                         isConnected = false;
@@ -636,11 +704,11 @@ namespace ZXClient
                     }
                     if (strInfo == "S04OK")//登录成功
                     {
-                        ShowInfo2("登录成功!");
+                        Tools.ShowInfo2("登录成功!");
                         isConnected = true;
                         if (this.InvokeRequired)
                         {
-                            this.Invoke(new Action(delegate ()
+                            this.Invoke(new System.Action(delegate()
                             {
                                 this._BtnEnable(true);
                             }));
@@ -652,14 +720,14 @@ namespace ZXClient
                     }
                     if (strInfo == "S05OK")//退出成功
                     {
-                        ShowInfo2("退出成功！");
+                        Tools.ShowInfo2("退出成功！");
                         IsUdpcRecvStart = false;
                         new Thread(StopUdpListen).Start();
                     }
                     if (strInfo == "S98OK")//修改评价器配置成功
                     {
                         isConnected = true;
-                        ShowInfo2("连接评价器成功！");
+                        Tools.ShowInfo2("连接评价器成功！");
                         EmployeeLogin(false, null, null);
                     }
                 }
@@ -670,339 +738,176 @@ namespace ZXClient
             }
             finally
             {
-                udpclient.Close();
+                if (null != client)
+                {
+                    client.Close();
+                    client = null;
+                }
+                
             }
         }
 
         public void USBPJQListener(object obj)
         {
+            UdpClient client = obj as UdpClient;
             try
             {
-                UdpClient client = obj as UdpClient;
-                IPEndPoint remoteIpep = new IPEndPoint(IPAddress.Any, 8001);
-                ShowInfo2("开始监听（排队叫号器）评价器返回数据，端口：8001"+ IsUdpcRecvStart);
-                while (IsUdpcRecvStart)
+                //IPEndPoint remoteIpep = new IPEndPoint(IPAddress.Any, 8001);
+                //IPEndPoint remoteIpep = (IPEndPoint)client.Client.LocalEndPoint;
+                Tools.ShowInfo2("开始监听（排队叫号器）评价器返回数据，端口：8001" + IsUdpcRecvStart);
+                while (IsUdpcRecvStart && client !=null && client.Client.Poll(-1, SelectMode.SelectRead))
                 {
-                    byte[] bytes = client.Receive(ref remoteIpep);
-                    string strInfo = MainData.encode.GetString(bytes, 0, bytes.Length);
-                    ShowInfo2("排队叫号器指令：" + strInfo);
-                    PjqModel o = JsonHelper.DeserializeJsonToObject<PjqModel>(strInfo);
-                    ShowInfo2("排队叫号器指令："+o.command);
+                    try
+                    {
+                        IPEndPoint remoteIpep = new IPEndPoint(IPAddress.Any, 0);
+                        byte[] bytes = client.Receive(ref remoteIpep);
+                        string strInfo = MainData.encode.GetString(bytes, 0, bytes.Length);
+                        Tools.ShowInfo2("排队叫号器指令：" + strInfo);
+                        PjqModel o = JsonHelper.DeserializeJsonToObject<PjqModel>(strInfo);
+                        Tools.ShowInfo2("排队叫号器指令：" + o.command);
 
-                    byte[] data = MainData.encode.GetBytes(JsonHelper.SerializeObject(new { succ = "0" }));
-                    int rr = client.Send(data, data.Length, remoteIpep);
-                    ShowInfo2("评价器应答命令:" + rr);
+                        byte[] data = MainData.encode.GetBytes(JsonHelper.SerializeObject(new { succ = "0" }));
+                        int rr = client.Send(data, data.Length, remoteIpep);
 
-                    if (o.command == "login")
-                    {
-                        MainData.USERCARD = o.sno;
-                        EmployeeLogin(true, client, remoteIpep);
+                        if (o.command == "login")
+                        {
+                            MainData.USERCARD = o.sno;
+                            EmployeeLogin(true, client, remoteIpep);
+                        }
+                        if (o.command == "unlogin")
+                        {
+                            ActionLogout(true, client, remoteIpep);
+                        }
+                        if (o.command == "pause")
+                        {
+                            ActionPauseOnly(client, remoteIpep);
+                        }
+                        if (o.command == "reset")
+                        {
+                            ActionPauseReset(client, remoteIpep);
+                        }
+                        if (o.command == "welcome")
+                        {
+                            ActionWel(true, client, remoteIpep);
+                        }
+                        if (o.command == "apprise")
+                        {
+                            ActionEval(true, client, remoteIpep);
+                        }
+                        if (o.command == "call")
+                        {
+                            ActionCall(o.number, o.servicename, true, client, remoteIpep);
+                        }
                     }
-                    if (o.command == "unlogin")
+                    catch (Exception e)
                     {
-                        ActionLogout(true, client, remoteIpep);
-                    }
-                    if (o.command == "pause")
-                    {
-                        ActionPauseOnly(client, remoteIpep);
-                    }
-                    if (o.command == "reset")
-                    {
-                        ActionPauseReset(client, remoteIpep);
-                    }
-                    if (o.command == "welcome")
-                    {
-                        ActionWel(true, client, remoteIpep);
-                    }
-                    if (o.command == "apprise")
-                    {
-                        ActionEval(true, client, remoteIpep);
-                    }
-                    if (o.command == "call")
-                    {
-                        ActionCall(o.number, o.servicename, true, client, remoteIpep);
+
+                        LogHelper.WriteError(TAG, e);
+                        Tools.ShowInfo2(e.ToString());
                     }
                 }
             }
             catch (Exception e)
             {
                 LogHelper.WriteError(TAG, e);
-                ShowInfo2(e.ToString());
+                Tools.ShowInfo2(e.ToString());
+            }
+            finally
+            {
+                if (null != client)
+                {
+                    client.Close();
+                    client = null;
+                    UdpThread.Abort();
+                }
+            }
+        }
+
+        public void USBPJQListener2(String strInfo, UdpClient client, IPEndPoint remoteIpep)
+        {
+            try
+            {
+                Tools.ShowInfo2("排队叫号器指令：" + strInfo);
+                PjqModel o = JsonHelper.DeserializeJsonToObject<PjqModel>(strInfo);
+                Tools.ShowInfo2("排队叫号器指令：" + o.command);
+
+                byte[] data = MainData.encode.GetBytes(JsonHelper.SerializeObject(new { succ = "0" }));
+                int rr = client.Send(data, data.Length, remoteIpep);
+
+                if (o.command == "login")
+                {
+                    MainData.USERCARD = o.sno;
+                    EmployeeLogin(true, client, remoteIpep);
+                }
+                if (o.command == "unlogin")
+                {
+                    ActionLogout(true, client, remoteIpep);
+                }
+                if (o.command == "pause")
+                {
+                    ActionPauseOnly(client, remoteIpep);
+                }
+                if (o.command == "reset")
+                {
+                    ActionPauseReset(client, remoteIpep);
+                }
+                if (o.command == "welcome")
+                {
+                    ActionWel(true, client, remoteIpep);
+                }
+                if (o.command == "apprise")
+                {
+                    ActionEval(true, client, remoteIpep);
+                }
+                if (o.command == "call")
+                {
+                    ActionCall(o.number, o.servicename, true, client, remoteIpep);
+                }
+            }
+            catch (Exception e)
+            {
+
+                LogHelper.WriteError(TAG, e);
+                Tools.ShowInfo2(e.ToString());
             }
         }
 
         private void StopUdpListen()
         {
-            //db_EmployeeLoginDao.logout(MainStaticData.USERCARD);
-            ShowInfo2("销毁udp监听进程");
+            Tools.ShowInfo2("销毁udp监听进程");
+            if (udpclient != null)
+                udpclient.Close();
             if(UdpThread!=null)
                 UdpThread.Abort();
-            if(udpclient!=null)
-                udpclient.Close();
             this.notifyIcon1.Dispose();
             System.Environment.Exit(0);
         }
 
         /// <summary>
-        /// 
+        ///  
         /// </summary>
         private void BeginGetEvalResult(Boolean isPJQ, UdpClient client, IPEndPoint endPoint)
         {
             GetEvalResultTimer = new System.Timers.Timer();
-            GetEvalResultTimer.Interval = 2000;
-            GetEvalResultTimer.Elapsed += (sender, e) => { USBSendData("SE", "evalwait", isPJQ, client, endPoint); };//GetEvalResult_Tick;
+            GetEvalResultTimer.Interval = 1000;
+            GetEvalResultTimer.Elapsed += (sender, e) => { Tools.USBSendData("SE", "evalwait", isPJQ, client, endPoint); };//GetEvalResult_Tick;
             GetEvalResultTimer.Enabled = true;
         }
         
-        private void USBSendFile(string path, String filename, String removeName)
-        {
-            ShowInfo2("发送文件：" + filename);
-            if(path == "" || path == null)
-            {
-                MyClient.Push(filename, MainData.SDCARD + "/" + removeName);
-            }
-            else
-                MyClient.Push(path + "/" + filename, MainData.SDCARD + path + "/" + removeName);
-        }
-
-        private void USBSendFile(string path, String filename)
-        {
-            USBSendFile(path, filename, filename);
-        }
-
-        private List<String> USBSendData(Object response, String op)
-        {
-            return this.USBSendData(response, op, false, null, null);
-        }
-        
-        private List<String> USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint)
-        {
-            ShowInfo2("USBSendData:" + response.ToString());
-            if (!isConnected && !response.ToString().StartsWith("S99||"))
-            {
-                ShowInfo2("评价器连接断开.");
-                if (btnWel.Enabled)
-                {
-                    MessageBox.Show(this, Resources.ZHCN_DEVICEDISCONN);
-                    BtnEnable(false);
-                }
-                return null;
-            }
-            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            try
-            {
-                socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), MainData.forwardPort));
-            }
-            catch (SocketException)
-            {
-                ShowInfo2("评价器连接失败,重定向连接");
-                MyClient.Forward(MainData.forwardPort, MainData.devicePort);
-                try
-                {
-                    socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), MainData.forwardPort));
-                }
-                catch (SocketException)
-                {
-                    ShowInfo2("评价器再次连接失败,不连了");
-                    //this.isConnected = false;
-                    //BtnEnable(false);
-                    return null;
-                }
-            }
-
-            try
-            {
-                byte[] data = MainData.encode.GetBytes(response.ToString());
-                ShowInfo2("(USB)发送内容：" + response.ToString());
-                socket.Send(data, 0, data.Length, SocketFlags.None);
-                byte[] buffer = new byte[1024];
-                List<byte> cdata = new List<byte>();
-                int length = 0;
-                List<String> mList = new List<string>();
-                try
-                {
-                    while ((length = socket.Receive(buffer, buffer.Length, SocketFlags.None)) > 0)
-                    {
-                        for (int j = 0; j < length; j++)
-                        {
-                            cdata.Add(buffer[j]);
-                        }
-                        mList.Add(MainData.encode.GetString(buffer, 0, length));
-                    }
-                    String receiveData = MainData.encode.GetString(cdata.ToArray(), 0, cdata.Count).Trim();
-                    USBSendCompleted(response.ToString(), receiveData, mList, isPJQ, client, ipendpoint);
-                }
-                catch (SocketException ex)
-                {
-                    LogHelper.WriteError(TAG, ex);
-                    ShowInfo2("设备连接失败！");
-                    //isConnected = false;
-                    //BtnEnable(false);
-                }
-                catch (Exception ex)
-                {
-                    LogHelper.WriteError(TAG, ex);
-                    ShowInfo2("设备连接失败！");
-                    //isConnected = false;
-                    //BtnEnable(false);
-                }
-                return mList;
-            }
-            catch (SocketException e)
-            {
-                LogHelper.WriteError(TAG, e);
-                ShowInfo2("网络错误,请检查评价器是否连接正常.");
-                //this.isConnected = false;
-                //BtnEnable(false);
-            }
-            catch (Exception e)
-            {
-                LogHelper.WriteError(TAG, e);
-                ShowInfo2("发送失败,请检查评价器是否连接正常.");
-                //this.isConnected = false;
-                //BtnEnable(false);
-            }
-            finally
-            {
-                socket.Close();
-            }
-            return null;
-        }
-        
-        /// <summary>
-        /// 发送UDP数据－网络方式
-        /// </summary>
-        /// <param name="str"></param>
-        private String NetWorkSendData(String str)
-        {
-            String recvdata = "";
-            try
-            {
-                byte[] data = new byte[1024];
-                //设置服务IP，设置TCP端口号
-                IPEndPoint ipep = new IPEndPoint(IPAddress.Parse(MainData.DeviceIP), MainData.udpPort);
-
-                //定义网络类型，数据连接类型和网络协议UDP
-                Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                data = MainData.encode.GetBytes(str);
-                server.SendTimeout = 3000;
-                server.SendTo(data, data.Length, SocketFlags.None, ipep);
-
-                IPEndPoint sender = new IPEndPoint(IPAddress.Parse(MainData.DeviceIP), 0);
-                Console.WriteLine("MainStaticData.DeviceIP:" + MainData.DeviceIP + ",发送内容：" + str);
-                EndPoint Remote = sender;
-
-                try
-                {
-                    data = new byte[1024];
-                    //发送接收信息
-                    server.ReceiveTimeout = 10000;
-                    int recv = server.ReceiveFrom(data, ref Remote);
-                    recvdata = MainData.encode.GetString(data, 0, recv);
-                }
-                catch (SocketException e)
-                {
-                    LogHelper.WriteError(TAG, e);
-                    recvdata = String.Empty;
-                    isConnected = false;
-                    BtnEnable(false);
-                    if(!ConnTimer.Enabled)
-                        ConnTimer.Enabled = true;
-                }
-                catch (Exception e)
-                {
-                    LogHelper.WriteError(TAG, e);
-                    recvdata = String.Empty;
-                }
-
-                server.Close();
-                return recvdata;
-            }
-            catch (Exception ex)
-            {
-                ShowInfo2("UDP发送失败" + ex.Message);
-                LogHelper.WriteError(TAG, ex);
-                return String.Empty;
-            }
-        }
-
         //定义与方法同签名的委托  
         private delegate void DelegateName();
         int inTimer = 0;
         int inTimer2 = 0;
 
-        /// <summary>
-        /// 设备连接心跳
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ConnTimer_Tick(object sender, EventArgs e)
-        {
-            if (MainData.isNetwork)
-            {
-                String recvData = NetWorkSendData("S95E");
-                isConnected = recvData == "S95OK";
-                BtnEnable(isConnected);
-            }
-            else
-            {
-                bool isconn = false;
-                List<String> data2 = USBSendData("S99||0||E", "getDeviceInfo");//获取设备信息
-                if (data2 == null || data2.Count ==0)
-                {
-                    ShowInfo2("评价器连不上了");
-                    isconn = false;
-                }
-                else
-                {
-                    isconn = false;
-                    foreach (var item in data2)
-                    {
-                        if (item == "RecvCmdOK")
-                        {
-                            ShowInfo2("设备连接心跳:成功");
-                        }
-                    }
-                    String[] d = data2[data2.Count - 1].Split(new string[] { "||" }, StringSplitOptions.None);
-                    if (d.Length > 2)
-                    {
-                        this.mID = d[2];
-                        this.mDeviceVer = d[1].Replace("Version=", "");
-                        this.mDeviceNVer = d[d.Length - 2];
-                        ShowInfo2("获取设备mac地址:" + this.mID + "，设备资源版本号：" + this.mDeviceVer + "，设备更新资源版本号：" + this.mDeviceNVer);
-                        isconn = true;
-                    }
-                }
-
-                if (isconn)
-                {
-                    try
-                    {
-                        #region 心跳方法
-                        String data = String.Format("mac={0}&cardNum={1}", this.mID, MainData.USERCARD);
-                        String ret = HttpUtil.RequestData(MainData.ServerAddr + MainData.INET_EMPLOYEEHEART, data);
-                        ShowInfo2(DateTime.Now + "心跳：" + ret + this.mID);
-                        #endregion
-                        isconn = ret == "online";
-                    }
-                    catch (Exception ex)
-                    {
-                        LogHelper.WriteError(TAG, ex);
-                        ShowInfo2("服务器连接失败！" + MainData.ServerAddr + MainData.INTE_EMPLOYEEGETINFO);
-                        isconn = false;
-                    }
-                }
-                isConnected = isconn;
-                BtnEnable(isConnected);
-            }
-        }
-
-        private void HeartTimer_Tick(object sender, EventArgs e)
+        private void workLoop_Tick(object sender, EventArgs e)
         {
             try
             {
                 if (Interlocked.Exchange(ref inTimer, 1) == 0)
                 {
+                    Tools.HeartTicket();
+                    BtnEnable(WorkForm.isConnected);
+
                     #region USB
                     if (!MainData.isNetwork && isConnected) {
                         #region 检查资源更新
@@ -1010,48 +915,45 @@ namespace ZXClient
                         #endregion
 
                         #region 检查游屏信息
-                        String data = String.Format("mac={0}", this.mID);
+                        String data = String.Format("mac={0}", mID);
                         String ret = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_GETDEPTNOTICE, data);
-                        USBSendData(String.Format("S15||{0}||E", ret), "Notice");
+                        Tools.USBSendData(String.Format("S15||{0}||E", ret), "Notice");
                         #endregion
 
                         #region 不满意按键
-                        data = String.Format("mac={0}", this.mID);
+                        data = String.Format("mac={0}", mID);
                         ret = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_GETDISSATISFIEDKEY, data);
-                        USBSendData(String.Format("S18||{0}||E", ret), "DISSATISKEY");
+                        Tools.USBSendData(String.Format("S18||{0}||E", ret), "DISSATISKEY");
                         #endregion
 
                         #region 信息查询更新
-                        data = String.Format("?mac={0}", this.mID);
+                        data = String.Format("?mac={0}", mID);
                         HttpUtil.DownloadFile(MainData.ServerAddr + MainData.INTE_WEBURLDOWNLOAD + data, "quary.xml");
-                        ShowInfo2("信息查询更新");
-                        USBSendFile("", "quary.xml");
+                        Tools.USBSendFile("", System.Environment.CurrentDirectory + "\\quary.xml", "quary.xml");
                         #endregion
 
                         #region 通知公告更新
                         HttpUtil.DownloadFile(MainData.ServerAddr + MainData.INTE_NOTICEDOWNLOAD, "notice.xml");
-                        ShowInfo2("通知公告更新");
-                        USBSendFile("", "notice.xml");
+                        Tools.USBSendFile("", System.Environment.CurrentDirectory + "\\notice.xml", "notice.xml");
                         #endregion
 
                         #region 评价按键更新
                         if(HttpUtil.DownloadFile(MainData.ServerAddr + MainData.INTE_GETEVALBUTTONS, "button.xml"))
                         {
-                            ShowInfo2("评价按键更新");
-                            USBSendFile("", "button.xml", "eval/button.xml");
+                            Tools.USBSendFile("", System.Environment.CurrentDirectory + "\\button.xml", "eval/button.xml");
                         }
                         else
                         {
                             #region 评价按钮
                             ret = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_GETKEYALL, "");
-                            USBSendData(String.Format("S51||{0}||E", ret), "GETKEYALL");
+                            Tools.USBSendData(String.Format("S51||{0}||E", ret), "GETKEYALL");
                             #endregion
                         }
                         #endregion
 
                         #region 意见调查
                         HttpUtil.DownloadFile(MainData.ServerAddr + MainData.INTE_ADVICEDOWNLOAD, "advice.db");
-                        USBSendFile("", "advice.db", "advise.ItemListener");
+                        Tools.USBSendFile("", System.Environment.CurrentDirectory + "\\advice.db", "advise.ItemListener");
                         #endregion
                     }
                     #endregion
@@ -1071,31 +973,29 @@ namespace ZXClient
         {
             if (Interlocked.Exchange(ref inTimer2, 1) == 0)
             {
-                String data = String.Format("mac={0}&config=true", this.mID); //检查资源版本号
+                String data = String.Format("mac={0}&config=true&androidVer={1}&prdcode={2}", mID, WorkForm.mAndroidVer, WorkForm.mPrdCode); //检查资源版本号
                 String ret = HttpUtil.RequestData(MainData.ServerAddr + MainData.INET_GETUPDATEVERSION, data).Replace("Version=", "");
-                ShowInfo2("评价器更新资源版本：" + this.mDeviceNVer + ", 服务器最新版本：" + ret);
+                Tools.ShowInfo2("评价器更新资源版本：" + mDeviceNVer + ", 服务器最新版本：" + ret);
                 int mServerVer;//服务器版本号
-                if (this.mDeviceNVer != ret && int.TryParse(ret, out mServerVer))
+                if (mDeviceNVer != ret && int.TryParse(ret, out mServerVer))
                 {
-                    int? laststate = db_ResUpdateDao.selectlast(this.mID, mServerVer);
-                    ShowInfo2("本地当前版本号更新状态：" + laststate);
+                    int? laststate = db_ResUpdateDao.selectlast(mID, mServerVer);
                     if (laststate == null)
-                        db_ResUpdateDao.add(this.mID, mServerVer, 0);//资源未下载
+                        db_ResUpdateDao.add(mID, mServerVer, 0);//资源未下载
 
                     if (laststate == null || laststate == 0)//未下载
                     {
-                        data = String.Format("mac={0}&config=false", this.mID); //下载更新资源包
+                        data = String.Format("mac={0}&config=false", mID); //下载更新资源包
                         bool isDown = HttpUtil.DownloadFile(MainData.ServerAddr + MainData.INET_GETUPDATEVERSION + "?" + data, "M7Update.zip");
-                        ShowInfo2("升级资源下载结果：" + isDown);
                         if (isDown)
                         {
-                            if (db_ResUpdateDao.update(this.mID, mServerVer, 1) == 1)//资源下载成功
+                            if (db_ResUpdateDao.update(mID, mServerVer, 1) == 1)//资源下载成功
                             {
                                 laststate = 1;
                             }
                             else
                             {
-                                ShowInfo2("升级资源下载到本地后，更新本地数据库失败。");
+                                Tools.ShowInfo2("升级资源下载到本地后，更新本地数据库失败。");
                             }
                         }
                     }
@@ -1105,21 +1005,19 @@ namespace ZXClient
                     {
                         if (!updateFile.Exists)
                         {
-                            ShowInfo2("升级资源文件发送失败，文件不存在。");
-                            db_ResUpdateDao.update(this.mID, mServerVer, 0);
+                            Tools.ShowInfo2("升级资源文件发送失败，文件不存在。");
+                            db_ResUpdateDao.update(mID, mServerVer, 0);
                             return;
                         }
-
-                        ShowInfo2("通知评价器准备接收文件：" + filename);
-                        USBSendFile("", filename);
-                        USBSendData("S97||" + mServerVer + "," + (mServerVer - 1) + "||E", "changeResVersion");
-                        if (db_ResUpdateDao.update(this.mID, mServerVer, 2) == 1)//推送成功
+                        Tools.USBSendFile("", filename);
+                        Tools.USBSendData("S97||" + mServerVer + "," + (mServerVer - 1) + "||E", "changeResVersion");
+                        if (db_ResUpdateDao.update(mID, mServerVer, 2) == 1)//推送成功
                         {
                             laststate = 2;
                         }
                         else
                         {
-                            ShowInfo2("更新到推送到评价器成功，但更新本地数据库失败。");
+                            Tools.ShowInfo2("更新到推送到评价器成功，但更新本地数据库失败。");
                         }
                     }
                 }
@@ -1154,118 +1052,14 @@ namespace ZXClient
 
         System.Timers.Timer Cut2Timer;
         
-        private void WorkForm_Load(object sender, EventArgs e)
-        {
-            this.Text = Resources.CLIENTNAME;
-            this.notifyIcon1.Text = Resources.CLIENTNAME;
-
-            this.WindowState = FormWindowState.Minimized;
-            this.ShowInTaskbar = false;
-            SetVisibleCore(false);
-       
-            //同屏
-            Cut2Timer = new System.Timers.Timer(MainData.CUTVIDEOPERSECOND);//实例化Timer类，设置间隔时间为10000毫秒； 
-            Cut2Timer.Elapsed += new System.Timers.ElapsedEventHandler(CutVideo);//到达时间的时候执行事件； 
-            Cut2Timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)； 
-            Cut2Timer.Enabled = false;//是否执行System.Timers.Timer.Elapsed事件； 
-
-            USBSendCompleted = delegate (string op, string message, List<String> data2, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint)
-            {
-                ShowInfo2(op + isPJQ + "接收数据:" + message);
-                if (isPJQ)
-                {
-                    //byte[] data = MainStaticData.encode.GetBytes(JsonHelper.SerializeObject(new { succ ="0"}));
-                    //int rr = client.Send(data, data.Length, ipendpoint);
-                    //ShowInfo2("评价器应答命令:" + rr);
-                }
-                for (int i = 0; i < data2.Count; i++)
-                {
-                    if (data2[i].StartsWith("S02||"))//评价数据
-                    {
-                        String[] d = data2[i].Split(new string[] { "||" }, StringSplitOptions.None);
-                        if (d.Length==10)
-                        {
-                            if (isPJQ)
-                            {
-                                byte[] data1 = MainData.encode.GetBytes(JsonHelper.SerializeObject(new { appriseresult = d[2] }));
-                                int rr = client.Send(data1, data1.Length, ipendpoint);
-                                ShowInfo2("评价器应答命令:" + rr + ", " + JsonHelper.SerializeObject(new { appriseresult = d[2] }));
-                            }
-
-                            String data = String.Format("mac={0}&tt={1}&cardnum={2}&pj={3}&demo=(NULL)&businessType=1&videofile={4}&businessTime={5}&imgfile={6}&busRst={7}&videofile2={8}"
-                                , mID, d[5], d[1], d[2], d[7], d[4], d[6], d[8], d[7]);
-                            String rst = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_EVALDATA, data);
-                            //if (rst == "success")
-                            {
-                                if (op == "SE" && GetEvalResultTimer != null && GetEvalResultTimer.Enabled)
-                                    GetEvalResultTimer.Stop();
-                                MyClient.Pull(MainData.SDCARD + "recorder/", "recorder/");//下载录音录像文件
-                                MyClient.Execute("rm " + MainData.SDCARD + "recorder/*", true);
-
-                                #region 上传录音录像文件到FTP
-                                try
-                                {
-                                    String ftpDir = "recorder";
-                                    List<String> listFiles = CommonHelper.ListFiles(new DirectoryInfo(ftpDir));
-                                    foreach (var item in listFiles)
-                                    {
-                                        FileInfo f = new FileInfo(item);
-                                        if (HttpUtil.UploadFile(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, f))
-                                        {
-                                            f.Delete();
-                                        }
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    LogHelper.WriteError(TAG, ex);
-                                }
-                                #endregion
-                            }
-                        }
-                        if (d.Length==7)
-                        {
-                            String data = String.Format("mac={0}&tt={1}&name={2}&phone={3}&remark={4}", d[1], d[2], d[3], d[4], d[5]);
-                            String rst = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_APPRIESADDCONTACT, data);
-                            Console.WriteLine("联系方式上传结果:" + rst);
-                        }
-                    }
-                    if (op.StartsWith("S98||") && data2[i].StartsWith("RecvCmdOK"))//修改评价器配置成功
-                    {
-                        DateTime now = DateTime.Now;
-                        USBSendData(String.Format("S14||{0}||{1}||{2}||{3}||{4}||{5}||E", now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second), "SyncDateTime");//同步设备时间
-
-                        String inteResp = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_GETDEPTVIDEO, "mac=" + this.mID);
-                        ShowInfo2("获取设备" + this.mID + "录音录像权限:" + inteResp);
-
-                        USBSendData("S17||" + inteResp + "||E", "Recorder");//设置录音录像
-                    }
-                }
-                if (data2.Count > 0 && data2[0].StartsWith("S24||"))
-                {
-                    String adviceData = data2[0].Substring(5, data2[0].Length-8);
-                    HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_ADVICEANSWER, "answer=" + adviceData.Split(',')[0]);
-                }
-            };
-
-            new Thread(ConnDevice).Start();//连接设备
-
-            //自动吸附
-            ctimer = new System.Timers.Timer();
-            ctimer.Interval = 300;
-            ctimer.Elapsed += StopRectTimer_Tick;
-            ctimer.Start();
-        }
-
         internal AnchorStyles stopAnchor = AnchorStyles.None;
-        //计时器 通过win32api实时获取鼠标位置c
-        internal static System.Timers.Timer ctimer;
 
         private void StopRectTimer_Tick(object sender, ElapsedEventArgs e)
         {
             try
             {
-                this.Invoke(new Action(delegate () {
+                this.Invoke(new System.Action(delegate()
+                {
                     //如果鼠标在窗体上，则根据停靠位置显示整个窗体
                     if (this.Bounds.Contains(Cursor.Position))
                     {
@@ -1320,7 +1114,7 @@ namespace ZXClient
         {
             if (this.InvokeRequired)
             {
-                this.Invoke(new Action(delegate ()
+                this.Invoke(new System.Action(delegate()
                 {
                     this.btnPause.Text = "暂停";
                 }));
@@ -1329,15 +1123,15 @@ namespace ZXClient
             {
                 this.btnPause.Text = "暂停";
             }
-            AsyncBtn(this.btnWel, new Action(delegate() { ActionWel(false, null, null); }));
+            AsyncBtn(this.btnWel, new System.Action(delegate() { ActionWel(false, null, null); }));
         }
 
         private void ActionWel(bool isPJQ, UdpClient client, IPEndPoint remoteIpep)
         {
             if (MainData.isNetwork)
-                this.NetWorkSendData("S01E");
+                Tools.SendUDP("S01E");
             else
-                USBSendData("S01E", "welcome", isPJQ, client, remoteIpep);
+                Tools.USBSendData("S01E", "welcome", isPJQ, client, remoteIpep);
         }
 
         /// <summary>
@@ -1352,7 +1146,7 @@ namespace ZXClient
                 MessageBox.Show(this, Resources.ZHCN_DEVICENOCONN);
                 return;
             }
-            AsyncBtn(this.btnPause, new Action(delegate
+            AsyncBtn(this.btnPause, new System.Action(delegate
             {
                 ActionPause(null, null);
             }), 1000);
@@ -1364,9 +1158,10 @@ namespace ZXClient
             {
                 if (btnPause.Text.ToString() == "取消暂停")
                 {
-                    NetWorkSendData("S06E");
+                    Tools.SendUDP("S06E");
                     if (this.InvokeRequired)
-                        this.Invoke(new Action(delegate {
+                        this.Invoke(new System.Action(delegate
+                        {
                             btnPause.Text = "暂停";
                         }));
                     else
@@ -1377,12 +1172,12 @@ namespace ZXClient
             {
                 if (btnPause.Text.ToString() == "取消暂停")
                 {
-                    List<String> rst = USBSendData("S25E", "pause", client != null, client, remoteIpep);
+                    List<String> rst = Tools.USBSendData("S25E", "pause", client != null, client, remoteIpep);
                     foreach (var item in rst)
                     {
                         if (item == "RecvCmdOK")
                         {
-                            this.InvokeMethod(new Action(delegate { btnPause.Text = "暂停"; }));
+                            this.InvokeMethod(new System.Action(delegate { btnPause.Text = "暂停"; }));
                         }
                     }
 
@@ -1396,10 +1191,11 @@ namespace ZXClient
             {
                 if (this.btnPause.Text.ToString() == "暂停")
                 {
-                    string rst = this.NetWorkSendData("S03E");
+                    string rst = Tools.SendUDP("S03E");
                     Console.WriteLine("命令返回结果:" + rst);
                     if (this.InvokeRequired)
-                        this.Invoke(new Action(delegate {
+                        this.Invoke(new System.Action(delegate
+                        {
                             btnPause.Text = "取消暂停";
                         }));
                     else
@@ -1410,12 +1206,12 @@ namespace ZXClient
             {
                 if (btnPause.Text.ToString() == "暂停")
                 {
-                    List<String> rst = USBSendData("S03E", "pause", client != null, client, remoteIpep);
+                    List<String> rst = Tools.USBSendData("S03E", "pause", client != null, client, remoteIpep);
                     foreach (var item in rst)
                     {
                         if (item == "RecvCmdOK")
                         {
-                            this.InvokeMethod(new Action(delegate { btnPause.Text = "取消暂停"; }));
+                            this.InvokeMethod(new System.Action(delegate { btnPause.Text = "取消暂停"; }));
                         }
                     }
                 }
@@ -1428,9 +1224,10 @@ namespace ZXClient
             {
                 if (this.btnPause.Text.ToString() == "暂停")
                 {
-                    string rst = this.NetWorkSendData("S03E");
+                    string rst = Tools.SendUDP("S03E");
                     if(this.InvokeRequired)
-                        this.Invoke(new Action(delegate {
+                        this.Invoke(new System.Action(delegate
+                        {
                             btnPause.Text = "取消暂停";
                         }));
                     else
@@ -1438,9 +1235,10 @@ namespace ZXClient
                 }
                 else if (btnPause.Text.ToString() == "取消暂停")
                 {
-                    NetWorkSendData("S06E");
+                    Tools.SendUDP("S06E");
                     if (this.InvokeRequired)
-                        this.Invoke(new Action(delegate {
+                        this.Invoke(new System.Action(delegate
+                        {
                             btnPause.Text = "暂停";
                         }));
                     else
@@ -1451,14 +1249,14 @@ namespace ZXClient
             {
                 if (btnPause.Text.ToString() == "暂停")
                 {
-                    List<String> rst = USBSendData("S03E", "pause", client != null, client, remoteIpep);
+                    List<String> rst = Tools.USBSendData("S03E", "pause", client != null, client, remoteIpep);
                     if (rst!=null)
                     {
                         foreach (var item in rst)
                         {
                             if (item == "RecvCmdOK")
                             {
-                                this.InvokeMethod(new Action(delegate { btnPause.Text = "取消暂停"; }));
+                                this.InvokeMethod(new System.Action(delegate { btnPause.Text = "取消暂停"; }));
                             }
                         }
                     }
@@ -1469,14 +1267,14 @@ namespace ZXClient
                 }
                 else if (btnPause.Text.ToString() == "取消暂停")
                 {
-                    List<String> rst = USBSendData("S25E", "pause", client != null, client, remoteIpep);
+                    List<String> rst = Tools.USBSendData("S25E", "pause", client != null, client, remoteIpep);
                     if (rst!=null)
                     {
                         foreach (var item in rst)
                         {
                             if (item == "RecvCmdOK")
                             {
-                                this.InvokeMethod(new Action(delegate { btnPause.Text = "暂停"; }));
+                                this.InvokeMethod(new System.Action(delegate { btnPause.Text = "暂停"; }));
                             }
                         }
                     }
@@ -1484,7 +1282,7 @@ namespace ZXClient
             }
         }
 
-        private void InvokeMethod(Action method) {
+        private void InvokeMethod(System.Action method) {
             if (this.InvokeRequired)
                 this.Invoke(method);
             else
@@ -1505,7 +1303,7 @@ namespace ZXClient
             }
             if (this.InvokeRequired)
             {
-                this.Invoke(new Action(delegate ()
+                this.Invoke(new System.Action(delegate()
                 {
                     this.btnPause.Text = "暂停";
                 }));
@@ -1514,15 +1312,15 @@ namespace ZXClient
             {
                 this.btnPause.Text = "暂停";
             }
-            AsyncBtn(this.btnEval, new Action(delegate
+            AsyncBtn(this.btnEval, new System.Action(delegate
             {
                 ActionEval(false, null, null);
             }));
         }
 
-        private void AsyncBtn(Button btn,Action action, int sleep=5000)
+        private void AsyncBtn(Button btn, System.Action action, int sleep = 5000)
         {
-            new DelegateName(new Action(delegate
+            new DelegateName(new System.Action(delegate
             {
                 if (btn.InvokeRequired == false)
                 {
@@ -1531,7 +1329,8 @@ namespace ZXClient
                 }
                 else
                 {
-                    btn.Invoke(new Action(delegate {
+                    btn.Invoke(new System.Action(delegate
+                    {
                         btn.ForeColor = ColorTranslator.FromHtml("#d5d5d5");
                         btn.Enabled = false;
                     }));
@@ -1540,7 +1339,7 @@ namespace ZXClient
             
             new DelegateName(action).BeginInvoke(null, null);
 
-            new DelegateName(new Action(delegate
+            new DelegateName(new System.Action(delegate
             {
                 Thread.Sleep(sleep);
                 if (btn.InvokeRequired == false)
@@ -1553,7 +1352,7 @@ namespace ZXClient
                 }
                 else
                 {
-                    btn.Invoke(new Action(delegate
+                    btn.Invoke(new System.Action(delegate
                     {
                         if (isConnected)
                         {
@@ -1569,11 +1368,12 @@ namespace ZXClient
         {
             if (MainData.isNetwork)
             {
-                this.NetWorkSendData("S02E");
+                Tools.SendUDP("S02E");
             }
             else
             {
-                USBSendData("S02E", "eval", isPJQ, client, endPoint);
+                
+                Tools.USBSendData("S02E", "eval", isPJQ, client, endPoint);
                 if (GetEvalResultTimer != null && GetEvalResultTimer.Enabled)
                     GetEvalResultTimer.Stop();
                 BeginGetEvalResult(isPJQ, client, endPoint);
@@ -1589,7 +1389,7 @@ namespace ZXClient
             }
             else
             {
-                USBSendData("S96||"+ number +","+ servicename + "||E", "call", isPJQ, client, endPoint);
+                Tools.USBSendData("S96||" + number + "," + servicename + "||E", "call", isPJQ, client, endPoint);
             }
         }
 
@@ -1607,10 +1407,11 @@ namespace ZXClient
         {
             if (MainData.isNetwork)
             {
-                if (!isConnected)
+                Tools.SendUDP("S94STOPE");
+                if (isConnected)
+                    Tools.SendUDP("S05E");
+                if (!isPJQ)
                     StopUdpListen();
-                else
-                    this.NetWorkSendData("S05E");
             }
             else
             {
@@ -1620,17 +1421,29 @@ namespace ZXClient
                     while (isCuttingVideo2)
                         Thread.Sleep(100);
                     this.Cut2Timer.Enabled = false;
-                    USBSendData("S08||STOP||E", "StopCutPrint");
+                    Tools.USBSendData("S08||STOP||E", "StopCutPrint");
                 }
-                USBSendData("S08||STOP||E", "StopCutPrint");
-                List<string> receiveData = USBSendData("S05E", "logout", isPJQ, client, endPoint);
+                this.IsUdpcRecvStart = false;
+                if (!isPJQ && null != udpclient)
+                {
+                    udpclient.Close();
+                    udpclient = null;
+                    if (udpclient != null)
+                        udpclient.Close();
+                    if (UdpThread != null)
+                        UdpThread.Abort();
+                }
+
+                Tools.USBSendData("S08||STOP||E", "StopCutPrint");
+                List<string> receiveData = Tools.USBSendData("S05E", "logout", isPJQ, client, endPoint);
                 if (null != receiveData && receiveData.Count>0 && receiveData[0].Contains("RecvCmdOK"))//退出成功
                 {
-                    ShowInfo2("用户退出成功！");
-                    //db_EmployeeLoginDao.logout(MainStaticData.USERCARD);
+                    Tools.ShowInfo2("用户退出成功！");
                 }
                 if (!isPJQ)
                 {
+                    Tools.killadb();
+                    Thread.Sleep(1500);
                     this.notifyIcon1.Dispose();
                     System.Environment.Exit(0);
                 }
@@ -1651,7 +1464,7 @@ namespace ZXClient
             }
             if (this.InvokeRequired)
             {
-                this.Invoke(new Action(delegate ()
+                this.Invoke(new System.Action(delegate()
                 {
                     this.btnPause.Text = "暂停";
                 }));
@@ -1670,11 +1483,11 @@ namespace ZXClient
                 {
                     if (MainData.isNetwork)
                     {
-                        this.NetWorkSendData("S09" + frm.Value + "E");
+                        Tools.SendUDP("S09" + frm.Value + "E");
                     }
                     else
                     {
-                        USBSendData(String.Format("S06||{0}||E", frm.Value), "Voice");
+                        Tools.USBSendData(String.Format("S06||{0}||E", frm.Value), "Voice");
                     }
                     frm.Close();
                     frm.Dispose();
@@ -1696,7 +1509,7 @@ namespace ZXClient
             }
             if (this.InvokeRequired)
             {
-                this.Invoke(new Action(delegate ()
+                this.Invoke(new System.Action(delegate()
                 {
                     this.btnPause.Text = "暂停";
                 }));
@@ -1711,6 +1524,7 @@ namespace ZXClient
                 {
                     this.Hide();
                 }
+                btnCut.Text = "取消截屏";
                 GetScreenOnFocus();
 
                 CutPopUp cut_form = new CutPopUp(CutScreen(screen_on_focus.Bounds.Left, screen_on_focus.Bounds.Top, screen_on_focus.Bounds.Width, screen_on_focus.Bounds.Height), screen_on_focus,previous_selection, this, 1);
@@ -1721,37 +1535,53 @@ namespace ZXClient
                         this.Show(); this.Focus();
                     }
                     previous_selection = e.Selection;
-                    imgsrc = e.imgsrc; 
+                    //imgsrc = e.img; 
 
                     if (MainData.isNetwork)
                     {
-                        this.NetWorkSendData("S08E");
+                        //string imgName = imgsrc.Substring(imgsrc.IndexOf(@"\") + 1);
+                        NetWorkCutImg(e.img);
+                        //Tools.SendUDP("S94"+ imgName + "E");
                     }
                     else
                     {
-                        string imgName = imgsrc.Substring(imgsrc.IndexOf(@"\") + 1);
-                        USBSendFile("CutImg", imgName);
-                        FileInfo f = new FileInfo("CutImg/" + imgName);
-                        if (f.Exists)
-                        {
-                            f.Delete();
-                        }
-                        List<string> receiveData = USBSendData(String.Format("S08||{0}||E", "CutImg/" + imgName), "CutPrint");
+                        byte[] fssize = ImageHelper.ImageToBytes(e.img);
+                        
+                        byte[] bLength = Encoding.Default.GetBytes(("S08" + fssize.Length).PadRight(100, ' '));
+                        object[] sendStream = new Object[2] {bLength, fssize};
+
+                        Tools.USBSendData(sendStream, "USBCutVideo");
+
+                        //string imgName = imgsrc.Substring(imgsrc.IndexOf(@"\") + 1);
+                        //USBSendFile("CutImg", imgName);
+                        //FileInfo f = new FileInfo("CutImg/" + imgName);
+                        //if (f.Exists)
+                        //{
+                        //    f.Delete();
+                        //}
+                        //USBSendData(String.Format("S08||{0}||E", "CutImg/" + imgName), "CutPrint");
                     }
                 };
                 cut_form.Show();
             }
             else
             {
+                if (MainData.isNetwork)
+                {
+                    Tools.SendUDP("S94STOPE");
+                }
+                else
+                {
+                    Tools.USBSendData("S08||STOP||E", "StopCutPrint");
+                }
                 btnCut.Text = "截屏";
-                USBSendData("S08||STOP||E", "StopCutPrint");
             }
         }
 
         #region 截图
         Screen screen_on_focus;
         Rectangle previous_selection;
-        private string imgsrc;
+        //private Image imgsrc;
 
         private void GetScreenOnFocus()
         {
@@ -1805,7 +1635,7 @@ namespace ZXClient
         private void InitUI()
         {
             int row = 1, col = 7;
-            if (MainData.isNetwork)
+            if (MainData.isNetwork && 1==2)
             {
                 col = 5;
                 this.Width -= 150;
@@ -1846,7 +1676,7 @@ namespace ZXClient
             this.tblPanel.SetColumn(btnVoice, 3);
 
             int next = 4;
-            if (!MainData.isNetwork)
+            if (!MainData.isNetwork || 1==1)
             {
                 this.btnCut = new Button();
                 btnCut.Text = "截屏";
@@ -1929,13 +1759,14 @@ namespace ZXClient
         private void _BtnEnable(object enable)
         {
             btnWel.Enabled = btnPause.Enabled = btnVoice.Enabled = btnLogout.Enabled = btnEval.Enabled = btnLogout.Enabled = (bool)enable;
+            btnCut.Enabled = btnCut2.Enabled = (bool)enable;
             if (contextMenuStrip1.Items.Count > 4 && contextMenuStrip1.Items[3].Text != "正在更新")
             {
                 contextMenuStrip1.Items[3].Enabled = (bool)enable;
             }
             if (!MainData.isNetwork)
             {
-                btnCut.Enabled = btnCut2.Enabled = (bool)enable;
+                
             }
             else
             {
@@ -2005,11 +1836,6 @@ namespace ZXClient
         /// <param name="e"></param>
         private void WorkForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(ctimer != null)
-            {
-                ctimer.Enabled = false;
-                ctimer.Close();
-            }
             if (null != KEYKOOK)
                 KEYKOOK.Stop();
             this.notifyIcon1.Dispose();
@@ -2017,6 +1843,8 @@ namespace ZXClient
             {
                 new Thread(StopUdpListen).Start();
             }
+            IsUdpcRecvStart = false;
+            Tools.ShowInfo2("窗口关闭。");
         }
 
         /// <summary>
@@ -2027,7 +1855,7 @@ namespace ZXClient
         private void button2_Click(object sender, EventArgs e)
         {
             string videourl = "http://111.230.14.84:8080/8.mp4";
-            USBSendData(String.Format("S09E", videourl), "CutPrint");
+            Tools.USBSendData(String.Format("S09E", videourl), "CutPrint");
         }
 
         private void btnCut2_Click(object sender, EventArgs e)
@@ -2039,7 +1867,7 @@ namespace ZXClient
             }
             if (this.InvokeRequired)
             {
-                this.Invoke(new Action(delegate ()
+                this.Invoke(new System.Action(delegate()
                 {
                     this.btnPause.Text = "暂停";
                 }));
@@ -2051,30 +1879,45 @@ namespace ZXClient
             if (btnCut2.Text == "同屏")
             {
                 GetScreenOnFocus();
-
-                CutPopUp cut_form = new CutPopUp(CutScreen(screen_on_focus.Bounds.Left, screen_on_focus.Bounds.Top, screen_on_focus.Bounds.Width, screen_on_focus.Bounds.Height), screen_on_focus, previous_selection, this, 2);
-                cut_form.OnCut += (s, e2) =>
+                if (MainData.isNetwork) //网络同屏，全屏
                 {
-                    if (!isRect)
-                    {
-                        this.Show(); this.Focus();
-                    }
-                    previous_selection = e2.Selection;
-                    cutvideo_x = previous_selection.X;
-                    cutvideo_y = previous_selection.Y;
-                    cutvideo_width = previous_selection.Width;
-                    cutvideo_height = previous_selection.Height;
+                    cutvideo_x = 0;
+                    cutvideo_y = 0;
+                    cutvideo_width = Screen.PrimaryScreen.Bounds.Width; 
+                    cutvideo_height = Screen.PrimaryScreen.Bounds.Height;
                     isCuttingVideo = true;
                     btnCut2.Text = "停止同屏";
-                    this.Cut2Timer.Start();
-                    if (!isRect)//最小化
+                    new Thread(NetWorkCutVideo).Start();
+                    //new Thread(NetWorkCutVideoListen).Start();
+                    //Tools.SendUDP("S90CutVideo2/cutvideo2.jpgE");
+                }
+                else //划定区域同屏
+                {
+                    CutPopUp cut_form = new CutPopUp(CutScreen(screen_on_focus.Bounds.Left, screen_on_focus.Bounds.Top, screen_on_focus.Bounds.Width, screen_on_focus.Bounds.Height), screen_on_focus, previous_selection, this, 2);
+                    cut_form.OnCut += (s, e2) =>
                     {
-                        this.WindowState = FormWindowState.Minimized;
-                        this.ShowInTaskbar = false;
-                        SetVisibleCore(false);
-                    }
-                };
-                cut_form.Show();
+                        if (!isRect)
+                        {
+                            this.Show(); this.Focus();
+                        }
+                        previous_selection = e2.Selection;
+                        cutvideo_x = previous_selection.X;
+                        cutvideo_y = previous_selection.Y;
+                        cutvideo_width = previous_selection.Width;
+                        cutvideo_height = previous_selection.Height;
+                        isCuttingVideo = true;
+                        btnCut2.Text = "停止同屏";
+                        this.CutVideo(null, null);
+                        this.Cut2Timer.Start();
+                        if (!isRect)//最小化
+                        {
+                            this.WindowState = FormWindowState.Minimized;
+                            this.ShowInTaskbar = false;
+                            SetVisibleCore(false);
+                        }
+                    };
+                    cut_form.Show();
+                }
             }
             else //停止
             {
@@ -2085,11 +1928,21 @@ namespace ZXClient
                     while (isCuttingVideo2)
                         Thread.Sleep(100);
                     this.Cut2Timer.Enabled = false;
-                    USBSendData("S08||STOP||E", "StopCutPrint");
+                    if (MainData.isNetwork)
+                    {
+                        Tools.SendUDP("S94STOPE");
+                        if (NetWorkCutVideoListenSocket != null && NetWorkCutVideoListenSocket.Connected)
+                        {
+                            NetWorkCutVideoListenSocket.Shutdown(SocketShutdown.Both);
+                            NetWorkCutVideoListenSocket.Close();
+                        }
+                    }
+                    else
+                        Tools.USBSendData("S08||STOP||E", "StopCutPrint");
                 }
             }
         }
-        
+       
         private delegate void returnStrDelegate();
         private delegate void returnStrDelegate2(object param);
         private int cutvideo_x=0, cutvideo_y = 0, cutvideo_width = 100, cutvideo_height = 100;
@@ -2118,6 +1971,136 @@ namespace ZXClient
                 myDelegate(param);
             }
         }
+        public static Thread thread;
+        Socket NetWorkCutVideoListenSocket = null;
+        private void NetWorkCutVideoListen()
+        {
+            if (NetWorkCutVideoListenSocket != null && NetWorkCutVideoListenSocket.Connected)
+            {
+                NetWorkCutVideoListenSocket.Shutdown(SocketShutdown.Both);
+                NetWorkCutVideoListenSocket.Close();
+                
+            }
+            Console.WriteLine("建立19999监听连接：");
+            NetWorkCutVideoListenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint ipendpiont = new IPEndPoint(IPAddress.Any, 19999);
+            NetWorkCutVideoListenSocket.Bind(ipendpiont);
+            NetWorkCutVideoListenSocket.Listen(10);
+            NetWorkCutVideoListenSocket.BeginAccept(new AsyncCallback((IAsyncResult ar) => {
+                Socket server1 = (Socket)ar.AsyncState;
+                Socket Client = server1.EndAccept(ar);
+                while (true)
+                {
+                    byte[] byteDateLine = new byte[1024];
+                    int recv = Client.Receive(byteDateLine);
+                    string stringdata = Encoding.ASCII.GetString(byteDateLine, 0, recv);
+                    Console.WriteLine("网络连接，点击坐标：" + stringdata);
+                }
+            }), null);
+        }
+
+        /*接收来自服务器上的信息*/
+        public void targett(Object sock)
+        {
+            Socket serverSocket = (Socket)sock;
+            Console.WriteLine("已经建立连接准备接受数据");
+
+            while (true && isCuttingVideo)
+            {
+                if (serverSocket.Available <= 0) continue;
+                if (serverSocket == null) return;
+
+                EndPoint point = new IPEndPoint(IPAddress.Any, 0);//用来保存发送方的ip和端口号
+                byte[] buffer2 = new byte[1024];
+                int length = serverSocket.ReceiveFrom(buffer2, ref point);//接收数据报
+                string message = Encoding.UTF8.GetString(buffer2, 0, length);
+                if (message.StartsWith("S94||"))
+                {
+                    String pointXY = message.Substring(5, message.Length - 5 - 3);
+                    Console.WriteLine("网络连接，点击坐标：" + message + ",截取：" + pointXY);
+                    Tools.ClickPrint(pointXY);
+                }
+            }
+        }
+
+        private void NetWorkCutVideo()
+        {
+            try
+            {
+                Socket serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                IPEndPoint ipendpiont = new IPEndPoint(IPAddress.Parse(MainData.DeviceIP), 20000);
+                serverSocket.Connect(ipendpiont);
+
+                Thread thread = new Thread(targett);
+                thread.Start(serverSocket);
+
+                new Thread(() =>
+                {
+                    try
+                    {
+                        while (isCuttingVideo)
+                        {
+                            Image img = ScreenCapture.captureScreen(cutvideo_x, cutvideo_y, cutvideo_width, cutvideo_height);
+                            byte[] fssize = ImageHelper.ImageToBytes(img);
+
+
+                            byte[] bLength = IntToByteArray(fssize.Length);
+                            serverSocket.Send(bLength);
+                            serverSocket.Send(fssize);
+
+                            byte[] filenamebytes = Encoding.UTF8.GetBytes("");
+                            int sendlen = serverSocket.Send(filenamebytes, filenamebytes.Length, SocketFlags.None);
+                            Console.WriteLine("发送截屏图片" + sendlen);
+                            Thread.Sleep(1000);
+                        }
+                        serverSocket.Shutdown(SocketShutdown.Both);
+                        serverSocket.Close();
+                    }
+                    catch { }
+                }).Start();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message + e.StackTrace);
+            }
+        }
+
+        private void NetWorkCutImg(Image img)
+        {
+            try
+            {
+                Socket serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                IPEndPoint ipendpiont = new IPEndPoint(IPAddress.Parse(MainData.DeviceIP), 20000);
+                serverSocket.Connect(ipendpiont);
+
+                byte[] fssize = ImageHelper.ImageToBytes(img);
+                byte[] bLength = IntToByteArray(fssize.Length);
+                serverSocket.Send(bLength);
+                serverSocket.Send(fssize);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message + e.StackTrace);
+            }
+        }
+        
+        /// <summary>
+        /// 把int32类型的数据转存到4个字节的byte数组中
+        /// </summary>
+        /// <param name="m">int32类型的数据</param>
+        /// <param name="arry">4个字节大小的byte数组</param>
+        /// <returns></returns>
+        static byte[] IntToByteArray(Int32 m)
+        {
+            byte[] arry = new byte[4]; 
+
+            arry[3] = (byte)(m & 0xFF);
+            arry[2] = (byte)((m & 0xFF00) >> 8);
+            arry[1] = (byte)((m & 0xFF0000) >> 16);
+            arry[0] = (byte)((m >> 24) & 0xFF);
+
+            return arry;
+        }
 
         private void CutVideo(object sender, ElapsedEventArgs e1)
         {
@@ -2130,29 +2113,24 @@ namespace ZXClient
                     isCuttingVideo2 = false;
                     return;
                 }
-
-                String dir = "CutVideo";
-
-                if (!Directory.Exists(dir))
-                    Directory.CreateDirectory(dir);
                 
                 Image img = ScreenCapture.captureScreen(cutvideo_x, cutvideo_y, cutvideo_width, cutvideo_height);
-
-                //以JPG文件格式来保存
-                Size screenSize = Screen.PrimaryScreen.Bounds.Size;
-                string imgName = string.Format(@"captureimg.{0:yyyyMMddHHmmss.ffff}.jpg", DateTime.Now);
-                //img.Save(dir + "/" + imgName, ImageFormat.Jpeg);
-                Common.GetPicThumbnail(img, dir + "/" + imgName, Convert.ToInt32(screenSize.Height / 2), Convert.ToInt32(screenSize.Width / 2), 70);
-                USBSendFile(dir, imgName);
-                FileInfo f = new FileInfo(dir + "/" + imgName);
-                USBSendData(String.Format("S08||{0}||E", dir + "/" + imgName), "CutPrint");
-                if (f.Exists)
+               
+                if (MainData.isNetwork)
                 {
-                    f.Delete();
+                }
+                else
+                {
+                    byte[] fssize = ImageHelper.ImageToBytes(img);
+                    byte[] bLength = Encoding.Default.GetBytes(("S08" + fssize.Length).PadRight(100, ' '));
+                    object[] sendStream = new Object[2] { bLength, fssize };
+
+                    Tools.USBSendData(sendStream, "USBCutVideo");
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message + e.StackTrace);
             }
             finally
             {
@@ -2160,6 +2138,42 @@ namespace ZXClient
             }
         }
 
+        private void UsbsendFile(int idx, String imgpath)
+        {
+            new Thread(() => {
+                try
+                {
+                    FileInfo f = new FileInfo(imgpath);
+                    System.IO.FileStream fs = new System.IO.FileStream(f.FullName, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Read);
+                    byte[] fssize = new byte[(int)fs.Length];
+                    fs.Read(fssize, 0, fssize.Length);
+
+                    byte[] bLength = Encoding.Default.GetBytes(("S08" + fssize.Length).PadRight(100, ' '));
+                    USBDeviceSocket.Send(bLength);
+                    USBDeviceSocket.Send(fssize);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message + e.StackTrace);
+                }
+            }).Start();
+        }
+
+        private FileInfo CutPrint()
+        {
+            String dir = "CutVideo";
+            Image img = ScreenCapture.captureScreen(cutvideo_x, cutvideo_y, cutvideo_width, cutvideo_height);
+
+            //以JPG文件格式来保存
+            Size screenSize = Screen.PrimaryScreen.Bounds.Size;
+            string imgName = string.Format(@"captureimg.{0:yyyyMMddHHmmss.ffff}.jpg", DateTime.Now);
+            //img.Save(dir + "/" + imgName, ImageFormat.Jpeg);
+            Common.GetPicThumbnail(img, dir + "/" + imgName, Convert.ToInt32(screenSize.Height*0.7), Convert.ToInt32(screenSize.Width * 0.7), 90);
+            FileInfo f = new FileInfo(dir + "/" + imgName);
+            return f;
+        }
+        
+        
         private void WorkForm_SizeChanged(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Minimized)

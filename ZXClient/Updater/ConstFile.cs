@@ -21,7 +21,7 @@ namespace ZXClient
     {
         public const string TEMPFOLDERNAME = "TempFolder";
         public const string CONFIGFILEKEY = "config_";
-        public const string FILENAME = "AutoUpdater.config";
+        public const string FILENAME = "Autoupdater.config";
         public const string ROOLBACKFILE = "众鑫工作窗口";
         public const string MESSAGETITLE = "自动升级程序";
         public const string CANCELORNOT = "正在升级,确定要取消吗?";

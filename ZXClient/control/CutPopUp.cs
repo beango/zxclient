@@ -233,8 +233,8 @@ namespace ZXClient.control
                 Bitmap cut_bmp = null;
                 ProcessBitmap(ref cut_bmp);
                 //Clipboard.SetImage(cut_bmp);
-                string imageName = saveCutImg(cut_bmp);
-                OnCut(this, new CutEventArgs(selection, imageName));
+                //string imageName = saveCutImg(cut_bmp);
+                OnCut(this, new CutEventArgs(selection, cut_bmp));
                 this.Close();
             }
             catch (Exception)
@@ -247,8 +247,8 @@ namespace ZXClient.control
         {
             Bitmap cut_bmp = null;
             ProcessBitmap(ref cut_bmp);
-            string imageName = saveCutImg(cut_bmp);
-            OnCut(this, new CutEventArgs(selection, imageName));
+            //string imageName = saveCutImg(cut_bmp);
+            OnCut(this, new CutEventArgs(selection, cut_bmp));
             this.Close();
 
             //SaveFileDialog save_box = new SaveFileDialog();
@@ -609,12 +609,14 @@ namespace ZXClient.control
     public class CutEventArgs : EventArgs
     {
         Rectangle selection;
-        string _imgsrc;
+        //string _imgsrc;
+        Image _img;
 
-        public CutEventArgs(Rectangle selection, string imgsrc)
+        public CutEventArgs(Rectangle selection, Image img)
         {
             this.selection = selection;
-            this._imgsrc = imgsrc;
+            //this._imgsrc = imgsrc;
+            this._img = img;
         }
 
         public Rectangle Selection
@@ -622,9 +624,14 @@ namespace ZXClient.control
             get { return selection; }
         }
 
-        public string imgsrc
+        //public string imgsrc
+        //{
+        //    get { return _imgsrc; }
+        //}
+
+        public Image img
         {
-            get { return _imgsrc; }
+            get { return _img; }
         }
     }
 }
