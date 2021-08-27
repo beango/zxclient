@@ -6,11 +6,8 @@ using System.Net.Sockets;
 using System.Resources;
 using System.Text;
 using System.Threading;
-using System.Windows.Forms;
-using ZXClient.Properties;
-using ZXClient.util;
 
-namespace ZXClient.model
+namespace Common.model
 {
     public static class MainData
     {
@@ -105,14 +102,14 @@ namespace ZXClient.model
             if(wf !=null)
                 wf.IsUdpcRecvStart = false;
             Tools.killadb();
-
-            System.Diagnostics.Process.Start(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            
+           
             Application.ExitThread();
-            System.Environment.Exit(0);
+            //System.Environment.Exit(0);
            
             //System.Diagnostics.Process.Start(System.Reflection.Assembly.GetExecutingAssembly().Location);
             Thread thtmp = new Thread(new ThreadStart(run));
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             thtmp.Start();
         }
 

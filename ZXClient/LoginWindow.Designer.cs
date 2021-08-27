@@ -44,7 +44,7 @@
             // tbCard
             // 
             this.tbCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbCard.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbCard.Font = new System.Drawing.Font("SimSun", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbCard.Location = new System.Drawing.Point(163, 148);
             this.tbCard.Margin = new System.Windows.Forms.Padding(2);
             this.tbCard.Name = "tbCard";
@@ -55,7 +55,7 @@
             // tbPwd
             // 
             this.tbPwd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbPwd.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbPwd.Font = new System.Drawing.Font("SimSun", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbPwd.Location = new System.Drawing.Point(164, 182);
             this.tbPwd.Margin = new System.Windows.Forms.Padding(2);
             this.tbPwd.Name = "tbPwd";
@@ -69,7 +69,7 @@
             this.cbMember.AutoSize = true;
             this.cbMember.BackColor = System.Drawing.Color.Transparent;
             this.cbMember.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.cbMember.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbMember.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbMember.Location = new System.Drawing.Point(130, 248);
             this.cbMember.Margin = new System.Windows.Forms.Padding(2);
             this.cbMember.Name = "cbMember";
@@ -120,6 +120,7 @@
             // btnLogin
             // 
             this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Location = new System.Drawing.Point(129, 216);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(216, 27);

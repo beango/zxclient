@@ -72,18 +72,18 @@ namespace ZXClient
 
         private void llgin(string[] lastEmployee)
         {
-            this.Invoke(new System.Action(delegate() { _ShowInfo("正在登录!", Color.Blue); }));
+            this.Invoke(new System.Action(delegate() {_ShowInfo("正在登录...", Color.Blue); }));
             MainData.USERCARD = lastEmployee[0];
             string loginRst = UserLogin(lastEmployee[0], lastEmployee[1], lastEmployee[2] == "1" ? 1 : 0);
             if (loginRst == MainData.loginSuccess)
             {
                 MainData.autoLoginSucc = true;
-                this.Invoke(new System.Action(delegate() { _ShowInfo("登录成功,正在跳转!", Color.Blue); }));
+                this.Invoke(new System.Action(delegate() { _ShowInfo("登录成功,正在跳转", Color.Blue); }));
                 Thread.Sleep(1000);
             }
             else
             {
-                this.Invoke(new System.Action(delegate() { _ShowInfo("登录失败!", Color.Blue); }));
+                this.Invoke(new System.Action(delegate() { _ShowInfo("登录失败!", Color.Red); }));
             }
             if (MainData.autoLoginSucc == true)
             {
@@ -143,7 +143,10 @@ namespace ZXClient
                 lblErrMsg.Text = "密码不能为空!";
                 return;
             }
+            Console.WriteLine("开始登录");
+            _ShowInfo("开始登录...", Color.Blue);
             string isLogin = UserLogin(card, pw, cbMember.Checked ? 1 : 0);
+            Console.WriteLine("登录结果" + isLogin);
             if (isLogin != MainData.loginSuccess)
             {
                 lblErrMsg.ForeColor = Color.Red;
@@ -166,8 +169,8 @@ namespace ZXClient
             String ReturnDatastr = null;
             try
             {
-                string data = String.Format("cardnum={0}&psw={1}", card, EDncryptHelper.MD5Encrypt16(pw));
-                ReturnDatastr = HttpUtil.RequestData(MainData.ServerAddr + MainData.INTE_EMPLOYEELOGIN, data);
+                string data = String.Format("?cardnum={0}&psw={1}", card, EDncryptHelper.MD5Encrypt16(pw));
+                ReturnDatastr = HttpUtil.GetData(MainData.ServerAddr + MainData.INTE_EMPLOYEELOGIN + data);
                 if (ReturnDatastr==null)
                 {
                     return "服务器连接失败!";

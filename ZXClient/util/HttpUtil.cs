@@ -13,12 +13,47 @@ namespace ZXClient.util
         /// <param name="POSTURL">请求提交的地址 如：http://xxx.xxx.xxx/interface/TestPostRequest</param>
         /// <param name="PostData">提交的数据(字符串)</param>
         /// <returns></returns>
+        public static string PostData(string POSTURL, string PostData)
+        {
+            try
+            {
+                Console.WriteLine(POSTURL + "?" + PostData);
+                StreamReader streamReader = RequestStream(POSTURL, PostData);
+                String rst = streamReader.ReadToEnd();
+                return rst;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteError(typeof(HttpUtil), ex);
+                return null;
+            }
+        }
         public static string RequestData(string POSTURL, string PostData)
         {
             try
             {
-                StreamReader streamReader = RequestStream(POSTURL, PostData);
+                StreamReader streamReader = GetStream(POSTURL + "?" + PostData);
+                if (streamReader == null)
+                    return null;
                 String rst = streamReader.ReadToEnd();
+                LogHelper.WriteInfo(typeof(HttpUtil), "请求结果：" + rst);
+                return rst;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteError(typeof(HttpUtil), ex);
+                return null;
+            }
+        }
+        public static string GetData(string POSTURL)
+        {
+            try
+            {
+                StreamReader streamReader = GetStream(POSTURL);
+                if (streamReader == null)
+                    return null;
+                String rst = streamReader.ReadToEnd();
+                LogHelper.WriteInfo(typeof(HttpUtil), "请求结果：" + rst);
                 return rst;
             }
             catch (Exception ex)
@@ -97,7 +132,6 @@ namespace ZXClient.util
             HttpWebResponse _response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(_response.GetResponseStream(), Encoding.UTF8);
             string content = reader.ReadToEnd();
-            Console.WriteLine("uploadfile:" + content);
             return true;
         }
 
@@ -174,6 +208,36 @@ namespace ZXClient.util
                 return new StreamReader(stream, enc);
             }
             catch(Exception ex)
+            {
+                LogHelper.WriteError(typeof(HttpUtil), ex);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 提交数据请求  方法一
+        /// </summary>
+        /// <param name="POSTURL">请求提交的地址 如：http://xxx.xxx.xxx/interface/TestPostRequest</param>
+        /// <param name="PostData">提交的数据(字符串)</param>
+        /// <returns></returns>
+        public static StreamReader GetStream(string POSTURL)
+        {
+            try
+            {
+                LogHelper.WriteInfo(typeof(HttpUtil), POSTURL);
+                WebRequest myHttpWebRequest = WebRequest.Create(POSTURL);
+                myHttpWebRequest.Timeout = 10000;
+                myHttpWebRequest.Method = "GET";
+                UTF8Encoding encoding = new UTF8Encoding();
+
+                //发送成功后接收返回的XML信息
+                HttpWebResponse response = (HttpWebResponse)myHttpWebRequest.GetResponse();
+                string lcHtml = string.Empty;
+                Encoding enc = Encoding.GetEncoding("UTF-8");
+                Stream stream = response.GetResponseStream();
+                return new StreamReader(stream, enc);
+            }
+            catch (Exception ex)
             {
                 LogHelper.WriteError(typeof(HttpUtil), ex);
                 return null;

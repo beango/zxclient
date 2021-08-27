@@ -36,6 +36,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pbClose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblMsg = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,7 +48,7 @@
             this.tblPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tblPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tblPanel.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tblPanel.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tblPanel.Location = new System.Drawing.Point(0, 30);
             this.tblPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tblPanel.Name = "tblPanel";
@@ -79,6 +80,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.Controls.Add(this.pbClose, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblMsg, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -115,6 +117,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblMsg
+            // 
+            this.lblMsg.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.BackColor = System.Drawing.Color.Transparent;
+            this.lblMsg.Location = new System.Drawing.Point(499, 5);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(0, 20);
+            this.lblMsg.TabIndex = 12;
+            // 
             // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -124,7 +136,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tblPanel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -136,6 +148,7 @@
             this.SizeChanged += new System.EventHandler(this.WorkForm_SizeChanged);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -149,5 +162,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pbClose;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblMsg;
     }
 }

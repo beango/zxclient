@@ -20,6 +20,7 @@ using ZXClient.model;
 using ZXClient.Properties;
 using ZXClient.util;
 using System.ComponentModel;
+using ZXClient.service;
 
 namespace ZXClient
 {
@@ -116,7 +117,8 @@ namespace ZXClient
                 MessageBox.Show(this, "呼叫器监听建立失败");
                 LogHelper.WriteError(TAG, ex);
             }
-            new Thread(ConnDevice).Start();//连接设备
+            new Thread(ConnDevice).Start(false);//连接设备
+            new LYLWListen();
         }
 
         private void listenQueue()
@@ -389,7 +391,7 @@ namespace ZXClient
             MainData.wf = this;
         }
 
-        private void ConnDevice()
+        private void ConnDevice(object isreConn)
         {
             if (MainData.isNetwork)
             {
@@ -466,7 +468,7 @@ namespace ZXClient
                     if (!isConnected)
                     {
                         Thread.Sleep(5000);
-                        ConnDevice();
+                        ConnDevice(isreConn);
                     }
                 }
                 else
@@ -526,11 +528,14 @@ namespace ZXClient
                             }
                         }
 
-                        bool islogin = EmployeeLogin(false, null, null);
-                        while (!islogin && !MainData.cbNoLogin)
+                        if (!(bool)isreConn)
                         {
-                            Thread.Sleep(10000);
-                            ConnDevice();
+                            bool islogin = EmployeeLogin(false, null, null);
+                            while (!islogin && !MainData.cbNoLogin)
+                            {
+                                Thread.Sleep(10000);
+                                ConnDevice(isreConn);
+                            }
                         }
 
                         Tools.USBSendData(String.Format("S98||{0}{1}||E", 0, MainData.ServerIP), "changeConnType");//修改连接方式
@@ -622,7 +627,7 @@ namespace ZXClient
                     {
                         if (null != model)
                         {
-                            StreamReader infosetdown = HttpUtil.RequestStream(MainData.ServerAddr + MainData.INTE_EMPLOYEEINFOSETDOWN, "");
+                            StreamReader infosetdown = HttpUtil.GetStream(MainData.ServerAddr + MainData.INTE_EMPLOYEEINFOSETDOWN);
 
                             d = MainData.USERCARD;
                             XmlSerializer ser = new XmlSerializer(typeof(InfoSetModel));
@@ -905,6 +910,19 @@ namespace ZXClient
             {
                 if (Interlocked.Exchange(ref inTimer, 1) == 0)
                 {
+                    if (!MainData.isNetwork)
+                    {
+                        ADBClient MyClient = new ADBClient();
+                        MyClient.AdbPath = MainData.AdbExePath;
+                        DeviceList = MyClient.Devices();
+                        Console.WriteLine("DeviceList="+DeviceList.Count);
+                        if (DeviceList.Count ==0)
+                        {
+                            isForwardPort = false;
+                            BtnEnable(false);
+                            ConnDevice(true);
+                        }
+                    }
                     Tools.HeartTicket();
                     BtnEnable(WorkForm.isConnected);
 

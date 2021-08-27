@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C5B4AB9-8002-4B19-816B-94C57BF43BE7}</ProjectGuid>
+    <ProjectGuid>{A6AE12F8-9D4A-484E-B100-4B1361EE6758}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ZXClient</RootNamespace>
@@ -217,6 +217,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="service\LYLWListen.cs" />
     <Compile Include="Updater\AutoUpdater.cs" />
     <Compile Include="Updater\CommonUnitity.cs" />
     <Compile Include="Updater\Config.cs" />
