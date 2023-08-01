@@ -68,7 +68,6 @@ namespace ZXClient.util
                 String recvData = Tools.SendUDP("S95E");
                 Tools.ShowInfo2("发送心跳命令：S95E, 返回：" + recvData);
                 WorkForm.isConnected = recvData != String.Empty;// "S95OK";
-                
             }
             else
             {
@@ -135,7 +134,6 @@ namespace ZXClient.util
             {
                 byte[] data = new byte[1024];
                 IPEndPoint ipep = new IPEndPoint(IPAddress.Parse(MainData.DeviceIP), MainData.udpPort);
-                ShowInfo2("SendUDP：" + MainData.DeviceIP + ":" + MainData.udpPort + ", " + str);
                 Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
                 data = MainData.encode.GetBytes(str);
                 server.SendTimeout = 3000;

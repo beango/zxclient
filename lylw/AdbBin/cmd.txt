@@ -1,0 +1,2 @@
+﻿mkdir /sdcard/d5/recorder1
+D:/workspace/zx/ZXClient/ZXClient/bin/Debug/AdbBin/adb.exe pull /sdcard/d5/recorder D:/workspace/zx/ZXClient/ZXClient/bin/Debug/recorder/

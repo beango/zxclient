@@ -21,6 +21,7 @@ using ZXClient.Properties;
 using ZXClient.util;
 using System.ComponentModel;
 using ZXClient.service;
+using Microsoft.VisualBasic;
 
 namespace ZXClient
 {
@@ -34,15 +35,19 @@ namespace ZXClient
         private System.Windows.Forms.Button btnEval;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnWel;
+        private System.Windows.Forms.Button btnRecall;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSpecial;
+        private String welcomLabel = "呼叫";
+        private String appriesLabel = "结束";
 
-        
         SynchronizationContext m_SyncContext = null;
         //public static ADBClient MyClient = new ADBClient();
         IList<string> DeviceList;
         
         public static System.Timers.Timer GetEvalResultTimer;
 
-        public static string mID = ""; //mac地址
+        public static string mID = "";
         public static string mDeviceVer = "";
         public static string mDeviceNVer = "";
         public static string mAndroidVer = "";
@@ -52,12 +57,14 @@ namespace ZXClient
         IPEndPoint ipendpoint;
         internal static UdpClient udpclient;
         Thread UdpThread;
-        static bool isRect = false;//是否处于吸附状态
+        static bool isRect = false;
         System.Timers.Timer workLoopTimer;
         public static System.Timers.Timer heartTimer;
         static bool isCuttingVideo = false, isCuttingVideo2 = false;//是否正在同屏
-        static bool isForwardPort = false;//本地端口是否转发成功
-        
+        static bool isForwardPort = false;
+
+        int WAITNUM = 0;
+        bool isTest = false;
         public WorkForm()
         {
             InitializeComponent();
@@ -88,16 +95,16 @@ namespace ZXClient
         private void WorkForm_Load(object sender, EventArgs e)
         {
             //同屏
-            Cut2Timer = new System.Timers.Timer(MainData.CUTVIDEOPERSECOND);//实例化Timer类，设置间隔时间为10000毫秒； 
-            Cut2Timer.Elapsed += new System.Timers.ElapsedEventHandler(CutVideo);//到达时间的时候执行事件； 
-            Cut2Timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)； 
-            Cut2Timer.Enabled = false;//是否执行System.Timers.Timer.Elapsed事件； 
+            Cut2Timer = new System.Timers.Timer(MainData.CUTVIDEOPERSECOND); 
+            Cut2Timer.Elapsed += new System.Timers.ElapsedEventHandler(CutVideo);
+            Cut2Timer.AutoReset = true;
+            Cut2Timer.Enabled = false;
 
             workLoopTimer = new System.Timers.Timer();
             workLoopTimer.Interval = 10000;
             workLoopTimer.Elapsed += new System.Timers.ElapsedEventHandler(workLoop_Tick);
             workLoopTimer.Start();
-
+            cardnum.Text = MainData.USERCARD;
             try
             {
                 Tools.killadb();
@@ -117,8 +124,29 @@ namespace ZXClient
                 MessageBox.Show(this, "呼叫器监听建立失败");
                 LogHelper.WriteError(TAG, ex);
             }
-            new Thread(ConnDevice).Start(false);//连接设备
-            new LYLWListen();
+            new Thread(ConnDevice).Start();//连接设备
+
+            new Thread(new ThreadStart(delegate {
+                LYLWListen pro = new LYLWListen();
+                while (true)
+                {
+                    if (pro.th != null)
+                    {
+                        Console.WriteLine("线程是否存活：" + pro.th.IsAlive);
+                        if (!pro.th.IsAlive)
+                        {
+                            Console.WriteLine("停止 ");
+                            pro.Stop();
+                        }
+                    }
+                    if (pro.th == null || (pro.th != null && !pro.th.IsAlive))
+                    {
+                        pro = new LYLWListen();
+                        pro.Listener();
+                    }
+                    Thread.Sleep(3000);
+                }
+            })).Start();
         }
 
         private void listenQueue()
@@ -391,7 +419,7 @@ namespace ZXClient
             MainData.wf = this;
         }
 
-        private void ConnDevice(object isreConn)
+        private void ConnDevice()
         {
             if (MainData.isNetwork)
             {
@@ -431,16 +459,9 @@ namespace ZXClient
                 //ConnTimer.Enabled = true;
                 while (!isConnected)
                 {
-                    Tools.ShowInfo2("网络方式--设备连接状态=" + isConnected);
                     Thread.Sleep(1000);
                 }
-                Tools.ShowInfo2("网络方式--设备连接状态=" + isConnected);
                 String recvData = Tools.SendUDP(String.Format("S98{0},{1},{2},{3},{4},{5}E", 1, MainData.ServerIP, MainData.FtpIP, MainData.FtpPort, MainData.FtpUserName, MainData.FtpPwd)); //修改连接方式为网络连接1
-                Tools.ShowInfo2("S98返回=" + recvData);
-                if (recvData == "S98OK")
-                {
-                    EmployeeLogin(false, null, null);
-                }
             }
             else //USB连接
             {
@@ -475,7 +496,7 @@ namespace ZXClient
                     if (!isConnected)
                     {
                         Thread.Sleep(5000);
-                        ConnDevice(isreConn);
+                        ConnDevice();
                     }
                 }
                 else
@@ -535,14 +556,11 @@ namespace ZXClient
                             }
                         }
 
-                        if (!(bool)isreConn)
+                        bool islogin = EmployeeLogin(false, null, null);
+                        while (!islogin && !MainData.cbNoLogin)
                         {
-                            bool islogin = EmployeeLogin(false, null, null);
-                            while (!islogin && !MainData.cbNoLogin)
-                            {
-                                Thread.Sleep(10000);
-                                ConnDevice(isreConn);
-                            }
+                            Thread.Sleep(10000);
+                            ConnDevice();
                         }
 
                         Tools.USBSendData(String.Format("S98||{0}{1}||E", 0, MainData.ServerIP), "changeConnType");//修改连接方式
@@ -586,6 +604,7 @@ namespace ZXClient
                 }
                 else
                 {
+                    
                     Tools.SendUDP(String.Format("S04{0}E", MainData.USERCARD));
                     return true;
                 }
@@ -634,7 +653,7 @@ namespace ZXClient
                     {
                         if (null != model)
                         {
-                            StreamReader infosetdown = HttpUtil.GetStream(MainData.ServerAddr + MainData.INTE_EMPLOYEEINFOSETDOWN);
+                            StreamReader infosetdown = HttpUtil.RequestStream(MainData.ServerAddr + MainData.INTE_EMPLOYEEINFOSETDOWN, "");
 
                             d = MainData.USERCARD;
                             XmlSerializer ser = new XmlSerializer(typeof(InfoSetModel));
@@ -702,6 +721,8 @@ namespace ZXClient
             {
                 IPEndPoint remoteIpep = new IPEndPoint(IPAddress.Any, 0);
                 Tools.ShowInfo2("开始监听（UDP）评价器返回数据，端口：7791," + IsUdpcRecvStart);
+                lblMsg.Text = "正在初始化...";
+                lblMsg.ForeColor = Color.White;
                 while (IsUdpcRecvStart && client != null)
                 {
                     if (client.Available <= 0) continue;
@@ -718,17 +739,9 @@ namespace ZXClient
                     {
                         Tools.ShowInfo2("登录成功!");
                         isConnected = true;
-                        if (this.InvokeRequired)
-                        {
-                            this.Invoke(new System.Action(delegate()
-                            {
-                                this._BtnEnable(true);
-                            }));
-                        }
-                        else
-                        {
-                            this._BtnEnable(true);
-                        }
+                        lblMsg.Text = "";
+                        lblMsg.ForeColor = Color.White;
+                        BtnEnable(true);
                     }
                     if (strInfo == "S05OK")//退出成功
                     {
@@ -835,19 +848,10 @@ namespace ZXClient
             }
         }
 
-        private string encode2UTF8(string str)
-        {
-            Encoding utf8 = Encoding.UTF8;
-            Encoding ISO = Encoding.Default;
-            byte[] temp = ISO.GetBytes(str);
-            return utf8.GetString(temp);
-        }
-
         public void USBPJQListener2(String strInfo, UdpClient client, IPEndPoint remoteIpep)
         {
             try
             {
-                strInfo = encode2UTF8(strInfo);
                 Tools.ShowInfo2("排队叫号器指令：" + strInfo);
                 PjqModel o = JsonHelper.DeserializeJsonToObject<PjqModel>(strInfo);
                 Tools.ShowInfo2("排队叫号器指令：" + o.command);
@@ -887,6 +891,7 @@ namespace ZXClient
             }
             catch (Exception e)
             {
+
                 LogHelper.WriteError(TAG, e);
                 Tools.ShowInfo2(e.ToString());
             }
@@ -925,21 +930,47 @@ namespace ZXClient
             {
                 if (Interlocked.Exchange(ref inTimer, 1) == 0)
                 {
-                    if (!MainData.isNetwork)
-                    {
-                        ADBClient MyClient = new ADBClient();
-                        MyClient.AdbPath = MainData.AdbExePath;
-                        DeviceList = MyClient.Devices();
-                        Console.WriteLine("DeviceList="+DeviceList.Count);
-                        if (DeviceList.Count ==0)
-                        {
-                            isForwardPort = false;
-                            BtnEnable(false);
-                            ConnDevice(true);
-                        }
-                    }
                     Tools.HeartTicket();
-                    BtnEnable(WorkForm.isConnected);
+                    if (MainData.isNetwork)
+                    {
+                        //String rst = "{\"Succ\":\"1\", \"Wait\": 10}";
+                        HttpUtil.GetData("http://localhost:9107/WCount", (s, x) =>
+                        {
+                            if (x.Error != null)
+                            {
+                                return;
+                            }
+                            String rst = x.Result;
+                            LogHelper.WriteInfo(typeof(HttpUtil), "请求结果：" + rst);
+
+                            if (rst != null && rst != "")
+                            {
+                                Dictionary<String, String> obj = JsonHelper.DeserializeJsonToObject<Dictionary<String, String>>(rst);
+                                String _waitnum = "";
+                                if (obj.ContainsKey("Succ") && obj["Succ"] == "1" && obj.ContainsKey("Wait"))
+                                {
+                                    _waitnum = obj["Wait"];
+                                    if (!int.TryParse(_waitnum, out WAITNUM))
+                                    {
+                                        WAITNUM = 0;
+                                    }
+                                }
+                                if (this.InvokeRequired)
+                                {
+                                    this.Invoke(new System.Action(delegate
+                                    {
+                                        waitnum.Text = _waitnum;
+                                    }));
+                                }
+                                else
+                                {
+                                    waitnum.Text = _waitnum;
+                                }
+                            }
+                        });
+                    }
+                    //BtnEnable(WorkForm.isConnected);
+                    BtnEnable(true);
 
                     #region USB
                     if (!MainData.isNetwork && isConnected) {
@@ -1159,12 +1190,170 @@ namespace ZXClient
             AsyncBtn(this.btnWel, new System.Action(delegate() { ActionWel(false, null, null); }));
         }
 
+        private void btnRecall_Click(object sender, EventArgs e)
+        {
+            if (!isTest)
+            {
+                HttpUtil.GetData("http://localhost:9107/ReCall", (s, x) =>
+                {
+                    if (x.Error != null)
+                    {
+                        Tools.ShowInfo2("呼叫结果:" + x.Error.Message);
+                        return;
+                    }
+                    String rst = x.Result;
+                    LogHelper.WriteInfo(typeof(HttpUtil), "请求结果：" + rst);
+                    lblMsg.Text = "呼叫成功";
+                    lblMsg.ForeColor = Color.White;
+                    Tools.ShowInfo2("呼叫号码结果:" + rst);
+                });
+            }
+        }
+
+        private void btnSpecial_Click(object sender, EventArgs e)
+        {
+            this.TopMost = false;
+            String PM = Interaction.InputBox("", "请输入特呼号码");
+            if (PM != "")
+            {
+                //String callrst = "{\"Succ\":1, \"QueueNum\":\"A001\"}";
+                HttpUtil.GetData("http://localhost:9107/SpeciallyCall?QueueNum=" + PM, (s, x)=>
+                {
+                    if (x.Error != null)
+                    {
+                        lblMsg.Text = PM + "选呼失败";
+                        lblMsg.ForeColor = Color.Red;
+                        return;
+                    }
+                    String callrst = x.Result;
+                    //callrst = "{\"Succ\":0, \"QueueNum\":\"A001\"}";
+                    LogHelper.WriteInfo(typeof(HttpUtil), "请求结果：" + callrst);
+
+                    Tools.ShowInfo2(PM + "选呼结果:" + callrst);
+                    if (callrst != null && callrst != "")
+                    {
+                        CALLDATA = JsonHelper.DeserializeJsonToObject<Dictionary<String, String>>(callrst);
+                        Tools.ShowInfo2("呼叫号码结果:" + (CALLDATA["Succ"] == "1"));
+                        if (CALLDATA.ContainsKey("Succ") && CALLDATA["Succ"] == "1") //呼叫成功
+                        {
+                            lblMsg.Text = "正在办理" + PM + "";
+                            lblMsg.ForeColor = Color.White;
+                            Tools.ShowInfo2("呼叫号码结果:" + CALLDATA.ToString());
+                            if (CALLDATA.ContainsKey("QueueNum"))
+                            {
+                                if (this.InvokeRequired)
+                                    this.Invoke(new System.Action(delegate
+                                    {
+                                        callnum.Text = CALLDATA["QueueNum"];
+                                    }));
+                                else
+                                    callnum.Text = CALLDATA["QueueNum"];
+                            }
+                            if (MainData.isNetwork)
+                                Tools.SendUDP("S01E");
+                        }
+                        else
+                        {
+                            lblMsg.Text = CALLDATA["Msg"];
+                            lblMsg.ForeColor = Color.Red;
+                            CALLDATA = null;
+                        }
+                    }
+                    else
+                    {
+                        CALLDATA = null;
+                        lblMsg.Text = "特呼号码" + PM + "呼叫失败";
+                        lblMsg.ForeColor = Color.Red;
+                    }
+                });
+            }
+            this.TopMost = true;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (!isTest)
+            {
+                HttpUtil.GetData("http://localhost:9107/Drop", (s, x) =>
+                {
+                    if (x.Error != null)
+                    {
+                        Tools.ShowInfo2("呼叫结果:" + x.Error.Message);
+                        return;
+                    }
+                    String rst = x.Result;
+                    LogHelper.WriteInfo(typeof(HttpUtil), "请求结果：" + rst);
+                });
+            }
+            CALLDATA = null;
+            BtnEnable(true);
+            lblMsg.Text = "弃号成功";
+            lblMsg.ForeColor = Color.White;
+        }
+
+        Dictionary<String, String> CALLDATA;
+
         private void ActionWel(bool isPJQ, UdpClient client, IPEndPoint remoteIpep)
         {
-            if (MainData.isNetwork)
-                Tools.SendUDP("S01E");
-            else
-                Tools.USBSendData("S01E", "welcome", isPJQ, client, remoteIpep);
+            CALLDATA = null;
+            this.lblMsg.Text = "开始呼叫";
+            lblMsg.ForeColor = Color.White;
+            String callrst = "{\"Succ\":1,\"QueueNum\":\"F001\",\"BizID\":\"Biz0123\",\"BizName\":\"业务名称\"}";
+            if (!isTest)
+            {
+                HttpUtil.GetData("http://localhost:9107/Call", (s, x) =>
+                {
+                    if (x.Error != null)
+                    {
+                        Tools.ShowInfo2("呼叫结果:" + x.Error.Message);
+                        return;
+                    }
+                    callrst = x.Result;
+                    LogHelper.WriteInfo(typeof(HttpUtil), "请求结果：" + callrst);
+
+                    if (callrst != null && callrst != "")
+                    {
+                        CALLDATA = JsonHelper.DeserializeJsonToObject<Dictionary<String, String>>(callrst);
+                        foreach (var item in CALLDATA)
+                        {
+                            Console.WriteLine(item.Key + "==" + item.Value);
+                        }
+                        if (CALLDATA.ContainsKey("Succ") && CALLDATA["Succ"] == "1") //呼叫成功
+                        {
+                            Tools.ShowInfo2("呼叫号码结果:" + CALLDATA.ToString());
+
+                            if (CALLDATA.ContainsKey("QueueNum"))
+                            {
+                                this.lblMsg.Text = "正在办理" + CALLDATA["QueueNum"];
+                                lblMsg.ForeColor = Color.White;
+                                if (this.InvokeRequired)
+                                    this.Invoke(new System.Action(delegate
+                                    {
+                                        callnum.Text = CALLDATA["QueueNum"];
+                                    }));
+                                else
+                                    callnum.Text = CALLDATA["QueueNum"];
+                                if (MainData.isNetwork)
+                                    Tools.SendUDP("S01E");
+                                else
+                                    Tools.USBSendData("S01E", "welcome", isPJQ, client, remoteIpep);
+                            }
+                            else
+                            {
+                                this.lblMsg.Text = "呼叫失败";
+                                lblMsg.ForeColor = Color.Red;
+                            }
+                        }
+                        else
+                        {
+                            CALLDATA = null;
+                            this.lblMsg.Text = "呼叫失败";
+                            lblMsg.ForeColor = Color.Red;
+                        }
+                    }
+                    BtnEnable(true);
+                });
+            }
         }
 
         /// <summary>
@@ -1183,6 +1372,7 @@ namespace ZXClient
             {
                 ActionPause(null, null);
             }), 1000);
+            BtnEnable(true);
         }
 
         private void ActionPauseReset(UdpClient client, IPEndPoint remoteIpep)
@@ -1265,6 +1455,8 @@ namespace ZXClient
                         }));
                     else
                         btnPause.Text = "取消暂停";
+                    lblMsg.Text = "暂停服务";
+                    lblMsg.ForeColor = Color.Red;
                 }
                 else if (btnPause.Text.ToString() == "取消暂停")
                 {
@@ -1276,6 +1468,23 @@ namespace ZXClient
                         }));
                     else
                         btnPause.Text = "暂停";
+                    lblMsg.Text = "";
+                    lblMsg.ForeColor = Color.White;
+                }
+                //String callrst = "";
+                if (!isTest)
+                {
+                    HttpUtil.GetData("http://localhost:9107/Pause", (s, x) =>
+                    {
+                        if (x.Error != null)
+                        {
+                            Tools.ShowInfo2("结果:" + x.Error.Message);
+                            return;
+                        }
+                        String callrst = x.Result;
+                        LogHelper.WriteInfo(typeof(HttpUtil), "请求结果：" + callrst);
+                        Tools.ShowInfo2("暂停结果:" + callrst);
+                    });
                 }
             }
             else
@@ -1379,8 +1588,8 @@ namespace ZXClient
                 {
                     if (isConnected)
                     {
-                        btn.Enabled = true;
-                        btn.ForeColor = Color.White;
+                        //btn.Enabled = true;
+                        //btn.ForeColor = Color.White;
                     }
                 }
                 else
@@ -1389,8 +1598,8 @@ namespace ZXClient
                     {
                         if (isConnected)
                         {
-                            btn.Enabled = true;
-                            btn.ForeColor = Color.White;
+                            //btn.Enabled = true;
+                            //btn.ForeColor = Color.White;
                         }
                     }));
                 }
@@ -1401,11 +1610,54 @@ namespace ZXClient
         {
             if (MainData.isNetwork)
             {
-                Tools.SendUDP("S02E");
+                if (CALLDATA != null)
+                {
+                    string extra = "&";
+                    foreach (var item in CALLDATA)
+	                {
+                        extra += item.Key + "=" + item.Value;
+	                }
+                }
+                //Tools.SendUDP("S06E");
+                //String callrst = "{\"Succ\":1}";
+                if (!isTest)
+                {
+                    HttpUtil.GetData("http://localhost:9107/Complete", (s, x) =>
+                    {
+                        if (x.Error != null)
+                        {
+                            Tools.ShowInfo2("结果:" + x.Error.Message);
+                            return;
+                        }
+                        String callrst = x.Result;
+                        LogHelper.WriteInfo(typeof(HttpUtil), "请求结果：" + callrst);
+                        Tools.ShowInfo2("完成事件结果:" + callrst);
+                    });
+                }
+                
+                if (CALLDATA != null && CALLDATA.ContainsKey("Succ") && CALLDATA["Succ"] == "1") //呼叫成功
+                {
+                    Tools.ShowInfo2("对号码进行评价:"); 
+                    String extra = "";
+                    foreach (var item in CALLDATA)
+                    {
+                        if (item.Key.ToLower() == "queuenum" || item.Key.ToLower() == "bizid" || item.Key.ToLower() == "bizname")
+                            extra += "&" + item.Key + "=" + item.Value;
+                    }
+                    if (extra!="")
+                    {
+                        extra = extra.Substring(1);
+                    }
+                    Tools.ShowInfo2(extra);
+                    Tools.SendUDP("{\"command\":\"complete\",\"extra\":\""+extra+"\"}");
+                    CALLDATA = null;
+                    lblMsg.Text = "办理结束";
+                    lblMsg.ForeColor = Color.White;
+                }
+                BtnEnable(true);
             }
             else
             {
-                
                 Tools.USBSendData("S02E", "eval", isPJQ, client, endPoint);
                 if (GetEvalResultTimer != null && GetEvalResultTimer.Enabled)
                     GetEvalResultTimer.Stop();
@@ -1677,12 +1929,28 @@ namespace ZXClient
             DynamicLayout(this.tblPanel, row, col);
 
             this.btnWel = new Button();
-            this.btnWel.Text = "欢迎光临";
+            this.btnWel.Text = welcomLabel;
             this.btnWel.Click += new System.EventHandler(this.btnWel_Click);
             initButtonStyle(this.btnWel);
             this.tblPanel.Controls.Add(btnWel);
             this.tblPanel.SetRow(btnWel, 0);
             this.tblPanel.SetColumn(btnWel, 0);
+
+            this.btnRecall = new Button();
+            this.btnRecall.Text = "重呼";
+            this.btnRecall.Click += new System.EventHandler(this.btnRecall_Click);
+            initButtonStyle(this.btnRecall);
+            this.tblPanel.Controls.Add(btnRecall);
+            this.tblPanel.SetRow(btnRecall, 0);
+            this.tblPanel.SetColumn(btnRecall, 1);
+
+            this.btnSpecial = new Button();
+            this.btnSpecial.Text = "特呼";
+            this.btnSpecial.Click += new System.EventHandler(this.btnSpecial_Click);
+            initButtonStyle(this.btnSpecial);
+            this.tblPanel.Controls.Add(btnSpecial);
+            this.tblPanel.SetRow(btnSpecial, 0);
+            this.tblPanel.SetColumn(btnSpecial, 2);
 
             this.btnPause = new Button();
             btnPause.Text = "暂停";
@@ -1690,17 +1958,26 @@ namespace ZXClient
             initButtonStyle(this.btnPause);
             this.tblPanel.Controls.Add(btnPause);
             this.tblPanel.SetRow(btnPause, 0);
-            this.tblPanel.SetColumn(btnPause, 1);
+            this.tblPanel.SetColumn(btnPause, 4);
 
             this.btnEval = new Button();
-            btnEval.Text = "请评价";
+            btnEval.Text = appriesLabel;
             this.btnEval.Click += new System.EventHandler(this.btnEval_Click);
             initButtonStyle(this.btnEval);
             this.tblPanel.Controls.Add(btnEval);
             this.tblPanel.SetRow(btnEval, 0);
-            this.tblPanel.SetColumn(btnEval, 2);
+            this.tblPanel.SetColumn(btnEval, 3);
+
+            this.btnCancel = new Button();
+            btnCancel.Text = "弃号";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            initButtonStyle(this.btnCancel);
+            this.tblPanel.Controls.Add(btnCancel);
+            this.tblPanel.SetRow(btnCancel, 0);
+            this.tblPanel.SetColumn(btnCancel, 5);
 
             this.btnVoice = new Button();
+            btnVoice.Visible = false;
             btnVoice.Text = "语音播报";
             this.btnVoice.Click += new System.EventHandler(this.btnVoice_Click);
             initButtonStyle(this.btnVoice);
@@ -1713,6 +1990,7 @@ namespace ZXClient
             {
                 this.btnCut = new Button();
                 btnCut.Text = "截屏";
+                btnCut.Visible = false;
                 this.btnCut.Click += new System.EventHandler(this.btnCut_Click);
                 initButtonStyle(this.btnCut);
                 this.tblPanel.Controls.Add(btnCut);
@@ -1721,6 +1999,7 @@ namespace ZXClient
 
                 this.btnCut2 = new Button();
                 this.btnCut2.Text = "同屏";
+                btnCut2.Visible = false;
                 this.btnCut2.Click += new System.EventHandler(this.btnCut2_Click);
                 initButtonStyle(this.btnCut2);
                 this.tblPanel.Controls.Add(btnCut2);
@@ -1740,7 +2019,7 @@ namespace ZXClient
 
         private void initButtonStyle(Button btn)
         {
-            btn.Font = new Font("微软雅黑", 9, FontStyle.Regular);
+            btn.Font = new Font("微软雅黑", 11, FontStyle.Regular);
             btn.Dock = DockStyle.Fill;
             btn.ForeColor = Color.White;
             btn.BackgroundImage = System.Drawing.Image.FromFile("images/buttonbg2.png");
@@ -1751,10 +2030,13 @@ namespace ZXClient
             btn.MouseHover += new System.EventHandler(this.btnWel_MouseHover);
             btn.MouseLeave += new System.EventHandler(this.btnWel_MouseLeave);
         }
+
         private void btnWel_MouseHover(Object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             btn.FlatStyle = FlatStyle.Popup;
+            btn.ForeColor = Color.Chartreuse;
+            btn.Font = new Font("微软雅黑", 12, FontStyle.Bold);
         }
 
         private void btnWel_MouseLeave(Object sender, EventArgs e)
@@ -1762,6 +2044,8 @@ namespace ZXClient
             Button btn = (Button)sender;
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
+            btn.ForeColor = Color.White;
+            btn.Font = new Font("微软雅黑", 11, FontStyle.Regular);
         }
 
         /// <summary>  
@@ -1791,9 +2075,28 @@ namespace ZXClient
 
         private void _BtnEnable(object enable)
         {
-            btnWel.Enabled = btnPause.Enabled = btnVoice.Enabled = btnLogout.Enabled = btnEval.Enabled = btnLogout.Enabled = (bool)enable;
-            btnCut.Enabled = btnCut2.Enabled = (bool)enable;
-            //btnCut.Enabled = btnCut2.Enabled = true;
+            btnWel.Enabled = btnRecall.Enabled = btnSpecial.Enabled = btnCancel.Enabled = btnPause.Enabled = btnVoice.Enabled = btnLogout.Enabled = btnEval.Enabled = btnLogout.Enabled = false;
+            Console.WriteLine("CALLDATA=null/" + (null == CALLDATA) + ", " + "WAITNUM>0/" + (WAITNUM > 0));
+            if (null != CALLDATA)
+            {
+                //btnWel.Enabled = btnRecall.Enabled = btnSpecial.Enabled = btnPause.Enabled = btnLogout.Enabled = false;
+                btnEval.Enabled = btnCancel.Enabled = true;
+            }
+            else
+            {
+                if (WAITNUM > 0)
+                {
+                    btnWel.Enabled = btnRecall.Enabled = btnSpecial.Enabled = btnPause.Enabled = btnVoice.Enabled = btnLogout.Enabled = btnLogout.Enabled = true;
+                    //btnEval.Enabled = btnCancel.Enabled = false;
+                }
+                else //没有等等号
+                {
+                    btnSpecial.Enabled = btnPause.Enabled = btnVoice.Enabled = btnLogout.Enabled = (bool)enable;
+                    btnCut.Enabled = btnCut2.Enabled = true;
+                    //btnWel.Enabled = btnCancel.Enabled = btnEval.Enabled = false;
+                }
+            }
+            
             if (contextMenuStrip1.Items.Count > 4 && contextMenuStrip1.Items[3].Text != "正在更新")
             {
                 contextMenuStrip1.Items[3].Enabled = (bool)enable;
@@ -1841,22 +2144,21 @@ namespace ZXClient
                     KeyEventArgs hotkey = item.Value;
                     if (e.KeyValue == hotkey.KeyValue && Control.ModifierKeys == hotkey.Modifiers)
                     {
-                        switch (item.Key)
+                        if (item.Key == welcomLabel)
                         {
-                            case "欢迎光临":
-                                btnWel_Click(null, null);
-                                break;
-                            case "暂停服务":
-                                btnPause_Click(null, null); 
-                                break;
-                            case "服务评价":
-                                btnEval_Click(null, null);
-                                break;
-                            case "语音播报":
-                                btnVoice_Click(null, null); 
-                                break;
-                            default:
-                                break;
+                            btnWel_Click(null, null);
+                        }
+                        else if (item.Key == "暂停服务")
+                        {
+                            btnPause_Click(null, null); 
+                        }
+                        else if (item.Key == "服务评价")
+                        {
+                            btnEval_Click(null, null);
+                        }
+                        else if (item.Key == "语音播报")
+                        {
+                            btnVoice_Click(null, null);
                         }
                     }
                 }
