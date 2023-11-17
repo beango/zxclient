@@ -1,0 +1,6 @@
+C:\workspace\ZXClient\ConsoleApplication1\bin\Release\ConsoleApplication1.exe.config
+C:\workspace\ZXClient\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+C:\workspace\ZXClient\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+C:\workspace\ZXClient\ConsoleApplication1\obj\Release\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\workspace\ZXClient\ConsoleApplication1\obj\Release\ConsoleApplication1.exe
+C:\workspace\ZXClient\ConsoleApplication1\obj\Release\ConsoleApplication1.pdb

@@ -1,0 +1,462 @@
+   ***********************header***********************   
+ 
+时间：2018-07-09 11:03:49,774 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 192.168.1.110:8080
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 179
+
+ 
+时间：2018-07-09 11:03:49,804 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+
+ 
+时间：2018-07-09 11:03:59,785 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 192.168.1.110:8080
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 179
+
+ 
+时间：2018-07-09 11:03:59,788 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+   ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 11:04:46,515 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 11:05:10,663 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 11:05:21,547 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 线程间操作无效: 从不是创建控件“cbMember”的线程访问它。
+   在 System.Windows.Forms.Control.get_Handle()
+   在 System.Windows.Forms.Control.SendMessage(Int32 msg, Int32 wparam, Int32 lparam)
+   在 System.Windows.Forms.CheckBox.set_CheckState(CheckState value)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 34
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+   ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 11:36:40,918 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:36:56,444 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:37:06,446 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:37:16,445 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:37:26,446 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:37:36,445 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:37:46,446 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:37:54,772 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e)
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 11:38:07,571 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 11:43:12,357 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+   ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 11:44:15,691 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:44:31,211 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:44:41,210 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 11:45:04,194 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:45:19,715 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:45:29,716 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:45:30,415 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“WorkForm”。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.returnCB2(returnStrDelegate2 myDelegate, Object param) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1902
+   在 ZXClient.WorkForm.BtnEnable(Boolean enable) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1738
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 835
+
+ 
+时间：2018-07-09 11:45:39,727 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:45:39,732 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.ArgumentOutOfRangeException: 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.Collections.ArrayList.get_Item(Int32 index)
+   在 System.Windows.Forms.ToolStripItemCollection.get_Item(Int32 index)
+   在 ZXClient.WorkForm._BtnEnable(Object enable) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1744
+   在 ZXClient.WorkForm.returnCB2(returnStrDelegate2 myDelegate, Object param) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1906
+   在 ZXClient.WorkForm.BtnEnable(Boolean enable) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1738
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 835
+
+ 
+时间：2018-07-09 11:45:49,718 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 826
+
+ 
+时间：2018-07-09 11:45:49,723 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.ArgumentOutOfRangeException: 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.Collections.ArrayList.get_Item(Int32 index)
+   在 System.Windows.Forms.ToolStripItemCollection.get_Item(Int32 index)
+   在 ZXClient.WorkForm._BtnEnable(Object enable) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1744
+   在 ZXClient.WorkForm.returnCB2(returnStrDelegate2 myDelegate, Object param) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1906
+   在 ZXClient.WorkForm.BtnEnable(Boolean enable) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1738
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 835
+   ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 11:51:19,446 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 111.230.14.83:8080
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 179
+
+ 
+时间：2018-07-09 11:51:19,476 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+   ***********************header***********************   
+ 
+时间：2018-07-09 11:55:03,444 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 111.230.14.83:8080
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 179
+
+ 
+时间：2018-07-09 11:55:03,469 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+   ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 14:44:45,587 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 825
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 14:48:15,370 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 825
+
+ 
+时间：2018-07-09 14:48:16,070 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 825
+
+ 
+时间：2018-07-09 14:48:27,695 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, EndPoint& remoteEP)
+   在 System.Net.Sockets.Socket.ReceiveFrom(Byte[] buffer, EndPoint& remoteEP)
+   在 ZXClient.WorkForm.NetWorkSendData(String str) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 825
+   ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-09 15:41:45,357 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 747
+   ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n 

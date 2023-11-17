@@ -1,0 +1,30 @@
+2018-07-09 11:45:30,864 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-07-09 11:45:31,040 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-07-09 11:45:31,269 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-07-09 11:45:31,270 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-07-09 11:45:31,270 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-07-09 11:45:31,270 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.105
+2018-07-09 11:45:31,270 [1] INFO  ZXClient.Program - 连接类型:网络连接
+2018-07-09 11:45:31,270 [1] INFO  ZXClient.Program - FTP:, , , 
+2018-07-09 11:45:41,180 [9] INFO  ZXClient.WorkForm - 评价器监听失败:通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+2018-07-09 11:45:41,181 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 ZXClient.WorkForm.ConnDevice() 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 286
+2018-07-09 11:50:45,328 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-07-09 11:50:45,507 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-07-09 11:50:45,736 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.83:8080/
+2018-07-09 11:50:45,736 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.83
+2018-07-09 11:50:45,737 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-07-09 11:50:45,737 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.105
+2018-07-09 11:50:45,737 [1] INFO  ZXClient.Program - 连接类型:网络连接
+2018-07-09 11:50:45,737 [1] INFO  ZXClient.Program - FTP:, , , 
+2018-07-09 11:55:17,164 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-07-09 11:55:17,308 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-07-09 11:55:17,536 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-07-09 11:55:17,537 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-07-09 11:55:17,537 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-07-09 11:55:17,537 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.105
+2018-07-09 11:55:17,537 [1] INFO  ZXClient.Program - 连接类型:网络连接
+2018-07-09 11:55:17,537 [1] INFO  ZXClient.Program - FTP:, , , 

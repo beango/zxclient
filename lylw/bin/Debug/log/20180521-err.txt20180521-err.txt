@@ -1,0 +1,88 @@
+   ***********************header***********************   
+ 
+时间：2018-05-21 11:18:24,560 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 64
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+   ***********************header***********************   
+ 
+时间：2018-05-21 17:08:28,089 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 ZXClient.WorkForm.ConnDevice() 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 219
+
+ 
+时间：2018-05-21 17:09:22,891 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 64
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+
+ 
+时间：2018-05-21 17:09:23,081 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 968
+
+ 
+时间：2018-05-21 17:09:23,391 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 968
+
+ 
+时间：2018-05-21 17:09:23,706 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 968
+
+ 
+时间：2018-05-21 17:09:24,020 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 968

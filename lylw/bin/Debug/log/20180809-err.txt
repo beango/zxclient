@@ -1,0 +1,1574 @@
+   ***********************header***********************   
+ 
+时间：2018-08-09 15:53:52,660 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 192.168.1.101:8080
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 179
+
+ 
+时间：2018-08-09 15:53:52,702 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+
+ 
+时间：2018-08-09 15:54:03,962 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 192.168.1.101:8080
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 179
+
+ 
+时间：2018-08-09 15:54:03,965 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+
+ 
+时间：2018-08-09 15:54:14,216 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 192.168.1.101:8080
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 179
+
+ 
+时间：2018-08-09 15:54:14,220 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+
+ 
+时间：2018-08-09 15:54:23,846 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 192.168.1.101:8080
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 179
+
+ 
+时间：2018-08-09 15:54:23,850 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+   ***********************header***********************   
+ 
+时间：2018-08-09 15:54:56,665 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+
+ 
+时间：2018-08-09 15:55:04,202 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+
+ 
+时间：2018-08-09 15:55:24,525 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 15:55:24,556 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 15:59:24,449 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 15:59:24,484 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 15:59:24,517 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 16:03:34,205 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+
+ 
+时间：2018-08-09 16:04:34,481 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 16:04:34,515 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 16:05:34,505 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 16:05:34,556 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 16:14:29,566 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+
+ 
+时间：2018-08-09 16:14:31,564 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+
+ 
+时间：2018-08-09 16:14:33,566 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+
+ 
+时间：2018-08-09 16:14:34,218 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+
+ 
+时间：2018-08-09 16:31:34,235 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+
+ 
+时间：2018-08-09 16:31:44,373 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZXClient.WorkForm.<WorkForm_Load>b__63_0(String op, String message, List`1 data2, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1187
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 827
+
+ 
+时间：2018-08-09 16:32:13,134 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZXClient.WorkForm.<WorkForm_Load>b__63_0(String op, String message, List`1 data2, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1187
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 827
+
+ 
+时间：2018-08-09 16:35:14,456 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZXClient.WorkForm.<WorkForm_Load>b__63_0(String op, String message, List`1 data2, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1187
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 827
+
+ 
+时间：2018-08-09 16:35:28,164 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 16:35:48,225 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZXClient.WorkForm.<WorkForm_Load>b__63_0(String op, String message, List`1 data2, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1187
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 827
+   ***********************header***********************   
+ 
+时间：2018-08-09 16:47:09,065 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 184
+
+ 
+时间：2018-08-09 16:47:09,148 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+   ***********************header***********************   
+ 
+时间：2018-08-09 16:57:24,305 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 16:58:52,831 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+
+ 
+时间：2018-08-09 17:01:33,152 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:01:33,183 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:01:44,279 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:01:53,213 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:02:03,152 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:02:03,182 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:02:13,166 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:02:13,218 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-08-09 17:15:40,339 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:15:40,395 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:15:50,297 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:15:50,328 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:16:10,318 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:16:10,347 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:16:10,372 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:16:20,293 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:16:20,316 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:16:31,360 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:16:50,306 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:16:50,330 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:17:01,395 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:17:10,358 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:17:20,301 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:17:20,329 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:17:30,302 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:17:30,327 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-08-09 17:49:16,464 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:49:35,949 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:49:45,950 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:49:45,973 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:49:55,934 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:49:55,975 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:50:06,032 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:50:15,919 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:50:15,968 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:50:25,946 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:50:25,975 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:50:55,945 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:50:55,976 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:51:15,916 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:51:15,944 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:51:15,971 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:51:25,989 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:51:26,016 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+   ***********************header***********************   
+ 
+时间：2018-08-09 17:52:01,546 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:52:10,486 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:52:20,436 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:52:20,485 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:52:30,441 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:52:30,474 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:52:40,553 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:52:50,453 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:52:50,503 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:53:00,462 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:53:00,485 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-08-09 17:56:34,969 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:56:35,029 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:56:44,957 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:56:44,983 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:56:55,010 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:04,963 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:04,990 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:14,972 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:14,999 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:25,084 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:34,946 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:34,971 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:44,959 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:44,985 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:57:55,968 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:58:04,980 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:58:05,006 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:58:05,039 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:58:14,975 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:58:15,001 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:58:21,956 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:58:24,586 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-08-09 17:59:02,850 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:02,905 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:12,835 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:12,868 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:23,887 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:32,875 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:32,906 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:32,934 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:42,866 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:42,890 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 17:59:53,935 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:02,873 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:12,868 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:12,921 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:22,860 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:22,889 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:32,932 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:42,878 
+线程ID:[13] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:42,906 
+线程ID:[13] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:52,864 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:00:52,899 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:01:12,923 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:01:12,960 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-08-09 18:01:35,355 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:01:35,421 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+   ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-08-09 18:02:34,766 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:04:14,064 
+线程ID:[40] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:04:14,084 
+线程ID:[40] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+   ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-08-09 18:28:41,048 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:28:41,103 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidOperationException: 此 BackgroundWorker 当前正忙，无法同时运行多个任务。
+   在 System.ComponentModel.BackgroundWorker.RunWorkerAsync(Object argument)
+   在 ZXClient.ADBClient.SendCommand(String command) 位置 D:\workspace\zx\ZXClient\ZXClient\ADBClient.cs:行号 83
+
+ 
+时间：2018-08-09 18:28:49,970 
+线程ID:[13] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 818
+   ***********************footer***********************/r/n 

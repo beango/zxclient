@@ -36,7 +36,7 @@ namespace ZXClient.model
         public static string INTE_GETEVALBUTTONS = "getevalbuttons.action";//获取评价按键
         public static string INTE_EMPLOYEECHANGEPSW = "employeeChangePsw.action";//修改密码
         public static string INTE_GETKEYALL = "getKeyAll.action";//获取所有评价按钮
-        public static string INTE_APPRIESFILEUPLOAD = "appries/appriesFileupload.action";
+        public static string INTE_APPRIESFILEUPLOAD = "upload";
 
         public static bool? autoLoginSucc = null;//是否自动登录
         public static string AccessToken { get; set; }

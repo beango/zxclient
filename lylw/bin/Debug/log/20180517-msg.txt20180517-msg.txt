@@ -1,0 +1,1058 @@
+2018-05-17 12:54:43,683 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-17 12:54:43,770 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-05-17 13:12:20,160 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-17 13:12:20,324 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-05-17 13:12:20,569 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-17 13:12:20,569 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-17 13:12:20,570 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-17 13:12:20,570 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.123
+2018-05-17 13:12:20,570 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-17 13:12:20,570 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-17 13:12:22,356 [6] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeLogin.action?cardnum=1&psw=965EB72C92A549DD
+2018-05-17 13:12:22,458 [6] INFO  ZXClient.util.HttpUtil - 接口请求结果:loginSuccess
+2018-05-17 13:12:22,458 [6] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2018-05-17 13:12:35,177 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:35,490 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:35,801 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:36,112 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:36,426 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:36,740 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:37,050 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:37,364 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:37,675 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:37,988 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:38,300 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:38,614 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:38,925 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:39,239 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:39,552 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:39,862 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:40,176 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:40,490 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:40,800 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:41,113 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:41,426 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:41,737 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:42,051 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:42,364 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:42,676 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:42,989 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:43,300 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:43,614 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:43,927 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:44,238 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:44,551 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:44,862 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:45,177 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:45,487 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:45,801 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:46,115 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:46,425 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:46,740 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:47,051 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:47,362 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:47,674 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:47,988 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:48,301 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:48,612 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:48,926 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:49,238 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:49,552 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:49,862 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:50,175 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:50,489 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:50,800 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:51,114 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:51,424 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:51,738 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:52,049 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:52,364 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:52,677 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:52,988 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:53,302 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:53,612 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:53,927 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:54,238 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:54,549 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:54,863 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:55,176 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:55,487 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:55,801 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:56,115 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:56,426 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:56,739 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:57,050 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:57,363 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:57,674 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:57,988 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:58,302 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:58,612 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:58,927 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:59,237 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:59,551 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:12:59,865 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:00,175 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:00,490 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:00,801 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:01,115 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:01,425 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:01,738 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:02,052 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:02,362 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:02,676 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:02,989 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:03,299 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:03,614 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:03,927 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:04,238 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:04,552 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:04,865 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:05,175 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:05,488 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:05,802 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:06,112 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:06,426 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:06,738 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:07,052 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:07,363 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:07,677 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:07,988 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:08,301 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:08,612 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:08,927 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:09,240 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:09,551 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:09,862 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:10,175 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:10,489 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:10,800 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:11,114 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:11,427 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:11,738 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:12,049 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:12,363 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:12,677 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:12,987 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:13,302 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:13,613 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:13,926 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:14,237 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:14,550 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:14,864 [9] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 908
+2018-05-17 13:13:15,018 [7] INFO  ZXClient.WorkForm - 没有连接到评价器！
+2018-05-17 13:13:36,444 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-17 13:13:36,535 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-05-17 13:13:36,780 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-17 13:13:36,780 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-17 13:13:36,780 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-17 13:13:36,780 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.123
+2018-05-17 13:13:36,780 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-17 13:13:36,780 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-17 13:13:38,560 [6] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeLogin.action?cardnum=1&psw=965EB72C92A549DD
+2018-05-17 13:13:38,736 [6] INFO  ZXClient.util.HttpUtil - 接口请求结果:loginSuccess
+2018-05-17 13:13:38,736 [6] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2018-05-17 13:13:46,232 [7] INFO  ZXClient.WorkForm - 没有连接到评价器！
+2018-05-17 13:13:53,346 [9] ERROR ERR - Error
+System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“WorkForm”。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e)
+2018-05-17 13:31:14,825 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-17 13:31:15,047 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-17 13:31:15,392 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-17 13:31:15,392 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-17 13:31:15,392 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-17 13:31:15,392 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.123
+2018-05-17 13:31:15,392 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-17 13:31:15,392 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-17 13:31:17,263 [6] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeLogin.action?cardnum=111&psw=49BA59ABBE56E057
+2018-05-17 13:31:17,426 [6] INFO  ZXClient.util.HttpUtil - 接口请求结果:loginSuccess
+2018-05-17 13:31:17,426 [6] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2018-05-17 13:31:20,117 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011，设备连接成功
+2018-05-17 13:31:20,320 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-17 13:31:20,361 [8] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:31:20,361 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-17 13:31:20,361 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:31:20,361 [8] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:000000000000，设备资源版本号：10，设备更新资源版本号：10
+2018-05-17 13:31:20,363 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeGetInfo.action?cardnum=111
+2018-05-17 13:31:20,569 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"Id":23,"deptid":230475,"Name":"111","Sex":"1","job_desc":"111","CardNum":"111","PassWord":"49BA59ABBE56E057","birthday":null,"Phone":"","beginWorkTime":null,"picture":"","remark":"","ext1":null,"ext2":"111","showDeptName":"","showWindowName":"","companyName":"","ext3":null,"ext4":null,"isonline":1,"onlinetime":{"date":17,"day":4,"hours":13,"minutes":35,"month":4,"nanos":13000000,"seconds":7,"time":1526535307013,"timezoneOffset":-480,"year":118},"deptName":"个税大厅","star":""}
+2018-05-17 13:31:20,947 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeInfoSetDownload
+2018-05-17 13:31:21,112 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S04||111|name,姓名,111|jobDesc,职务,111|jobNum,工号,111|star,星级,||E
+2018-05-17 13:31:21,130 [8] INFO  ZXClient.WorkForm - S04||111|name,姓名,111|jobDesc,职务,111|jobNum,工号,111|star,星级,||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:21,130 [8] INFO  ZXClient.WorkForm - S04||111|name,姓名,111|jobDesc,职务,111|jobNum,工号,111|star,星级,||E------------------:RecvCmdOK
+2018-05-17 13:31:21,133 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S98||0111.230.14.84||E
+2018-05-17 13:31:21,225 [8] INFO  ZXClient.WorkForm - S98||0111.230.14.84||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:21,225 [8] INFO  ZXClient.WorkForm - S98||0111.230.14.84||E------------------:RecvCmdOK
+2018-05-17 13:31:21,225 [8] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-17 13:31:21,225 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S14||2018||5||17||13||31||21||E
+2018-05-17 13:31:21,244 [8] INFO  ZXClient.WorkForm - S14||2018||5||17||13||31||21||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:21,244 [8] INFO  ZXClient.WorkForm - S14||2018||5||17||13||31||21||E------------------:RecvCmdOK
+2018-05-17 13:31:21,244 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptVideo.action?mac=000000000000
+2018-05-17 13:31:21,335 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:未找到绑定此mac的窗口
+2018-05-17 13:31:21,335 [8] INFO  ZXClient.WorkForm - 获取设备000000000000录音录像权限:未找到绑定此mac的窗口
+2018-05-17 13:31:21,335 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S17||未找到绑定此mac的窗口||E
+2018-05-17 13:31:21,364 [8] INFO  ZXClient.WorkForm - S17||未找到绑定此mac的窗口||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:21,364 [8] INFO  ZXClient.WorkForm - S17||未找到绑定此mac的窗口||E------------------:RecvCmdOK
+2018-05-17 13:31:21,365 [8] INFO  ZXClient.WorkForm - 开始心跳
+2018-05-17 13:31:21,370 [8] INFO  ZXClient.WorkForm - 呼叫器监听建立失败1:通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+2018-05-17 13:31:31,368 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-17 13:31:31,404 [9] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:31:31,404 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-17 13:31:31,404 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:31:31,404 [9] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:000000000000，设备资源版本号：10，设备更新资源版本号：10
+2018-05-17 13:31:31,404 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=000000000000&cardNum=111
+2018-05-17 13:31:31,859 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-17 13:31:31,859 [9] INFO  ZXClient.WorkForm - 2018/5/17 13:31:31心跳：online000000000000
+2018-05-17 13:31:31,859 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=000000000000&config=true
+2018-05-17 13:31:32,013 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:000000000000所在的部门不存
+2018-05-17 13:31:32,013 [9] INFO  ZXClient.WorkForm - 评价器更新资源版本：10, 服务器最新版本：000000000000所在的部门不存
+2018-05-17 13:31:32,013 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=000000000000
+2018-05-17 13:31:32,119 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:
+2018-05-17 13:31:32,119 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S15||||E
+2018-05-17 13:31:32,144 [9] INFO  ZXClient.WorkForm - S15||||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:32,144 [9] INFO  ZXClient.WorkForm - S15||||E------------------:RecvCmdOK
+2018-05-17 13:31:32,144 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=000000000000
+2018-05-17 13:31:32,271 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-17 13:31:32,272 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-17 13:31:32,287 [9] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:32,287 [9] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-17 13:31:32,393 [9] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-17 13:31:32,395 [9] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-17 13:31:32,935 [9] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-17 13:31:32,935 [9] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-17 13:31:33,467 [9] INFO  ZXClient.WorkForm - 意见调查
+2018-05-17 13:31:33,467 [9] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-17 13:31:33,968 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-17 13:31:34,077 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:31:34,077 [9] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:31:34,077 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-17 13:31:34,095 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:34,095 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-17 13:31:41,366 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-17 13:31:41,403 [9] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:31:41,403 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-17 13:31:41,404 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:31:41,404 [9] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:000000000000，设备资源版本号：10，设备更新资源版本号：10
+2018-05-17 13:31:41,404 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=000000000000&cardNum=111
+2018-05-17 13:31:41,884 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-17 13:31:41,884 [9] INFO  ZXClient.WorkForm - 2018/5/17 13:31:41心跳：online000000000000
+2018-05-17 13:31:41,884 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=000000000000&config=true
+2018-05-17 13:31:42,019 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:000000000000所在的部门不存
+2018-05-17 13:31:42,019 [9] INFO  ZXClient.WorkForm - 评价器更新资源版本：10, 服务器最新版本：000000000000所在的部门不存
+2018-05-17 13:31:42,019 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=000000000000
+2018-05-17 13:31:42,099 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:
+2018-05-17 13:31:42,099 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S15||||E
+2018-05-17 13:31:42,129 [9] INFO  ZXClient.WorkForm - S15||||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:42,129 [9] INFO  ZXClient.WorkForm - S15||||E------------------:RecvCmdOK
+2018-05-17 13:31:42,129 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=000000000000
+2018-05-17 13:31:42,210 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-17 13:31:42,211 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-17 13:31:42,229 [9] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:42,230 [9] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-17 13:31:42,316 [9] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-17 13:31:42,316 [9] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-17 13:31:42,858 [9] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-17 13:31:42,858 [9] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-17 13:31:43,391 [9] INFO  ZXClient.WorkForm - 意见调查
+2018-05-17 13:31:43,392 [9] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-17 13:31:43,892 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-17 13:31:43,982 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:31:43,982 [9] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:31:43,982 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-17 13:31:44,001 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:44,001 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-17 13:31:51,364 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-17 13:31:51,399 [9] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:31:51,399 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-17 13:31:51,399 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:31:51,399 [9] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:000000000000，设备资源版本号：10，设备更新资源版本号：10
+2018-05-17 13:31:51,399 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=000000000000&cardNum=111
+2018-05-17 13:31:51,906 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-17 13:31:51,906 [9] INFO  ZXClient.WorkForm - 2018/5/17 13:31:51心跳：online000000000000
+2018-05-17 13:31:51,906 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=000000000000&config=true
+2018-05-17 13:31:52,071 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:000000000000所在的部门不存
+2018-05-17 13:31:52,072 [9] INFO  ZXClient.WorkForm - 评价器更新资源版本：10, 服务器最新版本：000000000000所在的部门不存
+2018-05-17 13:31:52,072 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=000000000000
+2018-05-17 13:31:52,162 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:
+2018-05-17 13:31:52,162 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S15||||E
+2018-05-17 13:31:52,180 [9] INFO  ZXClient.WorkForm - S15||||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:52,180 [9] INFO  ZXClient.WorkForm - S15||||E------------------:RecvCmdOK
+2018-05-17 13:31:52,180 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=000000000000
+2018-05-17 13:31:52,277 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-17 13:31:52,277 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-17 13:31:52,294 [9] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:52,294 [9] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-17 13:31:52,477 [9] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-17 13:31:52,477 [9] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-17 13:31:53,039 [9] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-17 13:31:53,039 [9] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-17 13:31:53,573 [9] INFO  ZXClient.WorkForm - 意见调查
+2018-05-17 13:31:53,573 [9] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-17 13:31:54,073 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-17 13:31:54,208 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:31:54,208 [9] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:31:54,208 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-17 13:31:54,228 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-17 13:31:54,228 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-17 13:32:01,365 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-17 13:32:01,400 [11] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:32:01,400 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-17 13:32:01,400 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||10||000000000000||0||0||100||100||10||E
+2018-05-17 13:32:01,400 [11] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:000000000000，设备资源版本号：10，设备更新资源版本号：10
+2018-05-17 13:32:01,400 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=000000000000&cardNum=111
+2018-05-17 13:32:01,941 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-17 13:32:01,941 [11] INFO  ZXClient.WorkForm - 2018/5/17 13:32:01心跳：online000000000000
+2018-05-17 13:32:01,941 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=000000000000&config=true
+2018-05-17 13:32:02,102 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:000000000000所在的部门不存
+2018-05-17 13:32:02,102 [11] INFO  ZXClient.WorkForm - 评价器更新资源版本：10, 服务器最新版本：000000000000所在的部门不存
+2018-05-17 13:32:02,102 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=000000000000
+2018-05-17 13:32:02,194 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:
+2018-05-17 13:32:02,194 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S15||||E
+2018-05-17 13:32:02,218 [11] INFO  ZXClient.WorkForm - S15||||EFalse接收数据:RecvCmdOK
+2018-05-17 13:32:02,218 [11] INFO  ZXClient.WorkForm - S15||||E------------------:RecvCmdOK
+2018-05-17 13:32:02,219 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=000000000000
+2018-05-17 13:32:02,337 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-17 13:32:02,337 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-17 13:32:02,354 [11] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-17 13:32:02,354 [11] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-17 13:32:02,445 [11] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-17 13:32:02,445 [11] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-17 13:32:02,987 [11] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-17 13:32:02,987 [11] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-17 13:32:03,527 [11] INFO  ZXClient.WorkForm - 意见调查
+2018-05-17 13:32:03,527 [11] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-17 13:32:04,027 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-17 13:32:04,401 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:04,401 [11] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:04,401 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-17 13:32:04,456 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-17 13:32:04,456 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-17 13:32:11,365 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-17 13:32:11,371 [11] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:11,402 [11] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:11,402 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=000000000000&cardNum=111
+2018-05-17 13:32:12,014 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-17 13:32:12,014 [11] INFO  ZXClient.WorkForm - 2018/5/17 13:32:12心跳：online000000000000
+2018-05-17 13:32:12,014 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=000000000000&config=true
+2018-05-17 13:32:12,125 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:000000000000所在的部门不存
+2018-05-17 13:32:12,126 [11] INFO  ZXClient.WorkForm - 评价器更新资源版本：10, 服务器最新版本：000000000000所在的部门不存
+2018-05-17 13:32:12,126 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=000000000000
+2018-05-17 13:32:12,208 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:
+2018-05-17 13:32:12,208 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S15||||E
+2018-05-17 13:32:12,213 [11] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:12,213 [11] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:12,214 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=000000000000
+2018-05-17 13:32:12,331 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-17 13:32:12,331 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-17 13:32:12,338 [11] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:12,338 [11] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:12,475 [11] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-17 13:32:12,475 [11] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-17 13:32:13,019 [11] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-17 13:32:13,020 [11] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-17 13:32:13,564 [11] INFO  ZXClient.WorkForm - 意见调查
+2018-05-17 13:32:13,564 [11] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-17 13:32:14,064 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-17 13:32:14,227 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:14,227 [11] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:14,227 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-17 13:32:14,282 [11] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:14,283 [11] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:21,386 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-17 13:32:21,717 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:21,718 [9] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:21,718 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=000000000000&cardNum=111
+2018-05-17 13:32:22,814 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-17 13:32:22,815 [9] INFO  ZXClient.WorkForm - 2018/5/17 13:32:22心跳：online000000000000
+2018-05-17 13:32:22,815 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=000000000000&config=true
+2018-05-17 13:32:23,245 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:000000000000所在的部门不存
+2018-05-17 13:32:23,245 [9] INFO  ZXClient.WorkForm - 评价器更新资源版本：10, 服务器最新版本：000000000000所在的部门不存
+2018-05-17 13:32:23,245 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=000000000000
+2018-05-17 13:32:24,230 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:
+2018-05-17 13:32:24,230 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S15||||E
+2018-05-17 13:32:25,063 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:25,064 [9] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:25,064 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=000000000000
+2018-05-17 13:32:25,732 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-17 13:32:25,732 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-17 13:32:26,658 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:26,659 [9] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:27,598 [9] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-17 13:32:27,599 [9] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-17 13:32:31,193 [9] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-17 13:32:31,193 [9] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-17 13:32:31,863 [9] INFO  ZXClient.WorkForm - 意见调查
+2018-05-17 13:32:31,863 [9] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-17 13:32:33,365 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-17 13:32:33,632 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:33,632 [9] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:33,632 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-17 13:32:34,128 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:34,149 [9] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:41,389 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-17 13:32:42,143 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:42,144 [9] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:42,144 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=000000000000&cardNum=111
+2018-05-17 13:32:42,147 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 ZXClient.WorkForm.ConnDevice() 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 276
+2018-05-17 13:32:42,976 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-17 13:32:42,976 [9] INFO  ZXClient.WorkForm - 2018/5/17 13:32:42心跳：online000000000000
+2018-05-17 13:32:42,976 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=000000000000&config=true
+2018-05-17 13:32:43,441 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:000000000000所在的部门不存
+2018-05-17 13:32:43,441 [9] INFO  ZXClient.WorkForm - 评价器更新资源版本：10, 服务器最新版本：000000000000所在的部门不存
+2018-05-17 13:32:43,441 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=000000000000
+2018-05-17 13:32:43,780 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:
+2018-05-17 13:32:43,780 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S15||||E
+2018-05-17 13:32:44,222 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:44,222 [9] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:44,222 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=000000000000
+2018-05-17 13:32:44,517 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-17 13:32:44,517 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-17 13:32:44,526 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:44,529 [9] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:44,707 [9] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-17 13:32:44,707 [9] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-17 13:32:45,251 [9] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-17 13:32:45,251 [9] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-17 13:32:45,787 [9] INFO  ZXClient.WorkForm - 意见调查
+2018-05-17 13:32:45,787 [9] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-17 13:32:46,287 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-17 13:32:46,363 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:46,363 [9] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:46,364 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-17 13:32:46,370 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:46,371 [9] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:51,378 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-17 13:32:51,384 [11] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:51,384 [11] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:51,384 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=000000000000&cardNum=111
+2018-05-17 13:32:51,852 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-17 13:32:51,852 [11] INFO  ZXClient.WorkForm - 2018/5/17 13:32:51心跳：online000000000000
+2018-05-17 13:32:51,852 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=000000000000&config=true
+2018-05-17 13:32:52,039 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:000000000000所在的部门不存
+2018-05-17 13:32:52,039 [11] INFO  ZXClient.WorkForm - 评价器更新资源版本：10, 服务器最新版本：000000000000所在的部门不存
+2018-05-17 13:32:52,039 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=000000000000
+2018-05-17 13:32:52,126 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:
+2018-05-17 13:32:52,126 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S15||||E
+2018-05-17 13:32:52,131 [11] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:52,132 [11] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:52,132 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=000000000000
+2018-05-17 13:32:52,237 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-17 13:32:52,238 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-17 13:32:52,243 [11] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:52,243 [11] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:52,328 [11] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-17 13:32:52,328 [11] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-17 13:32:52,868 [11] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-17 13:32:52,868 [11] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-17 13:32:53,407 [11] INFO  ZXClient.WorkForm - 意见调查
+2018-05-17 13:32:53,407 [11] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-17 13:32:53,908 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-17 13:32:54,014 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:54,014 [11] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-17 13:32:54,014 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-17 13:32:54,020 [11] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:54,020 [11] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 13:32:55,078 [6] INFO  ZXClient.WorkForm - (USB)发送内容：S05E
+2018-05-17 13:32:55,085 [6] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 553
+2018-05-17 13:32:55,086 [6] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-17 14:24:05,000 [1] INFO  ZXClient.Program - 另一个窗口已在运行，不能重复运行。

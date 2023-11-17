@@ -20,13 +20,13 @@ namespace ZXClient.util
         /// <returns></returns>  
         public static Bitmap captureScreen(int x, int y, int width, int height)
         {
+            //return ScreenCapture2.Instance.Capture(new Rectangle(x, y, width, height));
             Bitmap bmp = new Bitmap(width, height);
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.CopyFromScreen(new Point(x, y), new Point(0, 0), bmp.Size);
                 g.Dispose();
             }
-            //bit.Save(@"capture2.png");  
             return bmp;
         }
 
@@ -37,7 +37,8 @@ namespace ZXClient.util
         /// 
         public static Bitmap captureScreen()
         {
-            Size screenSize = Screen.PrimaryScreen.Bounds.Size;
+            //Size screenSize = Screen.PrimaryScreen.Bounds.Size;
+            Size screenSize = ScreenDPIHelper.DesktopResolution;
             return captureScreen(0, 0, screenSize.Width, screenSize.Height);
         }
         #endregion

@@ -1,0 +1,85 @@
+2018-05-21 11:18:13,736 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-21 11:18:13,903 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-05-21 11:18:14,249 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-21 11:18:14,249 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-21 11:18:14,249 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-21 11:18:14,249 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-21 11:18:14,249 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-21 11:18:14,250 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-21 11:18:23,756 [7] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-21 11:18:23,963 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-21 11:18:24,066 [7] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||442C05AE8FE5||0||0||100||100||16||E
+2018-05-21 11:18:24,066 [7] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-21 11:18:24,066 [7] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||442C05AE8FE5||0||0||100||100||16||E
+2018-05-21 11:18:24,066 [7] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-21 11:18:24,066 [7] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:442C05AE8FE5，设备资源版本号：16，设备更新资源版本号：16
+2018-05-21 11:18:24,078 [7] INFO  ZXClient.WorkForm - 设备连接成功
+2018-05-21 11:18:24,082 [7] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeGetInfo.action?cardnum=10010
+2018-05-21 11:18:24,560 [6] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 64
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2018-05-21 11:18:24,633 [7] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"Id":25,"deptid":230475,"Name":"檀艺源","Sex":"1","job_desc":"test1","CardNum":"10010","PassWord":"49BA59ABBE56E057","birthday":null,"Phone":"","beginWorkTime":null,"picture":"upload/152602327191090.bmp","remark":"","ext1":null,"ext2":"10010","showDeptName":"","showWindowName":"","companyName":"","ext3":"","ext4":"6A26E27A52F1DBDF0B40FEF12F3B5317","isonline":1,"onlinetime":{"date":21,"day":1,"hours":10,"minutes":35,"month":4,"nanos":587000000,"seconds":40,"time":1526870140587,"timezoneOffset":-480,"year":118},"deptName":"个税大厅","star":""}
+2018-05-21 11:18:25,481 [7] INFO  ZXClient.WorkForm - 发送文件：picture/user_10010.jpg
+2018-05-21 11:18:26,483 [7] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeInfoSetDownload
+2018-05-21 11:18:26,763 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S04||10010|name,姓名,檀艺源|jobDesc,职务,test1|jobNum,工号,10010|star,星级,||E
+2018-05-21 11:18:27,240 [7] INFO  ZXClient.WorkForm - S04||10010|name,姓名,檀艺源|jobDesc,职务,test1|jobNum,工号,10010|star,星级,||EFalse接收数据:RecvCmdOK
+2018-05-21 11:18:27,241 [7] INFO  ZXClient.WorkForm - S04||10010|name,姓名,檀艺源|jobDesc,职务,test1|jobNum,工号,10010|star,星级,||E------------------:RecvCmdOK
+2018-05-21 11:18:27,242 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S98||0111.230.14.84||E
+2018-05-21 11:18:27,373 [7] INFO  ZXClient.WorkForm - S98||0111.230.14.84||EFalse接收数据:RecvCmdOK
+2018-05-21 11:18:27,373 [7] INFO  ZXClient.WorkForm - S98||0111.230.14.84||E------------------:RecvCmdOK
+2018-05-21 11:18:27,375 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S14||2018||5||21||11||18||27||E
+2018-05-21 11:18:27,404 [7] INFO  ZXClient.WorkForm - S14||2018||5||21||11||18||27||EFalse接收数据:RecvCmdOK
+2018-05-21 11:18:27,404 [7] INFO  ZXClient.WorkForm - S14||2018||5||21||11||18||27||E------------------:RecvCmdOK
+2018-05-21 11:18:27,405 [7] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptVideo.action?mac=442C05AE8FE5
+2018-05-21 11:18:27,462 [7] INFO  ZXClient.util.HttpUtil - 接口请求结果:2
+2018-05-21 11:18:27,462 [7] INFO  ZXClient.WorkForm - 获取设备442C05AE8FE5录音录像权限:2
+2018-05-21 11:18:27,463 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S17||2||E
+2018-05-21 11:18:27,489 [7] INFO  ZXClient.WorkForm - S17||2||EFalse接收数据:RecvCmdOK
+2018-05-21 11:18:27,489 [7] INFO  ZXClient.WorkForm - S17||2||E------------------:RecvCmdOK
+2018-05-21 11:18:27,490 [7] INFO  ZXClient.WorkForm - 开始心跳
+2018-05-21 11:18:27,495 [11] INFO  ZXClient.WorkForm - 开始监听（排队叫号器）评价器返回数据，端口：8001
+2018-05-21 17:08:24,791 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-21 17:08:24,924 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-05-21 17:08:25,193 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-21 17:08:25,193 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-21 17:08:25,193 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-21 17:08:25,193 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.119
+2018-05-21 17:08:25,193 [1] INFO  ZXClient.Program - 连接类型:网络连接
+2018-05-21 17:08:25,193 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-21 17:08:28,089 [7] INFO  ZXClient.WorkForm - 评价器监听失败:通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+2018-05-21 17:08:28,089 [7] ERROR ERR - Error
+System.Net.Sockets.SocketException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 ZXClient.WorkForm.ConnDevice() 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 219
+2018-05-21 17:09:22,891 [6] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 64
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2018-05-21 17:09:23,081 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 968
+2018-05-21 17:09:23,391 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 968
+2018-05-21 17:09:23,706 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 968
+2018-05-21 17:09:24,020 [8] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.WorkForm.StopRectTimer_Tick(Object sender, ElapsedEventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 968

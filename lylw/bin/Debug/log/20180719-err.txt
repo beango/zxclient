@@ -1,0 +1,150 @@
+   ***********************header***********************   
+ 
+时间：2018-07-19 14:41:11,502 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.FormatException: 该字符串未被识别为有效的布尔值。
+   在 System.Boolean.Parse(String value)
+   在 ZXClient.Program.initDB() 位置 D:\workspace\zx\ZXClient\ZXClient\Program.cs:行号 139
+   ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-19 14:42:54,120 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.WorkForm.ActionPause(UdpClient client, IPEndPoint remoteIpep) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1427
+   在 ZXClient.WorkForm.btnPause_Click(Object sender, EventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1329
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   在 System.Windows.Forms.Button.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   ***********************header***********************   
+ 
+时间：2018-07-19 14:44:21,547 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 793
+
+ 
+时间：2018-07-19 14:44:24,906 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 793
+   ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-19 14:52:09,652 
+线程ID:[1] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.WorkForm.btnVoice_Click(Object sender, EventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 1616
+   在 ZXClient.WorkForm.OnKeyPress(KeyEventArgs e, Boolean& handle) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 114
+   在 ZXClient.util.KeyboardHook.KeyboardHookProc(Int32 nCode, Int32 wParam, IntPtr lParam) 位置 D:\workspace\zx\ZXClient\ZXClient\util\KeyboardHook.cs:行号 161
+   ***********************header***********************   
+ 
+时间：2018-07-19 14:58:45,500 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 基础连接已经关闭: 服务器关闭了本应保持活动状态的连接。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 184
+
+ 
+时间：2018-07-19 14:58:45,530 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+   ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-19 15:06:41,849 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 184
+
+ 
+时间：2018-07-19 15:06:41,877 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+
+ 
+时间：2018-07-19 15:06:51,850 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 184
+
+ 
+时间：2018-07-19 15:06:51,851 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+   ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-07-19 15:15:41,519 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于套接字没有连接并且(当使用一个 sendto 调用发送数据报套接字时)没有提供地址，发送或接收数据的请求没有被接受。
+   在 System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 774
+
+ 
+时间：2018-07-19 15:15:51,522 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.Sockets.SocketException: 由于套接字没有连接并且(当使用一个 sendto 调用发送数据报套接字时)没有提供地址，发送或接收数据的请求没有被接受。
+   在 System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 774
+   ***********************footer***********************/r/n 

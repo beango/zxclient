@@ -1,0 +1,498 @@
+2021-04-21 16:20:03,884 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 16:20:03,903 [1] INFO  ZXClient.Program - 程序已启动
+2021-04-21 16:20:15,282 [1] INFO  ZXClient.util.Tools - 重启时监听端口释放失败:未将对象引用设置到对象的实例。
+2021-04-21 16:20:19,006 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 16:20:25,528 [1] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 16:20:25,660 [1] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 16:20:25,660 [1] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 16:20:25,681 [1] INFO  ZXClient.util.HttpUtil - http://localhost:9107/Login?UserID=1
+2021-04-21 16:20:29,312 [10] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 16:20:29,312 [10] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 16:20:29,313 [13] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 16:20:37,912 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 16:20:37,912 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 16:20:38,395 [13] INFO  ZXClient.util.Tools - 评价器返回：S98OK
+2021-04-21 16:20:38,395 [13] INFO  ZXClient.util.Tools - 连接评价器成功！
+2021-04-21 16:20:38,511 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 16:20:38,511 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 16:20:38,941 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 16:20:38,941 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 16:20:42,077 [9] INFO  ZXClient.util.Tools - 暂停结果:
+2021-04-21 16:20:42,079 [13] INFO  ZXClient.util.Tools - 评价器返回：S03OK
+2021-04-21 16:20:47,918 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 16:20:47,924 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 16:20:48,830 [13] INFO  ZXClient.util.Tools - 评价器返回：S06OK
+2021-04-21 16:20:48,832 [15] INFO  ZXClient.util.Tools - 暂停结果:
+2021-04-21 16:20:50,716 [16] INFO  ZXClient.util.Tools - 呼叫号码结果:System.Collections.Generic.Dictionary`2[System.String,System.String]
+2021-04-21 16:20:50,786 [13] INFO  ZXClient.util.Tools - 评价器返回：S01OK
+2021-04-21 16:20:57,953 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 16:20:57,953 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 16:21:15,981 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:21:15,981 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:21:15,981 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:21:15,987 [15] INFO  ZXClient.util.Tools - 暂停结果:
+2021-04-21 16:21:17,910 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:21:17,910 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:21:21,857 [8] INFO  ZXClient.util.Tools - 呼叫号码结果:System.Collections.Generic.Dictionary`2[System.String,System.String]
+2021-04-21 16:21:21,902 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:21:27,933 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:21:27,933 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:21:37,903 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:21:37,904 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:21:44,961 [9] INFO  ZXClient.util.Tools - 呼叫号码结果:System.Collections.Generic.Dictionary`2[System.String,System.String]
+2021-04-21 16:21:45,039 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:21:47,911 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:21:47,911 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:21:57,865 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:21:57,865 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:22:07,884 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:22:07,884 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:22:17,874 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:22:17,874 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:22:27,942 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:22:27,943 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:22:37,877 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:22:37,877 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:22:38,001 [17] INFO  ZXClient.util.Tools - 呼叫号码结果:System.Collections.Generic.Dictionary`2[System.String,System.String]
+2021-04-21 16:22:38,028 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:22:47,927 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:22:47,927 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:22:57,951 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:22:57,951 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:23:07,990 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:23:07,990 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:23:17,924 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:23:17,924 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:23:27,958 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:23:27,958 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:23:37,983 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:23:37,983 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:23:47,948 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:23:47,949 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:23:57,958 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:23:57,958 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:24:07,989 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:24:07,989 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:24:18,028 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:24:18,028 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:24:27,959 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:24:27,959 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:24:38,016 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:24:38,016 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:24:48,037 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:24:48,037 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:24:57,968 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:24:57,968 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:25:08,012 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:25:08,012 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:25:18,055 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:25:18,055 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:25:28,067 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:25:28,067 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:25:38,009 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:25:38,009 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:25:48,198 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:25:48,198 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:25:58,076 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:25:58,076 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:26:08,011 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:26:08,011 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:26:18,045 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:26:18,045 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:26:28,080 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:26:28,080 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:26:38,004 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:26:38,004 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:26:48,047 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:26:48,047 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:26:58,083 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:26:58,083 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:27:08,126 [17] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:27:08,126 [17] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:27:18,052 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:27:18,052 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:27:28,084 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:27:28,084 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:27:38,122 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:27:38,122 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:27:48,153 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:27:48,153 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:27:58,109 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:27:58,109 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:28:08,142 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:28:08,142 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:28:18,150 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:28:18,150 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:28:28,193 [15] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:28:28,193 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:28:38,150 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:28:38,150 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:28:48,164 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:28:48,164 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:28:58,189 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:28:58,190 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:29:08,197 [16] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:29:08,197 [16] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 16:29:17,981 [1] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 16:29:17,981 [1] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:08:40,094 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:08:40,113 [1] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:08:46,948 [1] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:08:47,017 [1] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:08:47,018 [1] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:08:47,092 [1] INFO  ZXClient.util.HttpUtil - http://localhost:9107/Login?UserID=1
+2021-04-21 17:08:50,805 [10] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:08:50,805 [10] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:08:50,806 [13] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:09:05,186 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:09:05,186 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:09:05,186 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:09:09,415 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:09:09,415 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:09:09,415 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:09:19,328 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:09:19,328 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:09:19,328 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:09:29,379 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:09:29,379 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:09:29,379 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:09:39,416 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:09:39,416 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:09:39,416 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:09:49,407 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:09:49,407 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:09:49,407 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:09:59,442 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:09:59,442 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:09:59,442 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:10:09,474 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:10:09,475 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:10:09,475 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:10:19,516 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:10:19,516 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:10:19,516 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:10:29,446 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:10:29,446 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:10:29,446 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:10:39,485 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:10:39,485 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:10:39,485 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:10:49,514 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:10:49,514 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:10:49,514 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:10:59,456 [8] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:10:59,457 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:10:59,457 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:11:09,486 [9] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:11:09,486 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：
+2021-04-21 17:11:09,486 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:11:19,456 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:11:19,456 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:11:19,456 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:11:19,932 [13] INFO  ZXClient.util.Tools - 评价器返回：S98OK
+2021-04-21 17:11:19,932 [13] INFO  ZXClient.util.Tools - 连接评价器成功！
+2021-04-21 17:11:20,032 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:11:20,032 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:11:20,245 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:11:20,245 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:11:29,564 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:11:29,564 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:11:29,564 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:11:36,758 [1] INFO  ZXClient.util.HttpUtil - http://localhost:9107/SpeciallyCall?QueueNum=3
+2021-04-21 17:11:38,760 [1] INFO  ZXClient.util.Tools - 3选呼结果:
+2021-04-21 17:11:39,495 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:11:39,495 [15] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:11:39,495 [15] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:11:49,533 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:11:49,533 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:11:49,533 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:11:51,822 [13] INFO  ZXClient.util.Tools - 评价器返回：S94OK
+2021-04-21 17:11:51,900 [1] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:14:15,654 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:14:15,669 [1] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:14:21,196 [1] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:14:21,240 [1] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:14:21,240 [1] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:14:21,303 [1] INFO  ZXClient.util.HttpUtil - http://localhost:9107/Login?UserID=1
+2021-04-21 17:14:25,007 [10] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:14:25,007 [10] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:14:25,009 [13] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:14:33,579 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:14:33,579 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:14:33,579 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:14:43,608 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:14:43,608 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:14:43,608 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:14:44,514 [10] INFO  ZXClient.util.Tools - UDP发送失败未将对象引用设置到对象的实例。
+2021-04-21 17:14:53,648 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:14:53,648 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:14:53,648 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:15:03,689 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:15:03,689 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:15:03,689 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:15:13,617 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:15:13,617 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:15:13,618 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:15:23,647 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:15:23,647 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:15:23,647 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:15:33,697 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:15:33,697 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:15:33,697 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:15:43,717 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:15:43,717 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:15:43,718 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:15:46,290 [13] INFO  ZXClient.util.Tools - 评价器返回：S94OK
+2021-04-21 17:15:46,307 [13] INFO  ZXClient.util.Tools - 评价器返回：S05OK
+2021-04-21 17:15:46,307 [13] INFO  ZXClient.util.Tools - 退出成功！
+2021-04-21 17:15:46,307 [1] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:15:46,307 [14] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:15:50,519 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:15:50,535 [1] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:15:56,993 [1] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:15:57,032 [1] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:15:57,032 [1] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:15:57,074 [1] INFO  ZXClient.util.HttpUtil - http://localhost:9107/Login?UserID=1
+2021-04-21 17:16:00,735 [10] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:16:00,735 [10] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:16:00,737 [13] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:16:09,331 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:16:09,331 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:16:09,331 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:16:09,837 [13] INFO  ZXClient.util.Tools - 评价器返回：S98OK
+2021-04-21 17:16:09,837 [13] INFO  ZXClient.util.Tools - 连接评价器成功！
+2021-04-21 17:16:09,866 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:16:09,866 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:16:10,046 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:16:10,046 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:16:19,356 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:16:19,356 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:16:19,356 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:16:29,397 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:16:29,397 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:16:29,397 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:16:39,326 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:16:39,326 [10] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:16:39,326 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:16:49,355 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:16:49,355 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:16:49,355 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:16:59,402 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:16:59,402 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:16:59,403 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:17:09,349 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:17:09,349 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:17:09,349 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:17:14,780 [13] INFO  ZXClient.util.Tools - 评价器返回：S94OK
+2021-04-21 17:17:14,816 [13] INFO  ZXClient.util.Tools - 评价器返回：S05OK
+2021-04-21 17:17:14,816 [13] INFO  ZXClient.util.Tools - 退出成功！
+2021-04-21 17:17:14,816 [1] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:17:14,816 [6] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:19:03,082 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:19:03,097 [1] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:19:09,862 [1] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:19:09,898 [1] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:19:09,898 [1] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:19:09,930 [1] INFO  ZXClient.util.HttpUtil - http://localhost:9107/Login?UserID=1
+2021-04-21 17:19:13,542 [10] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:19:13,542 [10] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:19:13,544 [13] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:19:22,158 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:19:22,158 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:19:22,158 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:19:22,653 [13] INFO  ZXClient.util.Tools - 评价器返回：S98OK
+2021-04-21 17:19:22,653 [13] INFO  ZXClient.util.Tools - 连接评价器成功！
+2021-04-21 17:19:22,683 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:19:22,683 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:19:22,868 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:19:22,868 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:19:32,085 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:19:32,085 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:19:32,085 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:19:42,113 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:19:42,113 [8] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:19:42,113 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:19:52,145 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:19:52,145 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:19:52,145 [9] INFO  ZXClient.util.HttpUtil - http://localhost:9107/WCount
+2021-04-21 17:19:58,603 [13] INFO  ZXClient.util.Tools - 评价器返回：S94OK
+2021-04-21 17:19:58,623 [1] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:21:30,779 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:21:30,794 [1] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:21:36,800 [1] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:21:36,877 [1] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:21:36,877 [1] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:21:36,944 [1] INFO  ZXClient.util.HttpUtil - http://localhost:9107/Login?UserID=1
+2021-04-21 17:21:40,670 [10] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:21:40,671 [10] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:21:40,673 [13] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:21:49,291 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:21:49,291 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:21:49,800 [13] INFO  ZXClient.util.Tools - 评价器返回：S98OK
+2021-04-21 17:21:49,801 [13] INFO  ZXClient.util.Tools - 连接评价器成功！
+2021-04-21 17:21:49,841 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:21:49,841 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:21:50,017 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:21:50,017 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:21:59,220 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:21:59,220 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:22:02,915 [13] INFO  ZXClient.util.Tools - 评价器返回：S94OK
+2021-04-21 17:22:02,930 [13] INFO  ZXClient.util.Tools - 评价器返回：S05OK
+2021-04-21 17:22:02,930 [13] INFO  ZXClient.util.Tools - 退出成功！
+2021-04-21 17:22:02,930 [1] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:22:02,930 [14] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:25:30,189 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:25:30,203 [1] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:25:35,578 [1] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:25:35,646 [1] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:25:35,646 [1] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:25:37,312 [10] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:25:37,312 [10] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:25:37,314 [13] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:25:46,045 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:25:46,045 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:25:46,455 [13] INFO  ZXClient.util.Tools - 评价器返回：S98OK
+2021-04-21 17:25:46,455 [13] INFO  ZXClient.util.Tools - 连接评价器成功！
+2021-04-21 17:25:46,485 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:25:46,485 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:25:46,665 [13] INFO  ZXClient.util.Tools - 评价器返回：S04OK
+2021-04-21 17:25:46,665 [13] INFO  ZXClient.util.Tools - 登录成功!
+2021-04-21 17:25:55,875 [8] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:25:55,875 [13] INFO  ZXClient.util.Tools - 评价器返回：S95OK
+2021-04-21 17:25:59,155 [13] INFO  ZXClient.util.Tools - 评价器返回：S94OK
+2021-04-21 17:25:59,186 [1] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:28:46,940 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:28:46,955 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:28:54,122 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:28:54,205 [8] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:28:54,205 [8] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:28:55,952 [16] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:28:55,952 [19] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:28:55,952 [16] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:29:04,606 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:29:17,639 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:29:17,650 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:29:22,346 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:29:22,399 [8] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:29:22,399 [8] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:29:24,122 [16] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:29:24,122 [16] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:29:24,124 [19] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:29:32,662 [8] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:29:32,707 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:30:00,992 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:30:01,005 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:30:08,050 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:30:08,121 [8] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:30:08,121 [8] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:30:09,857 [16] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:30:09,857 [16] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:30:09,858 [19] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:30:18,431 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:30:28,460 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:30:38,413 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:30:48,430 [11] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:30:51,830 [8] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:36:16,706 [7] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:36:16,719 [7] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:36:22,690 [7] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:36:22,766 [7] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:36:22,766 [7] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:36:24,453 [16] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:36:24,453 [16] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:36:24,455 [19] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:36:33,013 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:36:43,077 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:36:58,853 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:36:58,863 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:37:04,067 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:37:16,511 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:37:16,544 [8] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:37:16,544 [8] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:37:18,208 [17] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:37:18,208 [17] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:37:18,210 [20] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:38:40,096 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:38:40,108 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:38:48,405 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:38:48,492 [8] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:38:48,492 [8] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:38:50,215 [17] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:38:50,215 [17] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:38:50,218 [20] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:38:58,869 [11] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:39:08,810 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:39:18,847 [11] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:39:22,037 [8] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:39:39,669 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:39:39,678 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:48:09,616 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:48:09,633 [1] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:50:32,641 [7] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:50:32,654 [7] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:50:40,670 [7] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:50:40,724 [7] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:50:40,724 [7] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:50:42,375 [16] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:50:42,375 [16] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:50:42,379 [19] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:50:51,078 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:51:01,010 [9] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:51:10,906 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:51:12,197 [7] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:51:47,962 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:51:47,974 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:51:53,590 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:51:53,668 [8] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:51:53,668 [8] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:51:55,334 [17] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:51:55,334 [17] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:51:55,336 [20] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:52:03,844 [11] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:52:07,175 [8] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:52:56,514 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:52:56,525 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:53:02,333 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:53:02,389 [8] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:53:02,389 [8] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:53:04,015 [17] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:53:04,016 [17] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:53:04,018 [20] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 17:53:12,594 [11] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:53:22,625 [11] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:53:32,563 [11] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 17:53:33,671 [8] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 17:54:55,349 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:54:55,362 [1] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:59:44,722 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 17:59:44,734 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 17:59:53,233 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 17:59:53,308 [8] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 17:59:53,308 [8] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 17:59:54,987 [17] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 17:59:54,988 [17] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 17:59:54,989 [19] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 18:00:28,803 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 18:00:28,814 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 18:00:36,634 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 18:00:36,684 [8] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-04-21 18:00:36,685 [8] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-04-21 18:00:38,308 [17] INFO  ZXClient.util.Tools - 端口监听成功
+2021-04-21 18:00:38,308 [17] INFO  ZXClient.util.Tools - 网络方式--心跳
+2021-04-21 18:00:38,310 [20] INFO  ZXClient.util.Tools - 开始监听（UDP）评价器返回数据，端口：7791,True
+2021-04-21 18:00:38,819 [8] INFO  ZXClient.util.Tools - 登录结果:无法连接到远程服务器
+2021-04-21 18:00:46,943 [11] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 18:00:56,877 [10] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 18:00:59,103 [8] INFO  ZXClient.util.Tools - 222选呼结果:无法连接到远程服务器
+2021-04-21 18:01:06,903 [11] INFO  ZXClient.util.Tools - 发送心跳命令：S95E, 返回：S95OK
+2021-04-21 18:01:12,257 [8] INFO  ZXClient.util.Tools - 销毁udp监听进程
+2021-04-21 18:03:56,343 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 18:03:56,355 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 18:06:30,114 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 18:06:30,127 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 18:07:20,550 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 18:07:20,560 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 18:14:56,332 [8] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-04-21 18:14:56,342 [8] INFO  ZXClient.Program - 程序已启动
+2021-04-21 18:15:09,653 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-04-21 18:15:20,940 [8] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057

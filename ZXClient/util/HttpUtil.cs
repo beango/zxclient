@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -135,6 +136,71 @@ namespace ZXClient.util
             return true;
         }
 
+        public static bool ExecuteMultipartRequest(string url, List<KeyValue> nvc)
+        {
+            string boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x");
+            byte[] boundarybytes = Encoding.UTF8.GetBytes("\r\n--" + boundary + "\r\n");
+
+            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(new Uri(url, UriKind.RelativeOrAbsolute));
+            webRequest.Method = "POST";
+            webRequest.Timeout = 1800000;
+            webRequest.ContentType = "multipart/form-data; boundary=" + boundary;
+            webRequest.KeepAlive = true;
+            webRequest.Credentials = System.Net.CredentialCache.DefaultCredentials;
+            using (var rs = webRequest.GetRequestStream())
+            {
+                // 普通参数模板
+                string formdataTemplate = "Content-Disposition: form-data; name=\"{0}\"\r\n\r\n{1}";
+                //带文件的参数模板
+                string headerTemplate = "Content-Disposition: form-data; name=\"{0}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n";
+                foreach (KeyValue keyValue in nvc)
+                {
+                    //如果是普通参数
+                    if (keyValue.FilePath == null)
+                    {
+                        rs.Write(boundarybytes, 0, boundarybytes.Length);
+                        string formitem = string.Format(formdataTemplate, keyValue.Key, keyValue.Value);
+                        byte[] formitembytes = System.Text.Encoding.UTF8.GetBytes(formitem);
+                        rs.Write(formitembytes, 0, formitembytes.Length);
+                    }
+                    //如果是文件参数,则上传文件
+                    else
+                    {
+                        rs.Write(boundarybytes, 0, boundarybytes.Length);
+                        string header = string.Format(headerTemplate, keyValue.Key, keyValue.Value, keyValue.ContentType);
+                        byte[] headerbytes = System.Text.Encoding.UTF8.GetBytes(header);
+                        rs.Write(headerbytes, 0, headerbytes.Length);
+                        using (var fileStream = new FileStream(keyValue.FilePath, FileMode.Open, FileAccess.Read))
+                        {
+                            byte[] buffer = new byte[4096];
+                            int bytesRead = 0;
+                            long total = 0;
+                            while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) != 0)
+                            {
+                                rs.Write(buffer, 0, bytesRead);
+                                total += bytesRead;
+                            }
+                        }
+                    }
+
+                }
+                byte[] trailer = Encoding.UTF8.GetBytes("\r\n--" + boundary + "--\r\n");
+                rs.Write(trailer, 0, trailer.Length);
+                rs.Close();
+            }
+
+            // 获取响应
+            using (HttpWebResponse webResponse = (HttpWebResponse)webRequest.GetResponse())
+            {
+                using (StreamReader reader = new StreamReader(webResponse.GetResponseStream(), Encoding.UTF8))
+                {
+                    string body = reader.ReadToEnd();
+                    reader.Close();
+                    return true;
+                }
+            }
+        }
+      
         public static bool DownloadFile(string url, string path)
         {
             string tempFile = "update.temp"; //临时文件
@@ -244,4 +310,31 @@ namespace ZXClient.util
             }
         }
     }
+
+    public class KeyValue
+      {
+          public string Key;
+          public string Value;
+          public string FilePath;
+          public string ContentType = "*/*";
+          public KeyValue(string key, string value, string filePath, string contentType)
+          {
+              Key = key;
+              Value = value;
+              FilePath = filePath;
+              ContentType = contentType;
+          }
+          public KeyValue() { }
+          public KeyValue(string key, string value, string filePath)
+          {
+              Key = key;
+              Value = value;
+              FilePath = filePath;
+          }
+          public KeyValue(string key, string value)
+          {
+              Key = key;
+              Value = value;
+          }
+      }
 }

@@ -210,7 +210,7 @@ namespace ZXClient.util
                 }
                 else
                 {
-                    Console.WriteLine("USBSendData:" + response.ToString());
+                    Tools.ShowInfo2("USB发送数据：" + response.ToString() + ", op=" + op);
                     data = MainData.encode.GetBytes(response.ToString());
                     socket.Send(data, 0, data.Length, SocketFlags.None);
                 }
@@ -314,10 +314,18 @@ namespace ZXClient.util
                                     foreach (var item in listFiles)
                                     {
                                         FileInfo f = new FileInfo(item);
-                                        if (HttpUtil.UploadFile(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, f))
+                                        Tools.ShowInfo2("上传录音文件：" + item + ", " + MainData.ServerAddr);
+                                        List<KeyValue> keyValues = new List<KeyValue>();
+                                        keyValues.Add(new KeyValue("uploaddir", "download/recorder"));
+                                        keyValues.Add(new KeyValue("file", new FileInfo(item).Name, item));
+                                        if (HttpUtil.ExecuteMultipartRequest(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, keyValues))
                                         {
                                             f.Delete();
                                         }
+                                        //if (HttpUtil.UploadFile(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, new FileInfo(item)))
+                                        //{
+                                        //    f.Delete();
+                                        //}
                                     }
                                 }
                                 catch (Exception ex)

@@ -419,14 +419,13 @@ namespace ZXClient
                     }
                     catch (Exception ex)
                     {
-                        Tools.ShowInfo2("端口监听失败3！");
+                        Tools.ShowInfo2("端口监听失败！");
                         isConnected = false;
                         LogHelper.WriteError(TAG, ex);
                         return;
                     }
                     Tools.ShowInfo2("端口监听成功");
                 }
-                Tools.ShowInfo2("网络方式--心跳");
                 //ConnTimer_Tick(null, null);
                 //ConnTimer.Enabled = true;
                 while (!isConnected)
@@ -434,9 +433,7 @@ namespace ZXClient
                     Tools.ShowInfo2("网络方式--设备连接状态=" + isConnected);
                     Thread.Sleep(1000);
                 }
-                Tools.ShowInfo2("网络方式--设备连接状态=" + isConnected);
                 String recvData = Tools.SendUDP(String.Format("S98{0},{1},{2},{3},{4},{5}E", 1, MainData.ServerIP, MainData.FtpIP, MainData.FtpPort, MainData.FtpUserName, MainData.FtpPwd)); //修改连接方式为网络连接1
-                Tools.ShowInfo2("S98返回=" + recvData);
                 if (recvData == "S98OK")
                 {
                     EmployeeLogin(false, null, null);
@@ -930,7 +927,6 @@ namespace ZXClient
                         ADBClient MyClient = new ADBClient();
                         MyClient.AdbPath = MainData.AdbExePath;
                         DeviceList = MyClient.Devices();
-                        Console.WriteLine("DeviceList="+DeviceList.Count);
                         if (DeviceList.Count ==0)
                         {
                             isForwardPort = false;
@@ -974,6 +970,22 @@ namespace ZXClient
                         if(HttpUtil.DownloadFile(MainData.ServerAddr + MainData.INTE_GETEVALBUTTONS, "button.xml"))
                         {
                             Tools.USBSendFile("", System.Environment.CurrentDirectory + "\\button.xml", "eval/button.xml");
+                            var Metadata = XmlHelper.XmlDeserializeFromFile<EvalBtnModel>("button.xml");
+                            if (Metadata != null)
+                            {
+                                foreach (var button in Metadata.Buttons)
+                                {
+                                    if (!button.Img.StartsWith("eval_"))
+                                    {
+                                        bool down = HttpUtil.DownloadFile(MainData.ServerAddr + "upload/" + button.Img, "picture/" + button.Img);
+                                        if (down)
+                                        {
+                                            string picpath = System.Environment.CurrentDirectory + "\\picture\\" + button.Img;
+                                            new ADBClient().Push(picpath, MainData.SDCARD + "eval/" + button.Img);
+                                        }
+                                    }
+                                }
+                            }
                         }
                         else
                         {
@@ -1405,11 +1417,10 @@ namespace ZXClient
             }
             else
             {
-                
                 Tools.USBSendData("S02E", "eval", isPJQ, client, endPoint);
-                if (GetEvalResultTimer != null && GetEvalResultTimer.Enabled)
-                    GetEvalResultTimer.Stop();
-                BeginGetEvalResult(isPJQ, client, endPoint);
+                //if (GetEvalResultTimer != null && GetEvalResultTimer.Enabled)
+                //    GetEvalResultTimer.Stop();
+                //BeginGetEvalResult(isPJQ, client, endPoint);
             }
         }
 
@@ -1582,17 +1593,7 @@ namespace ZXClient
                         
                         byte[] bLength = Encoding.Default.GetBytes(("S08" + fssize.Length).PadRight(100, ' '));
                         object[] sendStream = new Object[2] {bLength, fssize};
-
                         Tools.USBSendData(sendStream, "USBCutVideo");
-
-                        //string imgName = imgsrc.Substring(imgsrc.IndexOf(@"\") + 1);
-                        //USBSendFile("CutImg", imgName);
-                        //FileInfo f = new FileInfo("CutImg/" + imgName);
-                        //if (f.Exists)
-                        //{
-                        //    f.Delete();
-                        //}
-                        //USBSendData(String.Format("S08||{0}||E", "CutImg/" + imgName), "CutPrint");
                     }
                 };
                 cut_form.Show();
@@ -1921,24 +1922,28 @@ namespace ZXClient
                     cutvideo_height = Screen.PrimaryScreen.Bounds.Height;
                     isCuttingVideo = true;
                     btnCut2.Text = "停止同屏";
-                    new Thread(NetWorkCutVideo).Start();
+                    NetWorkCutVideo();
                     //new Thread(NetWorkCutVideoListen).Start();
                     //Tools.SendUDP("S90CutVideo2/cutvideo2.jpgE");
                 }
                 else //划定区域同屏
                 {
-                    CutPopUp cut_form = new CutPopUp(CutScreen(screen_on_focus.Bounds.Left, screen_on_focus.Bounds.Top, screen_on_focus.Bounds.Width, screen_on_focus.Bounds.Height), screen_on_focus, previous_selection, this, 2);
-                    cut_form.OnCut += (s, e2) =>
-                    {
+                    //CutPopUp cut_form = new CutPopUp(CutScreen(screen_on_focus.Bounds.Left, screen_on_focus.Bounds.Top, screen_on_focus.Bounds.Width, screen_on_focus.Bounds.Height), screen_on_focus, previous_selection, this, 2);
+                    //cut_form.OnCut += (s, e2) =>
+                    //{
                         if (!isRect)
                         {
                             this.Show(); this.Focus();
                         }
-                        previous_selection = e2.Selection;
-                        cutvideo_x = previous_selection.X;
-                        cutvideo_y = previous_selection.Y;
-                        cutvideo_width = previous_selection.Width;
-                        cutvideo_height = previous_selection.Height;
+                        //previous_selection = e2.Selection;
+                        //cutvideo_x = previous_selection.X;
+                        //cutvideo_y = previous_selection.Y;
+                        //cutvideo_width = previous_selection.Width;
+                        //cutvideo_height = previous_selection.Height;
+                        cutvideo_x = 0;
+                        cutvideo_y = 0;
+                        cutvideo_width = Screen.PrimaryScreen.Bounds.Width;
+                        cutvideo_height = Screen.PrimaryScreen.Bounds.Height;
                         isCuttingVideo = true;
                         btnCut2.Text = "停止同屏";
                         this.CutVideo(null, null);
@@ -1949,8 +1954,8 @@ namespace ZXClient
                             this.ShowInTaskbar = false;
                             SetVisibleCore(false);
                         }
-                    };
-                    cut_form.Show();
+                    //};
+                    //cut_form.Show();
                 }
             }
             else //停止
@@ -2015,7 +2020,6 @@ namespace ZXClient
                 NetWorkCutVideoListenSocket.Close();
                 
             }
-            Console.WriteLine("建立19999监听连接：");
             NetWorkCutVideoListenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPEndPoint ipendpiont = new IPEndPoint(IPAddress.Any, 19999);
             NetWorkCutVideoListenSocket.Bind(ipendpiont);
@@ -2028,7 +2032,6 @@ namespace ZXClient
                     byte[] byteDateLine = new byte[1024];
                     int recv = Client.Receive(byteDateLine);
                     string stringdata = Encoding.ASCII.GetString(byteDateLine, 0, recv);
-                    Console.WriteLine("网络连接，点击坐标：" + stringdata);
                 }
             }), null);
         }
@@ -2037,7 +2040,6 @@ namespace ZXClient
         public void targett(Object sock)
         {
             Socket serverSocket = (Socket)sock;
-            Console.WriteLine("已经建立连接准备接受数据");
 
             while (true && isCuttingVideo)
             {
@@ -2051,7 +2053,6 @@ namespace ZXClient
                 if (message.StartsWith("S94||"))
                 {
                     String pointXY = message.Substring(5, message.Length - 5 - 3);
-                    Console.WriteLine("网络连接，点击坐标：" + message + ",截取：" + pointXY);
                     Tools.ClickPrint(pointXY);
                 }
             }
@@ -2068,6 +2069,9 @@ namespace ZXClient
                 Thread thread = new Thread(targett);
                 thread.Start(serverSocket);
 
+                Size screenSize = ScreenDPIHelper.DesktopResolution;
+                cutvideo_width = screenSize.Width;
+                cutvideo_height = screenSize.Height;
                 new Thread(() =>
                 {
                     try
@@ -2077,20 +2081,22 @@ namespace ZXClient
                             Image img = ScreenCapture.captureScreen(cutvideo_x, cutvideo_y, cutvideo_width, cutvideo_height);
                             byte[] fssize = ImageHelper.ImageToBytes(img);
 
-
                             byte[] bLength = IntToByteArray(fssize.Length);
                             serverSocket.Send(bLength);
                             serverSocket.Send(fssize);
 
                             byte[] filenamebytes = Encoding.UTF8.GetBytes("");
                             int sendlen = serverSocket.Send(filenamebytes, filenamebytes.Length, SocketFlags.None);
-                            Console.WriteLine("发送截屏图片" + sendlen);
+
                             Thread.Sleep(1000);
                         }
                         serverSocket.Shutdown(SocketShutdown.Both);
                         serverSocket.Close();
                     }
-                    catch { }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message + e.StackTrace);
+                    }
                 }).Start();
             }
             catch (Exception e)

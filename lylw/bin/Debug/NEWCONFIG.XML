@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+<M7Config>
+    <Software>
+        <Version>10</Version>
+        <Welcometime>5</Welcometime>
+        <Approvertime>30</Approvertime>
+        <Shutdown>17:31</Shutdown>
+        <Boot>8:30</Boot>
+        <ShowEmployeePage>1</ShowEmployeePage>
+    </Software>
+    <Server>
+        <IP>192.168.239.1</IP>
+        <Port>80</Port>
+    </Server>
+    <Network>
+        <Type>0</Type>
+    </Network>
+</M7Config>
+

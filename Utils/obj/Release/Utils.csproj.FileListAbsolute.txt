@@ -1,0 +1,5 @@
+C:\workspace\ZXClient\Utils\bin\Release\Utils.dll
+C:\workspace\ZXClient\Utils\bin\Release\Utils.pdb
+C:\workspace\ZXClient\Utils\obj\Release\Utils.dll
+C:\workspace\ZXClient\Utils\obj\Release\Utils.pdb
+C:\workspace\ZXClient\Utils\obj\Release\Utils.csprojResolveAssemblyReference.cache

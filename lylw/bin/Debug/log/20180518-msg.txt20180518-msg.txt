@@ -1,0 +1,123 @@
+2018-05-18 13:18:15,535 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:18:37,150 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:18:37,150 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:18:37,151 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:18:37,151 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:18:37,151 [1] INFO  ZXClient.Program - 连接类型:网络连接
+2018-05-18 13:18:37,151 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:18:40,126 [7] INFO  ZXClient.WorkForm - 评价器监听失败:通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+2018-05-18 13:18:40,127 [7] ERROR ERR - Error
+System.Net.Sockets.SocketException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 ZXClient.WorkForm.ConnDevice() 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 219
+2018-05-18 13:18:48,324 [7] INFO  ZXClient.WorkForm - 连接成功:False
+2018-05-18 13:21:40,998 [6] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 64
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2018-05-18 13:21:51,394 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:21:52,224 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:22:14,022 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:22:14,023 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:22:14,023 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:22:14,023 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:22:14,023 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:22:14,023 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:22:18,555 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:22:18,760 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:22:18,809 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 602
+2018-05-18 13:22:18,842 [8] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-18 13:22:25,471 [7] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 64
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2018-05-18 13:38:02,238 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:38:05,743 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:38:05,743 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:38:05,743 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:38:05,743 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:38:05,743 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:38:05,743 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:38:10,238 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:38:10,445 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:38:10,523 [8] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||442C05AE8FE5||1||0||100||100||16||E
+2018-05-18 13:38:10,523 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-18 13:38:10,523 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||442C05AE8FE5||1||0||100||100||16||E
+2018-05-18 13:38:10,523 [8] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-18 13:38:10,523 [8] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:442C05AE8FE5，设备资源版本号：16，设备更新资源版本号：16
+2018-05-18 13:38:10,523 [8] INFO  ZXClient.WorkForm - 设备连接成功
+2018-05-18 13:38:10,528 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeGetInfo.action?cardnum=10010
+2018-05-18 13:38:13,549 [8] ERROR ERR - Error
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 119
+2018-05-18 13:38:13,583 [8] ERROR ERR - Error
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+2018-05-18 13:38:13,616 [8] ERROR ERR - Error
+System.ArgumentNullException: 值不能为空。
+参数名: s
+   在 System.IO.StringReader..ctor(String s)
+   在 ZXClient.util.JsonHelper.DeserializeJsonToObject[T](String json) 位置 D:\workspace\zx\ZXClient\ZXClient\util\JsonHelper.cs:行号 33
+   在 ZXClient.WorkForm.EmployeeLogin(Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 333
+2018-05-18 13:38:13,619 [8] INFO  ZXClient.WorkForm - 用户登录失败-服务器出错！
+2018-05-18 13:38:13,620 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S98||0111.230.14.84||E
+2018-05-18 13:38:13,748 [8] INFO  ZXClient.WorkForm - S98||0111.230.14.84||EFalse接收数据:RecvCmdOK
+2018-05-18 13:38:13,748 [8] INFO  ZXClient.WorkForm - S98||0111.230.14.84||E------------------:RecvCmdOK
+2018-05-18 13:38:13,748 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S14||2018||5||18||13||38||13||E
+2018-05-18 13:38:13,795 [8] INFO  ZXClient.WorkForm - S14||2018||5||18||13||38||13||EFalse接收数据:RecvCmdOK
+2018-05-18 13:38:13,795 [8] INFO  ZXClient.WorkForm - S14||2018||5||18||13||38||13||E------------------:RecvCmdOK
+2018-05-18 13:38:13,795 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptVideo.action?mac=442C05AE8FE5
+2018-05-18 13:38:16,813 [8] ERROR ERR - Error
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 119
+2018-05-18 13:38:16,813 [8] ERROR ERR - Error
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+2018-05-18 13:38:16,813 [8] INFO  ZXClient.WorkForm - 获取设备442C05AE8FE5录音录像权限:
+2018-05-18 13:38:16,814 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S17||||E
+2018-05-18 13:38:16,850 [8] INFO  ZXClient.WorkForm - S17||||EFalse接收数据:RecvCmdOK
+2018-05-18 13:38:16,850 [8] INFO  ZXClient.WorkForm - S17||||E------------------:RecvCmdOK
+2018-05-18 13:38:16,851 [8] INFO  ZXClient.WorkForm - 开始心跳
+2018-05-18 13:38:16,865 [10] INFO  ZXClient.WorkForm - 开始监听（排队叫号器）评价器返回数据，端口：8001
+2018-05-18 13:38:26,875 [6] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:38:26,970 [6] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||442C05AE8FE5||0||0||100||100||16||E
+2018-05-18 13:38:26,972 [6] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-18 13:38:26,972 [6] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||442C05AE8FE5||0||0||100||100||16||E
+2018-05-18 13:38:26,972 [6] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-18 13:38:26,972 [6] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:442C05AE8FE5，设备资源版本号：16，设备更新资源版本号：16
+2018-05-18 13:38:26,973 [6] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=442C05AE8FE5&cardNum=10010
+2018-05-18 13:38:29,996 [6] ERROR ERR - Error
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 119
+2018-05-18 13:38:29,997 [6] ERROR ERR - Error
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+2018-05-18 13:38:29,997 [6] INFO  ZXClient.WorkForm - 2018/5/18 13:38:29心跳：442C05AE8FE5
+2018-05-18 13:38:29,997 [6] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=442C05AE8FE5&config=true
+2018-05-18 13:38:33,025 [6] ERROR ERR - Error
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 119
+2018-05-18 13:38:33,025 [6] ERROR ERR - Error
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+2018-05-18 13:38:33,026 [6] ERROR ERR - Error
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.WorkForm.employeeHeartTimer_Tick(Object sender, EventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 704

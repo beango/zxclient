@@ -1,0 +1,43 @@
+   ***********************header***********************   
+ 
+时间：2018-06-28 09:13:32,875 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 186
+
+ 
+时间：2018-06-28 09:13:32,929 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+
+ 
+时间：2018-06-28 09:13:32,937 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.WorkForm._checkupdateres() 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 971
+   在 ZXClient.WorkForm.HeartTimer_Tick(Object sender, EventArgs e) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 913
+   ***********************header***********************      ***********************footer***********************/r/n    ***********************header***********************   
+ 
+时间：2018-06-28 09:54:37,315 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：ERR property: [(null)] - 
+错误描述：Error
+ 
+System.Net.WebException: 远程服务器返回错误: (404) 未找到。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 ZXClient.util.HttpUtil.DownloadFile(String url, String path) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 131

@@ -1,0 +1,599 @@
+2018-05-22 11:18:04,090 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-22 11:18:04,231 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-05-22 11:18:04,471 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-22 11:18:04,471 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-22 11:18:04,472 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-22 11:18:04,472 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.119
+2018-05-22 11:18:04,472 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-22 11:18:04,472 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-22 11:18:07,297 [6] INFO  ZXClient.WorkForm - 没有吸附
+2018-05-22 11:18:07,306 [6] INFO  ZXClient.WorkForm - 没有吸附
+2018-05-22 11:18:07,308 [6] INFO  ZXClient.WorkForm - 吸附在上面
+2018-05-22 11:18:08,839 [7] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-22 11:18:09,045 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:18:09,127 [7] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:09,127 [7] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:18:09,127 [7] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:09,127 [7] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:18:09,127 [7] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:18:09,128 [7] INFO  ZXClient.WorkForm - 设备连接成功
+2018-05-22 11:18:09,132 [7] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeGetInfo.action?cardnum=10010
+2018-05-22 11:18:09,211 [7] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"Id":25,"deptid":230475,"Name":"檀艺源","Sex":"1","job_desc":"test1","CardNum":"10010","PassWord":"49BA59ABBE56E057","birthday":null,"Phone":"","beginWorkTime":null,"picture":"upload/152602327191090.bmp","remark":"","ext1":null,"ext2":"10010","showDeptName":"","showWindowName":"","companyName":"","ext3":"","ext4":"6A26E27A52F1DBDF0B40FEF12F3B5317","isonline":1,"onlinetime":{"date":22,"day":2,"hours":11,"minutes":18,"month":4,"nanos":10000000,"seconds":6,"time":1526959086010,"timezoneOffset":-480,"year":118},"deptName":"个税大厅","star":""}
+2018-05-22 11:18:09,625 [7] INFO  ZXClient.WorkForm - 发送文件：picture/user_10010.jpg
+2018-05-22 11:18:10,627 [7] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeInfoSetDownload
+2018-05-22 11:18:10,778 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S04||10010|name,姓名,檀艺源|jobDesc,职务,test1|jobNum,工号,10010|star,星级,||E
+2018-05-22 11:18:10,945 [7] INFO  ZXClient.WorkForm - S04||10010|name,姓名,檀艺源|jobDesc,职务,test1|jobNum,工号,10010|star,星级,||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:10,945 [7] INFO  ZXClient.WorkForm - S04||10010|name,姓名,檀艺源|jobDesc,职务,test1|jobNum,工号,10010|star,星级,||E------------------:RecvCmdOK
+2018-05-22 11:18:10,946 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S98||0111.230.14.84||E
+2018-05-22 11:18:11,084 [7] INFO  ZXClient.WorkForm - S98||0111.230.14.84||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:11,084 [7] INFO  ZXClient.WorkForm - S98||0111.230.14.84||E------------------:RecvCmdOK
+2018-05-22 11:18:11,084 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S14||2018||5||22||11||18||11||E
+2018-05-22 11:18:11,107 [7] INFO  ZXClient.WorkForm - S14||2018||5||22||11||18||11||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:11,107 [7] INFO  ZXClient.WorkForm - S14||2018||5||22||11||18||11||E------------------:RecvCmdOK
+2018-05-22 11:18:11,107 [7] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptVideo.action?mac=CCB8A8DB14F8
+2018-05-22 11:18:11,176 [7] INFO  ZXClient.util.HttpUtil - 接口请求结果:2
+2018-05-22 11:18:11,176 [7] INFO  ZXClient.WorkForm - 获取设备CCB8A8DB14F8录音录像权限:2
+2018-05-22 11:18:11,177 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S17||2||E
+2018-05-22 11:18:11,204 [7] INFO  ZXClient.WorkForm - S17||2||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:11,204 [7] INFO  ZXClient.WorkForm - S17||2||E------------------:RecvCmdOK
+2018-05-22 11:18:11,205 [7] INFO  ZXClient.WorkForm - 开始心跳
+2018-05-22 11:18:11,205 [7] INFO  ZXClient.WorkForm - 呼叫器监听建立失败1:通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+2018-05-22 11:18:21,205 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:18:21,288 [9] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:21,288 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:18:21,288 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:21,288 [9] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:18:21,288 [9] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:18:21,288 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:18:21,330 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:18:21,330 [9] INFO  ZXClient.WorkForm - 2018/5/22 11:18:21心跳：onlineCCB8A8DB14F8
+2018-05-22 11:18:21,330 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:18:21,379 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:18:21,379 [9] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:18:21,401 [9] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:18:21,401 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:18:21,453 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:18:21,454 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:18:21,493 [9] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:21,493 [9] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:18:21,493 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:18:21,535 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:18:21,535 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:18:21,572 [9] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:21,572 [9] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:18:21,616 [9] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:18:21,616 [9] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:18:22,160 [9] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:18:22,160 [9] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:18:22,696 [9] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:18:22,696 [9] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:18:23,197 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:18:23,222 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:18:23,222 [9] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:18:23,222 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:18:23,262 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:23,262 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:18:31,205 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:18:31,248 [9] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:31,248 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:18:31,248 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:31,248 [9] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:18:31,248 [9] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:18:31,248 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:18:31,304 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:18:31,304 [9] INFO  ZXClient.WorkForm - 2018/5/22 11:18:31心跳：onlineCCB8A8DB14F8
+2018-05-22 11:18:31,304 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:18:31,358 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:18:31,358 [9] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:18:31,359 [9] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:18:31,359 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:18:31,409 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:18:31,410 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:18:31,460 [9] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:31,460 [9] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:18:31,460 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:18:31,518 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:18:31,519 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:18:31,564 [9] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:31,564 [9] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:18:31,605 [9] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:18:31,606 [9] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:18:32,151 [9] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:18:32,151 [9] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:18:32,692 [9] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:18:32,692 [9] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:18:33,192 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:18:33,218 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:18:33,218 [9] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:18:33,218 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:18:33,268 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:33,268 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:18:41,207 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:18:41,288 [9] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:41,288 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:18:41,288 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:41,288 [9] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:18:41,288 [9] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:18:41,288 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:18:41,330 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:18:41,330 [9] INFO  ZXClient.WorkForm - 2018/5/22 11:18:41心跳：onlineCCB8A8DB14F8
+2018-05-22 11:18:41,330 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:18:41,385 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:18:41,385 [9] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:18:41,385 [9] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:18:41,385 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:18:41,437 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:18:41,437 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:18:41,488 [9] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:41,488 [9] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:18:41,488 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:18:41,537 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:18:41,537 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:18:41,576 [9] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:41,576 [9] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:18:41,628 [9] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:18:41,628 [9] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:18:42,168 [9] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:18:42,168 [9] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:18:42,704 [9] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:18:42,704 [9] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:18:43,204 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:18:43,228 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:18:43,228 [9] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:18:43,228 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:18:43,258 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:43,258 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:18:51,204 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:18:51,270 [11] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:51,270 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:18:51,270 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:18:51,270 [11] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:18:51,270 [11] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:18:51,271 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:18:51,336 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:18:51,336 [11] INFO  ZXClient.WorkForm - 2018/5/22 11:18:51心跳：onlineCCB8A8DB14F8
+2018-05-22 11:18:51,336 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:18:51,392 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:18:51,392 [11] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:18:51,392 [11] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:18:51,393 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:18:51,450 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:18:51,450 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:18:51,483 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:51,483 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:18:51,483 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:18:51,542 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:18:51,543 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:18:51,570 [11] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:51,570 [11] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:18:51,616 [11] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:18:51,616 [11] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:18:52,160 [11] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:18:52,160 [11] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:18:52,702 [11] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:18:52,702 [11] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:18:53,203 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:18:53,226 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:18:53,226 [11] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:18:53,227 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:18:53,253 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:18:53,253 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:19:01,205 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:19:01,280 [8] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:01,280 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:19:01,280 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:01,280 [8] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:19:01,280 [8] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:19:01,282 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:19:01,355 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:19:01,356 [8] INFO  ZXClient.WorkForm - 2018/5/22 11:19:01心跳：onlineCCB8A8DB14F8
+2018-05-22 11:19:01,356 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:19:01,411 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:19:01,411 [8] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:19:01,411 [8] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:19:01,411 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:01,470 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:19:01,470 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:19:01,518 [8] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:01,518 [8] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:19:01,518 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:01,570 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:19:01,570 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:19:01,607 [8] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:01,607 [8] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:19:01,655 [8] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:19:01,655 [8] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:19:02,200 [8] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:19:02,200 [8] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:19:02,736 [8] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:19:02,736 [8] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:19:03,237 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:19:03,263 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:03,263 [8] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:03,263 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:19:03,314 [8] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:03,314 [8] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:19:11,202 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:19:11,277 [11] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:11,278 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:19:11,278 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:11,278 [11] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:19:11,278 [11] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:19:11,278 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:19:11,333 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:19:11,333 [11] INFO  ZXClient.WorkForm - 2018/5/22 11:19:11心跳：onlineCCB8A8DB14F8
+2018-05-22 11:19:11,333 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:19:11,689 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:19:11,689 [11] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:19:11,689 [11] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:19:11,689 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:11,743 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:19:11,743 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:19:11,769 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:11,769 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:19:11,769 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:11,811 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:19:11,811 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:19:11,839 [11] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:11,839 [11] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:19:11,932 [11] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:19:11,932 [11] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:19:12,474 [11] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:19:12,474 [11] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:19:13,013 [11] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:19:13,013 [11] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:19:13,513 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:19:13,539 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:13,539 [11] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:13,539 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:19:13,580 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:13,580 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:19:21,203 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:19:21,281 [11] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:21,282 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:19:21,282 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:21,282 [11] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:19:21,282 [11] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:19:21,282 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:19:21,337 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:19:21,337 [11] INFO  ZXClient.WorkForm - 2018/5/22 11:19:21心跳：onlineCCB8A8DB14F8
+2018-05-22 11:19:21,337 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:19:21,387 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:19:21,387 [11] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:19:21,387 [11] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:19:21,387 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:21,448 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:19:21,448 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:19:21,497 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:21,497 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:19:21,497 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:21,545 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:19:21,546 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:19:21,586 [11] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:21,586 [11] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:19:21,628 [11] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:19:21,629 [11] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:19:22,173 [11] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:19:22,173 [11] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:19:22,708 [11] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:19:22,708 [11] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:19:23,209 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:19:23,238 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:23,238 [11] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:23,238 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:19:23,293 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:23,293 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:19:31,205 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:19:31,288 [8] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:31,288 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:19:31,288 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:31,288 [8] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:19:31,288 [8] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:19:31,289 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:19:31,365 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:19:31,365 [8] INFO  ZXClient.WorkForm - 2018/5/22 11:19:31心跳：onlineCCB8A8DB14F8
+2018-05-22 11:19:31,365 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:19:31,415 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:19:31,415 [8] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:19:31,415 [8] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:19:31,415 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:31,469 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:19:31,469 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:19:31,509 [8] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:31,509 [8] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:19:31,509 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:31,558 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:19:31,559 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:19:31,593 [8] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:31,593 [8] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:19:31,641 [8] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:19:31,641 [8] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:19:32,184 [8] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:19:32,184 [8] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:19:32,720 [8] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:19:32,720 [8] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:19:33,220 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:19:33,243 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:33,243 [8] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:33,243 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:19:33,282 [8] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:33,282 [8] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:19:41,206 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:19:41,279 [9] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:41,279 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:19:41,279 [9] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:41,279 [9] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:19:41,279 [9] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:19:41,279 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:19:41,325 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:19:41,325 [9] INFO  ZXClient.WorkForm - 2018/5/22 11:19:41心跳：onlineCCB8A8DB14F8
+2018-05-22 11:19:41,325 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:19:41,382 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:19:41,382 [9] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:19:41,382 [9] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:19:41,382 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:41,434 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:19:41,434 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:19:41,484 [9] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:41,484 [9] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:19:41,484 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:41,536 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:19:41,536 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:19:41,575 [9] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:41,575 [9] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:19:41,620 [9] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:19:41,620 [9] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:19:42,160 [9] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:19:42,160 [9] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:19:42,698 [9] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:19:42,698 [9] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:19:43,199 [9] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:19:43,222 [9] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:43,222 [9] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:43,222 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:19:43,272 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:43,272 [9] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:19:51,203 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 11:19:51,273 [11] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:51,273 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 11:19:51,273 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 11:19:51,273 [11] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 11:19:51,273 [11] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 11:19:51,273 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=10010
+2018-05-22 11:19:51,622 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 11:19:51,622 [11] INFO  ZXClient.WorkForm - 2018/5/22 11:19:51心跳：onlineCCB8A8DB14F8
+2018-05-22 11:19:51,622 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 11:19:51,674 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 11:19:51,674 [11] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 11:19:51,674 [11] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 11:19:51,674 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:51,739 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 11:19:51,739 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 11:19:51,790 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:51,790 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 11:19:51,791 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 11:19:51,840 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 11:19:51,840 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 11:19:51,890 [11] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:51,890 [11] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 11:19:51,984 [11] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 11:19:51,984 [11] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 11:19:52,532 [11] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 11:19:52,532 [11] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 11:19:53,072 [11] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 11:19:53,072 [11] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 11:19:53,573 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 11:19:53,597 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:53,597 [11] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 11:19:53,597 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 11:19:53,623 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 11:19:53,623 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 11:19:55,663 [7] ERROR ERR - Error
+System.Net.Sockets.SocketException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 ZXClient.WorkForm.ConnDevice() 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 320
+2018-05-22 11:23:34,988 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-22 11:23:35,125 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-05-22 11:23:35,360 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-22 11:23:35,360 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-22 11:23:35,360 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-22 11:23:35,360 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.119
+2018-05-22 11:23:35,360 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-22 11:23:35,360 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-22 12:05:54,192 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-22 12:05:54,413 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-22 12:05:54,545 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-05-22 12:05:54,854 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-22 12:05:54,854 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-22 12:05:54,854 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-22 12:05:54,855 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.119
+2018-05-22 12:05:54,855 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-22 12:05:54,855 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-22 12:06:01,883 [1] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeLogin.action?cardnum=1&psw=965EB72C92A549DD
+2018-05-22 12:06:01,937 [1] INFO  ZXClient.util.HttpUtil - 接口请求结果:loginSuccess
+2018-05-22 12:06:01,937 [1] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2018-05-22 12:06:02,049 [1] INFO  ZXClient.WorkForm - 没有吸附
+2018-05-22 12:06:02,063 [1] INFO  ZXClient.WorkForm - 没有吸附
+2018-05-22 12:06:02,065 [1] INFO  ZXClient.WorkForm - 吸附在上面
+2018-05-22 12:06:03,603 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-22 12:06:03,806 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 12:06:03,876 [8] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 12:06:03,876 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 12:06:03,876 [8] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 12:06:03,876 [8] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 12:06:03,876 [8] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 12:06:03,877 [8] INFO  ZXClient.WorkForm - 设备连接成功
+2018-05-22 12:06:03,880 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeGetInfo.action?cardnum=1
+2018-05-22 12:06:03,964 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"Id":2,"deptid":230475,"Name":"李四","Sex":"0","job_desc":"综合岗","CardNum":"1","PassWord":"965EB72C92A549DD","birthday":null,"Phone":"3","beginWorkTime":null,"picture":"upload/152385863860719.jpg","remark":"","ext1":"yes","ext2":"1","showDeptName":"","showWindowName":"","companyName":"","ext3":"","ext4":"2EB1EA966E82CEE825B5A37DE51190D6","isonline":1,"onlinetime":{"date":22,"day":2,"hours":12,"minutes":5,"month":4,"nanos":30000000,"seconds":2,"time":1526961902030,"timezoneOffset":-480,"year":118},"deptName":"个税大厅","star":"3"}
+2018-05-22 12:06:04,357 [8] INFO  ZXClient.WorkForm - 发送文件：picture/user_1.jpg
+2018-05-22 12:06:05,359 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeInfoSetDownload
+2018-05-22 12:06:05,534 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S04||1|name,姓名,李四|jobDesc,职务,综合岗|jobNum,工号,1|star,星级,3||E
+2018-05-22 12:06:05,695 [8] INFO  ZXClient.WorkForm - S04||1|name,姓名,李四|jobDesc,职务,综合岗|jobNum,工号,1|star,星级,3||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:05,695 [8] INFO  ZXClient.WorkForm - S04||1|name,姓名,李四|jobDesc,职务,综合岗|jobNum,工号,1|star,星级,3||E------------------:RecvCmdOK
+2018-05-22 12:06:05,695 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S98||0111.230.14.84||E
+2018-05-22 12:06:05,763 [8] INFO  ZXClient.WorkForm - S98||0111.230.14.84||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:05,763 [8] INFO  ZXClient.WorkForm - S98||0111.230.14.84||E------------------:RecvCmdOK
+2018-05-22 12:06:05,763 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S14||2018||5||22||12||6||5||E
+2018-05-22 12:06:05,791 [8] INFO  ZXClient.WorkForm - S14||2018||5||22||12||6||5||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:05,791 [8] INFO  ZXClient.WorkForm - S14||2018||5||22||12||6||5||E------------------:RecvCmdOK
+2018-05-22 12:06:05,791 [8] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptVideo.action?mac=CCB8A8DB14F8
+2018-05-22 12:06:05,839 [8] INFO  ZXClient.util.HttpUtil - 接口请求结果:2
+2018-05-22 12:06:05,839 [8] INFO  ZXClient.WorkForm - 获取设备CCB8A8DB14F8录音录像权限:2
+2018-05-22 12:06:05,839 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S17||2||E
+2018-05-22 12:06:05,876 [8] INFO  ZXClient.WorkForm - S17||2||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:05,876 [8] INFO  ZXClient.WorkForm - S17||2||E------------------:RecvCmdOK
+2018-05-22 12:06:05,877 [8] INFO  ZXClient.WorkForm - 开始心跳
+2018-05-22 12:06:05,881 [10] INFO  ZXClient.WorkForm - 开始监听（排队叫号器）评价器返回数据，端口：8001
+2018-05-22 12:06:09,495 [1] INFO  ZXClient.WorkForm - 没有吸附
+2018-05-22 12:06:09,501 [1] INFO  ZXClient.WorkForm - 吸附在上面
+2018-05-22 12:06:09,582 [1] INFO  ZXClient.WorkForm - 没有吸附
+2018-05-22 12:06:15,880 [5] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 12:06:15,961 [5] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 12:06:15,962 [5] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 12:06:15,962 [5] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 12:06:15,962 [5] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 12:06:15,962 [5] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 12:06:15,962 [5] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=1
+2018-05-22 12:06:16,024 [5] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 12:06:16,024 [5] INFO  ZXClient.WorkForm - 2018/5/22 12:06:16心跳：onlineCCB8A8DB14F8
+2018-05-22 12:06:16,024 [5] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 12:06:16,103 [5] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 12:06:16,104 [5] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 12:06:16,106 [5] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 12:06:16,107 [5] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 12:06:16,164 [5] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 12:06:16,165 [5] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 12:06:16,204 [5] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:16,204 [5] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 12:06:16,204 [5] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 12:06:16,269 [5] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 12:06:16,269 [5] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 12:06:16,307 [5] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:16,307 [5] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 12:06:16,360 [5] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 12:06:16,360 [5] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 12:06:16,914 [5] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 12:06:16,914 [5] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 12:06:17,456 [5] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 12:06:17,456 [5] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 12:06:17,956 [5] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 12:06:17,981 [5] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 12:06:17,981 [5] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 12:06:17,983 [5] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 12:06:18,022 [5] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:18,022 [5] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 12:06:25,877 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 12:06:25,962 [11] INFO  ZXClient.WorkForm - S99||0||EFalse接收数据:RecvCmdOKS99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 12:06:25,962 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:RecvCmdOK
+2018-05-22 12:06:25,962 [11] INFO  ZXClient.WorkForm - S99||0||E------------------:S99||16||CCB8A8DB14F8||0||0||80||85||16||E
+2018-05-22 12:06:25,962 [11] INFO  ZXClient.WorkForm - 连接评价器成功！
+2018-05-22 12:06:25,962 [11] INFO  ZXClient.WorkForm - S99||0||E获取设备mac地址:CCB8A8DB14F8，设备资源版本号：16，设备更新资源版本号：16
+2018-05-22 12:06:25,963 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeHeart.action?mac=CCB8A8DB14F8&cardNum=1
+2018-05-22 12:06:26,063 [1] INFO  ZXClient.WorkForm - 发送文件：captureimg.20180522120626.0429.jpg
+2018-05-22 12:06:26,334 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:online
+2018-05-22 12:06:26,334 [11] INFO  ZXClient.WorkForm - 2018/5/22 12:06:26心跳：onlineCCB8A8DB14F8
+2018-05-22 12:06:26,334 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getUpdateVersion.action?mac=CCB8A8DB14F8&config=true
+2018-05-22 12:06:26,385 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:Version=17
+2018-05-22 12:06:26,385 [11] INFO  ZXClient.WorkForm - 评价器更新资源版本：16, 服务器最新版本：17
+2018-05-22 12:06:26,385 [11] INFO  ZXClient.WorkForm - 本地当前版本号更新状态：2
+2018-05-22 12:06:26,385 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDeptNotice.action?mac=CCB8A8DB14F8
+2018-05-22 12:06:26,461 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:生态环境保护多重要，听习近平怎么说
+2018-05-22 12:06:26,461 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S15||生态环境保护多重要，听习近平怎么说||E
+2018-05-22 12:06:26,510 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:26,510 [11] INFO  ZXClient.WorkForm - S15||生态环境保护多重要，听习近平怎么说||E------------------:RecvCmdOK
+2018-05-22 12:06:26,510 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getDissatisfiedKey.action?mac=CCB8A8DB14F8
+2018-05-22 12:06:26,563 [1] INFO  ZXClient.WorkForm - (USB)发送内容：S08||CutVideo/captureimg.20180522120626.0429.jpg||E
+2018-05-22 12:06:26,564 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:2,3
+2018-05-22 12:06:26,565 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S18||2,3||E
+2018-05-22 12:06:26,615 [11] INFO  ZXClient.WorkForm - S18||2,3||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:26,615 [11] INFO  ZXClient.WorkForm - S18||2,3||E------------------:RecvCmdOK
+2018-05-22 12:06:26,710 [11] INFO  ZXClient.WorkForm - 信息查询更新
+2018-05-22 12:06:26,711 [11] INFO  ZXClient.WorkForm - 发送文件：quary.xml
+2018-05-22 12:06:27,253 [11] INFO  ZXClient.WorkForm - 通知公告更新
+2018-05-22 12:06:27,253 [11] INFO  ZXClient.WorkForm - 发送文件：notice.xml
+2018-05-22 12:06:28,290 [11] INFO  ZXClient.WorkForm - 意见调查
+2018-05-22 12:06:28,291 [11] INFO  ZXClient.WorkForm - 发送文件：advice.db
+2018-05-22 12:06:28,307 [11] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/getKeyAll.action
+2018-05-22 12:06:28,330 [11] INFO  ZXClient.util.HttpUtil - 接口请求结果:{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 12:06:28,330 [11] INFO  ZXClient.WorkForm - 评价按钮{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+
+2018-05-22 12:06:28,330 [11] INFO  ZXClient.WorkForm - (USB)发送内容：S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E
+2018-05-22 12:06:28,380 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||EFalse接收数据:RecvCmdOK
+2018-05-22 12:06:28,380 [11] INFO  ZXClient.WorkForm - S51||{"data":[{"detail":"非常满意","img":"eval_0.png","x":"0","y":"0"},{"detail":"满意","img":"eval_1.png","x":"1","y":"0"},{"detail":"不满意","img":"eval_2.png","x":"2","y":"0"},{"detail":"很不满意","img":"eval_3.png","x":"3","y":"0"}],"success":true}
+||E------------------:RecvCmdOK
+2018-05-22 16:54:11,653 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-22 16:54:11,907 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-22 16:54:12,096 [1] INFO  ZXClient.Updater.AutoUpdater - 检测到升级文件2个
+2018-05-22 16:54:12,424 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-22 16:54:12,424 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-22 16:54:12,424 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-22 16:54:12,424 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.123
+2018-05-22 16:54:12,425 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-22 16:54:12,426 [1] INFO  ZXClient.Program - FTP:, , , 
+2018-05-22 16:54:16,861 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-22 16:54:17,066 [8] INFO  ZXClient.WorkForm - USBSendData:S99||0||E
+2018-05-22 16:54:17,066 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-22 16:54:17,076 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 638
+2018-05-22 16:54:17,104 [8] INFO  ZXClient.WorkForm - 设备连接失败！

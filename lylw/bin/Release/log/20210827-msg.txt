@@ -1,0 +1,30 @@
+2021-08-27 15:24:13,119 [10] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-08-27 15:24:13,130 [10] INFO  ZXClient.Program - 程序已启动
+2021-08-27 15:24:33,564 [10] INFO  ZXClient.util.Tools - 重启时监听端口释放失败:未将对象引用设置到对象的实例。
+2021-08-27 15:24:37,351 [1] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-08-27 15:24:44,494 [10] INFO  ZXClient.util.Tools - 销毁进程adb没有找到进程
+2021-08-27 15:24:44,507 [10] INFO  ZXClient.Program - 程序已启动
+2021-08-27 15:24:53,502 [10] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeLogin.action?cardnum=1&psw=49BA59ABBE56E057
+2021-08-27 15:24:53,708 [10] INFO  ZXClient.util.HttpUtil - 请求结果：loginSuccess
+2021-08-27 15:24:53,708 [10] INFO  ZXClient.LoginWindow - 登录结果：　loginSuccess
+2021-08-27 15:24:55,809 [10] INFO  ZXClient.util.Tools - 登录结果:无法连接到远程服务器
+2021-08-27 15:25:00,348 [19] INFO  ZXClient.util.Tools - 检测到USB设备,可以进行端口转发了.
+2021-08-27 15:25:00,849 [19] INFO  ZXClient.util.Tools - 设备端口8000重定向到本地端口8011
+2021-08-27 15:25:00,849 [19] INFO  ZXClient.util.Tools - 测试连接重定向端口成功
+2021-08-27 15:25:00,849 [19] INFO  ZXClient.util.Tools - 设备连接成功
+2021-08-27 15:25:00,939 [19] INFO  ZXClient.util.Tools - S99||3||704A0E50CEEC||0||0||75||75||0||ZXEval-YF-2021.1.2||ZX-EVAL-COMMON||E获取设备mac地址:704A0E50CEEC，设备资源版本号：3，设备更新资源版本号：0, len:11
+2021-08-27 15:25:00,943 [19] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeGetInfo.action?cardnum=1
+2021-08-27 15:25:03,887 [17] INFO  ZXClient.util.Tools - 设备连接心跳:成功
+2021-08-27 15:25:03,887 [17] INFO  ZXClient.util.Tools - S99||3||704A0E50CEEC||0||0||75||75||0||ZXEval-YF-2021.1.2||ZX-EVAL-COMMON||E获取设备mac地址:704A0E50CEEC，设备资源版本号：3，设备更新资源版本号：0
+2021-08-27 15:25:03,887 [17] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeHeart.action?mac=704A0E50CEEC&cardNum=1
+2021-08-27 15:25:04,154 [17] INFO  ZXClient.util.Tools - 2021-08-27 15:25:04心跳：704A0E50CEEC
+2021-08-27 15:25:12,380 [19] INFO  ZXClient.util.Tools - 检测到USB设备,可以进行端口转发了.
+2021-08-27 15:25:13,892 [22] INFO  ZXClient.util.Tools - 设备连接心跳:成功
+2021-08-27 15:25:13,892 [22] INFO  ZXClient.util.Tools - S99||3||704A0E50CEEC||0||0||75||75||0||ZXEval-YF-2021.1.2||ZX-EVAL-COMMON||E获取设备mac地址:704A0E50CEEC，设备资源版本号：3，设备更新资源版本号：0
+2021-08-27 15:25:13,892 [22] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeHeart.action?mac=704A0E50CEEC&cardNum=1
+2021-08-27 15:25:14,054 [22] INFO  ZXClient.util.Tools - 2021-08-27 15:25:14心跳：704A0E50CEEC
+2021-08-27 15:25:23,894 [6] INFO  ZXClient.util.Tools - 设备连接心跳:成功
+2021-08-27 15:25:23,894 [6] INFO  ZXClient.util.Tools - S99||3||704A0E50CEEC||0||0||75||75||0||ZXEval-YF-2021.1.2||ZX-EVAL-COMMON||E获取设备mac地址:704A0E50CEEC，设备资源版本号：3，设备更新资源版本号：0
+2021-08-27 15:25:23,894 [6] INFO  ZXClient.util.HttpUtil - http://192.168.1.199:8082/employeeHeart.action?mac=704A0E50CEEC&cardNum=1
+2021-08-27 15:25:24,179 [6] INFO  ZXClient.util.Tools - 2021-08-27 15:25:24心跳：704A0E50CEEC
+2021-08-27 15:25:25,880 [10] INFO  ZXClient.util.Tools - 用户退出成功！

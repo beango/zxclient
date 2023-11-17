@@ -1,0 +1,214 @@
+2018-05-18 11:43:23,596 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 11:43:24,141 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 11:43:52,500 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 11:43:52,501 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 11:43:52,501 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 11:43:52,501 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.123
+2018-05-18 11:43:52,501 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 11:43:52,501 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 11:45:02,281 [1] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeLogin.action?cardnum=1&psw=A0B923820DCC509A
+2018-05-18 11:45:05,456 [1] ERROR ERR - Error
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 119
+2018-05-18 11:45:05,518 [1] ERROR ERR - Error
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+2018-05-18 11:45:05,519 [1] INFO  ZXClient.LoginWindow - 登录结果：　
+2018-05-18 11:45:12,676 [1] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeLogin.action?cardnum=1&psw=965EB72C92A549DD
+2018-05-18 11:45:15,781 [1] ERROR ERR - Error
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 119
+2018-05-18 11:45:15,816 [1] ERROR ERR - Error
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+2018-05-18 11:45:15,820 [1] INFO  ZXClient.LoginWindow - 登录结果：　
+2018-05-18 11:45:36,468 [1] INFO  ZXClient.util.HttpUtil - 接口请求:http://111.230.14.84:8080/employeeLogin.action?cardnum=1&psw=965EB72C92A549DD
+2018-05-18 11:45:39,535 [1] ERROR ERR - Error
+System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 ZXClient.util.HttpUtil.RequestStream(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 119
+2018-05-18 11:45:39,559 [1] ERROR ERR - Error
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.util.HttpUtil.RequestData(String POSTURL, String PostData) 位置 D:\workspace\zx\ZXClient\ZXClient\util\HttpUtil.cs:行号 21
+2018-05-18 11:45:39,560 [1] INFO  ZXClient.LoginWindow - 登录结果：　
+2018-05-18 11:57:43,183 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 11:57:43,951 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 11:58:05,980 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 11:58:05,981 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 11:58:05,981 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 11:58:05,981 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.123
+2018-05-18 11:58:05,981 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 11:58:05,981 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:13:28,287 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:13:28,986 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:13:51,200 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:13:51,200 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:13:51,201 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:13:51,201 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.123
+2018-05-18 13:13:51,201 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:13:51,202 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:13:53,134 [7] ERROR ERR - Error
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 30
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2018-05-18 13:17:29,776 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:17:30,869 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:17:52,757 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:17:52,757 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:17:52,757 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:17:52,758 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.123
+2018-05-18 13:17:52,758 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:17:52,758 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:18:02,307 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:18:02,515 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:18:02,529 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 602
+2018-05-18 13:18:02,561 [8] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-18 13:18:14,664 [7] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 64
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2018-05-18 13:21:41,909 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:22:03,498 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:22:03,498 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:22:03,499 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:22:03,499 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:22:03,499 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:22:03,499 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:22:08,028 [7] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:22:08,243 [7] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:22:08,249 [7] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 602
+2018-05-18 13:22:08,277 [7] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-18 13:22:38,324 [6] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 64
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2018-05-18 13:22:49,201 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:22:49,966 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:23:12,124 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:23:12,124 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:23:12,125 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:23:12,125 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:23:12,125 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:23:12,125 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:23:16,641 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:23:16,865 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:23:16,911 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 602
+2018-05-18 13:23:16,941 [8] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-18 13:27:09,135 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:27:09,883 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:27:32,170 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:27:32,171 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:27:32,171 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:27:32,171 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:27:32,171 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:27:32,171 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:27:36,690 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:27:36,907 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:27:36,953 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 602
+2018-05-18 13:27:36,983 [8] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-18 13:31:10,603 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:31:11,750 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:31:34,033 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:31:34,034 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:31:34,034 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:31:34,034 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:31:34,034 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:31:34,035 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:31:38,722 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:31:38,930 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:31:38,982 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 602
+2018-05-18 13:31:39,022 [8] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-18 13:32:46,853 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:32:47,756 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:32:58,655 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:32:58,655 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:32:58,655 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:32:58,655 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:32:58,656 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:32:58,656 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:33:03,206 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:33:03,417 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:33:03,456 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 602
+2018-05-18 13:33:03,489 [8] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-18 13:33:36,967 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:33:38,046 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:33:38,969 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:33:38,969 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:33:38,972 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:33:38,973 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:33:38,973 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:33:38,973 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:33:43,468 [9] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:33:43,681 [9] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:33:43,712 [9] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 602
+2018-05-18 13:33:43,742 [9] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-18 13:36:54,869 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:36:55,698 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:36:59,584 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:36:59,584 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:36:59,584 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:36:59,585 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:36:59,585 [1] INFO  ZXClient.Program - 连接类型:USB连接
+2018-05-18 13:36:59,585 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:37:04,165 [8] INFO  ZXClient.WorkForm - 设备端口8000重定向到本地端口8011
+2018-05-18 13:37:04,379 [8] INFO  ZXClient.WorkForm - (USB)发送内容：S99||0||E
+2018-05-18 13:37:04,433 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   在 ZXClient.WorkForm.USBSendData(Object response, String op, Boolean isPJQ, UdpClient client, IPEndPoint ipendpoint) 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 602
+2018-05-18 13:37:04,478 [8] INFO  ZXClient.WorkForm - 设备连接失败！
+2018-05-18 13:38:01,104 [7] ERROR ERR - Error
+System.InvalidOperationException: 在创建窗口句柄之前，不能在控件上调用 Invoke 或 BeginInvoke。
+   在 System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   在 System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
+   在 ZXClient.LoginWindow.AutoLogin() 位置 D:\workspace\zx\ZXClient\ZXClient\LoginWindow.cs:行号 64
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+2018-05-18 13:40:11,981 [1] INFO  ZXClient.Program - 程序已启动
+2018-05-18 13:40:13,617 [1] INFO  ZXClient.Updater.AutoUpdater - 开始升级
+2018-05-18 13:40:18,121 [1] INFO  ZXClient.Program - 服务器地址:http://111.230.14.84:8080/
+2018-05-18 13:40:18,121 [1] INFO  ZXClient.Program - 服务器IP:111.230.14.84
+2018-05-18 13:40:18,121 [1] INFO  ZXClient.Program - 服务器端口:8080
+2018-05-18 13:40:18,121 [1] INFO  ZXClient.Program - 评价器IP:192.168.1.124
+2018-05-18 13:40:18,121 [1] INFO  ZXClient.Program - 连接类型:网络连接
+2018-05-18 13:40:18,121 [1] INFO  ZXClient.Program - FTP:111.230.14.84, 21, zxeval, zxeval
+2018-05-18 13:40:21,676 [8] INFO  ZXClient.WorkForm - 评价器监听失败:通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+2018-05-18 13:40:21,677 [8] ERROR ERR - Error
+System.Net.Sockets.SocketException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 ZXClient.WorkForm.ConnDevice() 位置 D:\workspace\zx\ZXClient\ZXClient\WorkForm.cs:行号 219
+2018-05-18 13:40:31,185 [8] INFO  ZXClient.WorkForm - 连接成功:False
