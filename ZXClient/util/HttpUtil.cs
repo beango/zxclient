@@ -18,7 +18,7 @@ namespace ZXClient.util
         {
             try
             {
-                Console.WriteLine(POSTURL + "?" + PostData);
+                Console.WriteLine(POSTURL + ", " + PostData);
                 StreamReader streamReader = RequestStream(POSTURL, PostData);
                 String rst = streamReader.ReadToEnd();
                 return rst;
@@ -33,6 +33,7 @@ namespace ZXClient.util
         {
             try
             {
+                Console.WriteLine("RequestData, "+ POSTURL + ", " + PostData);
                 StreamReader streamReader = GetStream(POSTURL + "?" + PostData);
                 if (streamReader == null)
                     return null;
@@ -214,6 +215,7 @@ namespace ZXClient.util
                 // 设置参数
                 HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
                 //发送请求并获取相应回应数据
+                Console.WriteLine("文件下载 " + url);
                 HttpWebResponse response = request.GetResponse() as HttpWebResponse;
                 //直到request.GetResponse()程序才开始向目标网页发送Post请求
                 Stream responseStream = response.GetResponseStream();
@@ -296,6 +298,11 @@ namespace ZXClient.util
                 myHttpWebRequest.Method = "GET";
                 UTF8Encoding encoding = new UTF8Encoding();
 
+                if (myHttpWebRequest == null)
+                {
+                    Console.WriteLine("接口请求错误" + POSTURL);
+                    return null;
+                }
                 //发送成功后接收返回的XML信息
                 HttpWebResponse response = (HttpWebResponse)myHttpWebRequest.GetResponse();
                 string lcHtml = string.Empty;

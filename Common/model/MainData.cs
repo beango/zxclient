@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.util;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Diagnostics;
@@ -6,6 +7,7 @@ using System.Net.Sockets;
 using System.Resources;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace Common.model
 {

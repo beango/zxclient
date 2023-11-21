@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 using ZXClient.model;
 
@@ -292,8 +293,39 @@ namespace ZXClient.util
                         {
                             if (isPJQ)
                             {
-                                byte[] data1 = MainData.encode.GetBytes(JsonHelper.SerializeObject(new { appriseresult = d[2] }));
+                                Tools.ShowInfo2("发送udp回程(评价结果):" + (client==null) + ", appriseresult=" + d[2]);
+                                string tagNameList = "";
+                                string tagidList = "";
+                                if (d.Length > 11)
+                                {
+                                    string tagjsonstr = d[11];
+                                    Tools.ShowInfo2("发送udp回程(评价结果):tagjsonstr=" + tagjsonstr);
+                                    if (tagjsonstr != null && tagjsonstr != "")
+                                    {
+                                        JavaScriptSerializer jss = new JavaScriptSerializer();
+                                        try
+                                        {
+                                            Dictionary<string, object> tagDict = jss.Deserialize<Dictionary<string, object>>(tagjsonstr);
+                                            foreach (var item in tagDict)
+                                            {
+                                                tagidList += "," + item.Key;
+                                                tagNameList += "," + item.Value;
+                                            }
+                                            if (tagidList != "")
+                                            {
+                                                tagidList = tagidList.Substring(1);
+                                                tagNameList = tagNameList.Substring(1);
+                                            }
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Tools.ShowInfo2("评价结果tag转换失败, " + ex.Message);
+                                        }
+                                    }
+                                }
+                                byte[] data1 = MainData.encode.GetBytes(JsonHelper.SerializeObject(new { appriseresult = d[2], tagId= tagidList, tagName= tagNameList }));
                                 int rr = client.Send(data1, data1.Length, ipendpoint);
+                                Tools.ShowInfo2("发送udp回程结果(评价结果)，数据长度=" + rr + "，source=" + ipendpoint.Address.ToString()+ ":" + ipendpoint.Port);
                             }
 
                             String data = String.Format("mac={0}&tt={1}&cardnum={2}&pj={3}&demo=(NULL)&businessType=1&videofile={4}&businessTime={5}&imgfile={6}&busRst={7}&videofile2={8}"
@@ -311,21 +343,24 @@ namespace ZXClient.util
                                 {
                                     String ftpDir = "recorder";
                                     List<String> listFiles = CommonHelper.ListFiles(new DirectoryInfo(ftpDir));
-                                    foreach (var item in listFiles)
+                                    if (listFiles != null)
                                     {
-                                        FileInfo f = new FileInfo(item);
-                                        Tools.ShowInfo2("上传录音文件：" + item + ", " + MainData.ServerAddr);
-                                        List<KeyValue> keyValues = new List<KeyValue>();
-                                        keyValues.Add(new KeyValue("uploaddir", "download/recorder"));
-                                        keyValues.Add(new KeyValue("file", new FileInfo(item).Name, item));
-                                        if (HttpUtil.ExecuteMultipartRequest(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, keyValues))
+                                        foreach (var item in listFiles)
                                         {
-                                            f.Delete();
+                                            FileInfo f = new FileInfo(item);
+                                            Tools.ShowInfo2("上传录音文件：" + item + ", " + MainData.ServerAddr);
+                                            List<KeyValue> keyValues = new List<KeyValue>();
+                                            keyValues.Add(new KeyValue("uploaddir", "download/recorder"));
+                                            keyValues.Add(new KeyValue("file", new FileInfo(item).Name, item));
+                                            if (HttpUtil.ExecuteMultipartRequest(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, keyValues))
+                                            {
+                                                f.Delete();
+                                            }
+                                            //if (HttpUtil.UploadFile(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, new FileInfo(item)))
+                                            //{
+                                            //    f.Delete();
+                                            //}
                                         }
-                                        //if (HttpUtil.UploadFile(MainData.ServerAddr + MainData.INTE_APPRIESFILEUPLOAD, new FileInfo(item)))
-                                        //{
-                                        //    f.Delete();
-                                        //}
                                     }
                                 }
                                 catch (Exception ex)

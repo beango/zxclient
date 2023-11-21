@@ -1,10 +1,6 @@
-﻿using Newtonsoft.Json.Serialization;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
@@ -19,7 +15,6 @@ using ZXClient.dao;
 using ZXClient.model;
 using ZXClient.Properties;
 using ZXClient.util;
-using System.ComponentModel;
 using ZXClient.service;
 
 namespace ZXClient
@@ -27,6 +22,7 @@ namespace ZXClient
     public partial class WorkForm : ParentForm
     {
         private Type TAG = typeof(WorkForm);
+        private String ver = "1.3.3";
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnCut2;
         private System.Windows.Forms.Button btnCut;
@@ -268,7 +264,7 @@ namespace ZXClient
             contextMenuStrip1.Items.Add("退出");
             contextMenuStrip1.Items[4].Click += btnLogout_Click;
 
-            contextMenuStrip1.Items.Add("当前版本-" + System.Configuration.ConfigurationManager.AppSettings["version"]);
+            contextMenuStrip1.Items.Add("当前版本-" + ver);
         }
 
         /// <summary>
@@ -391,6 +387,8 @@ namespace ZXClient
             MainData.wf = this;
         }
 
+        bool isFirst = true;
+
         private void ConnDevice(object isreConn)
         {
             if (MainData.isNetwork)
@@ -443,7 +441,11 @@ namespace ZXClient
             {
                 ADBClient MyClient = new ADBClient();
                 MyClient.AdbPath = MainData.AdbExePath;
-                MyClient.StartServer();
+                if (isFirst)
+                {
+                    isFirst = false;
+                    MyClient.StartServer();
+                }
 
                 DeviceList = MyClient.Devices();
                 if (DeviceList.Count == 0)
@@ -771,7 +773,7 @@ namespace ZXClient
                         IPEndPoint remoteIpep = new IPEndPoint(IPAddress.Any, 0);
                         byte[] bytes = client.Receive(ref remoteIpep);
                         string strInfo = MainData.encode.GetString(bytes, 0, bytes.Length);
-                        Tools.ShowInfo2("排队叫号器指令：" + strInfo);
+                        Tools.ShowInfo2("排队叫号器指令：" + strInfo + ", removeip:" + remoteIpep.Address.ToString());
                         PjqModel o = JsonHelper.DeserializeJsonToObject<PjqModel>(strInfo);
                         Tools.ShowInfo2("排队叫号器指令：" + o.command);
 
@@ -1418,9 +1420,9 @@ namespace ZXClient
             else
             {
                 Tools.USBSendData("S02E", "eval", isPJQ, client, endPoint);
-                //if (GetEvalResultTimer != null && GetEvalResultTimer.Enabled)
-                //    GetEvalResultTimer.Stop();
-                //BeginGetEvalResult(isPJQ, client, endPoint);
+                if (GetEvalResultTimer != null && GetEvalResultTimer.Enabled)
+                    GetEvalResultTimer.Stop();
+                BeginGetEvalResult(isPJQ, client, endPoint);
             }
         }
 
@@ -1589,10 +1591,15 @@ namespace ZXClient
                     }
                     else
                     {
+                        new ADBClient().Execute("rm " + MainData.SDCARD + "1.jpg", true);
+                        e.img.Save(System.Environment.CurrentDirectory + "\\picture\\1.jpg");
+                        Tools.USBSendFile("", System.Environment.CurrentDirectory + "\\picture\\1.jpg", "1.jpg");
+                        Tools.USBSendData("S08||1.jpg||E", "CutPrint");
+
                         byte[] fssize = ImageHelper.ImageToBytes(e.img);
-                        
+
                         byte[] bLength = Encoding.Default.GetBytes(("S08" + fssize.Length).PadRight(100, ' '));
-                        object[] sendStream = new Object[2] {bLength, fssize};
+                        object[] sendStream = new Object[2] { bLength, fssize };
                         Tools.USBSendData(sendStream, "USBCutVideo");
                     }
                 };
@@ -2117,6 +2124,9 @@ namespace ZXClient
                 byte[] bLength = IntToByteArray(fssize.Length);
                 serverSocket.Send(bLength);
                 serverSocket.Send(fssize);
+                serverSocket.Disconnect(false);
+                serverSocket.Close();
+                serverSocket = null;
             }
             catch (Exception e)
             {
